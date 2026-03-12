@@ -151,51 +151,52 @@ $$R_A = \frac{I_S - I_A}{I_A} R$$
 
 \begin{table}[H]
     \centering
-    % 关键修正：将列数从 5 个 c 改为 6 个 c，匹配实际 6 列数据
     \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      % 修正语法：将 $R_1$/$\Omega$ 改为 $R_1/\Omega$，统一数学模式
-      $U/\mathrm{V}$ & $U_1/\mathrm{V}$ & $U_2/\mathrm{V}$ & $I/\mathrm{mA}$ & $R_1/\Omega$ & $R_2/\Omega$ \\
-      \hline
-      11.96 & 4.16 & 7.78 & 12.42 & 331 & 624 \\
-      \hline
+        \hline
+        $R_L/\Omega$ & 200 & 100 & 50 & 20 & 0 (短路) \\
+        \hline
+        $U/\mathrm{V}$ & 6.64 & 4.98 & 3.33 & 1.67 & / \\
+        \hline
+        $I/\mathrm{mA}$ & 32.5 & 49.4 & 65.9 & 82.8 & 99.7 \\
+        \hline
     \end{tabular}
-    \caption{直流电压、电流和电阻的测量}
-    \label{tab:exp_data}
-\end{table}
-通过欧姆定律计算得到的电阻：
-$$ R_1 = \frac{U_1}{I_1}=335\Omega \quad\quad R_2 = \frac{U_2}{I_2}=626\Omega $$
-
-\begin{table}[H]
-    \centering
-    % 关键修正：从 5 列改为 6 列，匹配 6 列内容
-    \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      被测电压表量程/V & $U_s/\mathrm{V}$(S闭合) & $U_v/\mathrm{V}$(S断开) & $R/\Omega$(标称阻值) & $R_v/\Omega$(计算) \\
-      \hline
-      万用表20VDC档 & 11.96 & 7.97 & 5.1M & 10.19M \\
-      \hline
-      直流电压表20V档 & 12.02 & 6.11 & 500k & 516.9k \\
-      \hline
-    \end{tabular}
-    \caption{电压表内阻测量}
-    \label{tab:exp_data}
+    \caption{电压源的外特性}
+    \label{tab:voltage_source_characteristic}
 \end{table}
 
 \begin{table}[H]
     \centering
-    % 关键修正：从 5 列改为 6 列，匹配 6 列内容
     \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      被测电流表量程/mA & $I_s/\mathrm{mA}$(S断开) & $I_A/\mathrm{mA}$(闭合) & $R/\Omega$ & $R_A/\Omega$(计算) \\
-      \hline
-      2 & 1.995 & 1.002 & 50 & 49.557 \\
-      \hline
-      20 & 19.72 & 9.87 & 5 & 4.990 \\
-      \hline
+        \hline
+        $R_L/\Omega$ & $\infty$ (开路) & 100 & 50 & 20 & 0 (短路) \\
+        \hline
+        $U/\mathrm{V}$ & 1.78 & 0.89 & 0.59 & 0.29 & / \\
+        \hline
+        $I/\mathrm{mA}$ & / & 8.0 & 11.5 & 14.4 & 17.3 \\
+        \hline
     \end{tabular}
-    \caption{电流表内阻测量}
-    \label{tab:exp_data}
+    \caption{电流源的外特性}
+    \label{tab:current_source_characteristic}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{电路元件的伏安特性}
+    \label{tab:diode_characteristic}
+    % 使用 resizebox 确保表格不会超出边距
+    \resizebox{\textwidth}{!}{
+        % 修正为 14 列：|c| 加上 13 个 c|
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            & $U_1/\mathrm{V}$ & 0.05 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 1 & 2 & 5 & 7 & 9 \\
+            \cline{2-14}
+            二极管 & $I/\mathrm{mA}$ (计算) & 0.05 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 1 & 2 & 5 & 7 & 9 \\
+            \cline{2-14}
+            & $U/\mathrm{V}$ & & & & & & & & & & & & \\
+            \hline
+        \end{tabular}
+    }
 \end{table}
 
 
@@ -212,13 +213,7 @@ $$ R_1 = \frac{U_1}{I_1}=335\Omega \quad\quad R_2 = \frac{U_2}{I_2}=626\Omega $$
     \item \textbf{电流表内阻：} 通过分流法计算得出，电流表在 2mA 量程下的内阻约为 $49.56\Omega$，而在 20mA 量程下的内阻约为 $4.99\Omega$。这表明，在低阻值电路中，电流表的内阻不能近似为0，还是要考虑电流表的分压作用。
 \end{enumerate}
 
-\section{讨论、心得}
-
-本次实验是我们电工电子学课程的首次实操实践，核心围绕基本电学量测量与常用电子仪表的规范操作展开。通过本次实验，我不仅熟悉了综合实验台的模块布局，熟练掌握了直流稳压电源、恒流源及数字万用表的调试与使用方法，还通过电路搭接与实际测量，精准获取了各支路电压与电流数据，成功验证了基尔霍夫电压定律与电流定律。同时，我还利用 “分压法” 与 “分流法” 探究了电压表、电流表的内阻特性，并对测量引入的 “方法误差” 进行了初步计算与分析。
-
-实验前，老师着重强调了实验室安全规范与仪器仪表的使用方法，为安全操作筑牢了基础。实操阶段，我严格遵循电路原理图完成接线。尽管本次为验证性实验，电路相对简单，但各种实验过程中的细节要求，仍时刻考验着操作的严谨性。这让我深刻认识到，电路实验中细致认真的态度与严守回路原则的习惯，是获取可靠数据的核心前提。
-
-此次实验过程中规范的接线流程、审慎的量程选择与精准的读数习惯，不仅夯实了专业基础，更培养了我严谨求实的科学态度与标准化的实验操作素养，为后续复杂电路实验的开展奠定了坚实基础。
+\section*{七、讨论、心得}
 
 \end{document}
 
