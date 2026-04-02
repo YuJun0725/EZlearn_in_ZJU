@@ -284,3 +284,60 @@ $ = - sum_(k=1)^K p_k log p_k $
 + 非负性，即 $H_K(P) >= 0$。
 + 确定性，即若 $P = (p_1, p_2, dots.c, p_K)$ 中有一个分量为1，其余均为零，则 $H_K(P) = 0$。
 + 可扩展性，即 $lim_(epsilon -> 0) H_(K+1)(p_1, p_2, dots.c, p_K - epsilon, epsilon) = H_K(p_1, p_2, dots.c, p_K)$，这个可以这样理解：当佳航一个概率很小的事情，对总体的熵没有影响。
+
+*极值性*
+
+$ H_K(p_1, p_2, ..., p_K) <= H_K(1/K, 1/K, ..., 1/K) = log K $
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*证明：*
+
+$H_K(p_1, p_2, ..., p_K) <= -sum_(k=1)^K p_k log q_k$ 对任何概率矢量 $q$ 均成立。因为：
+
+$ H_K(p_1, p_2, ..., p_K) + sum_(k=1)^K p_k log q_k $
+$ = sum_(k=1)^K p_k log(q_k / p_k) <= log e dot sum_(k=1)^K p_k (q_k / p_k - 1) , quad "因" (ln x <= x - 1) $
+$ = 0 quad quad quad "令" q_k = 1/K , k = 1, 2, ..., K "即得。" $
+$ H(p_1, p_2, dots.c, p_K) <= - sum_{k=1}^K p_k log q_k $
+
+$ H(X|Y) &= E lr(\{H(X|y)\}) = - sum_{x in cal(X)} sum_{y in cal(Y)} p(x,y) log p(x|y) \
+         &= - sum_{y in cal(Y)} omega(y) lr(\{ sum_{x in cal(X)} p(x|y) log p(x|y) \}) \
+         &<= - sum_{y in cal(Y)} omega(y) lr(\{ sum_{x in cal(X)} p(x|y) log p(x) \}) \
+         &= - sum_{x in cal(X)} p(x) log p(x) = H(X) $
+
+
+
+=== 凸性
+    
+   
+        $H_k(P)$ 是 $P = (p_1, p_2, dots.c, p_k)$ 的严格上凸（,凹,Concave)函数，即对任何 $theta$，$0 < theta < 1$，和任何二个 K维概率矢量 $P_1, P_2, P_1 != P_2$，有
+
+        $ H_k(theta P_1 + (1 - theta)P_2) > theta H_k(P_1) + (1 - theta)H_k(P_2) $
+   
+
+
+   #set text(font: ("Times New Roman", "SimSun"), size: 12pt)
+#set par(justify: true)
+#set heading(numbering: "1.1")
+
+= 凸集与凸函数 (Convex Sets and Convex Functions)
+
+== 凸集 (Convex Set)
+
+*定义：*
+集合 $C$ 被称为凸集，如果对于集合 $C$ 中的任意两点 $x, y in C$，以及任意实数 $theta in [0, 1]$，它们的凸组合也属于集合 $C$。即：
+$ theta x + (1 - theta) y in C $
+
+== 凸函数 (Convex Function)
+
+*定义：*
+函数 $f: D subset.eq RR^n -> RR$ 是凸函数，当且仅当其定义域 $D$ 是一个凸集，且对于任意 $x, y in D$ 和任意 $theta in [0, 1]$，满足琴生不等式 (Jensen's Inequality)：
+$ f(theta x + (1 - theta) y) <= theta f(x) + (1 - theta) f(y) $
+如果对于 $x != y$ 和 $theta in (0, 1)$，上述不等式严格成立（即 $<$），则称 $f$ 为*严格凸函数*。
+
+*主要性质：*
++ *局部极小值即全局极小值*：对于凸函数，其定义域内的任何局部极小值同时也是全局极小值。如果是严格凸函数，则全局极小值是唯一的。
++ *一阶条件*：若 $f$ 连续可微（即其梯度 $nabla f(x)$ 处处存在），则 $f$ 是凸函数当且仅当对所有 $x, y in D$，有：
+  $ f(y) >= f(x) + nabla f(x)^T (y - x) $
+  （几何意义：凸函数的泰勒一阶展开始终位于函数图像的下方）。
++ *非负线性组合*：凸函数的非负线性组合仍然是凸函数。若 $f_1, f_2, dots.c, f_k$ 为凸函数，$w_1, w_2, dots.c, w_k >= 0$，则 $sum_(i=1)^k w_i f_i$ 也是凸函数。
