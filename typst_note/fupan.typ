@@ -61,6 +61,21 @@
 ]
 
 
+
+#slide[
+  校赛前：
+
+  *机器设计问题*
+
+
+#text(size: 20pt)[
+  机械
+]
+  #image("jiegou.png")
+  
+]
+
+
 #slide[
   校赛前：
 

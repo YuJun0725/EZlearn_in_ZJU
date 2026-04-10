@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1775108130.59967 "main.xdv" "main.pdf" "main" 1775108132.29596 0
-  "main.xdv" 1775108130 56068 2e612c9b3df95cec0f5617d2201840da "xelatex"
+["xdvipdfmx"] 1775837705.8699 "main.xdv" "main.pdf" "main" 1775837707.81636 0
+  "main.xdv" 1775837705 78868 6de1b33eecb5f6c10fac82e1a799f807 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1775108123.44627 "f:/yujun/github_file/EZlearn_in_ZJU/电工电子学实验/实验报告/第五次/main.tex" "main.xdv" "main" 1775108132.24623 0
+["xelatex"] 1775837681.32576 "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/6th/main.tex" "main.xdv" "main" 1775837707.76629 0
   "c:/Windows/Fonts/msyh.ttc" 1724000015 19704352 1e10e74402e59d54499af795caf0b135 ""
   "config.cls" 1773823681 8485 4c4c454e857eddab1ad2c3b3d1c12bea ""
   "f:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1770715415 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -56,6 +56,7 @@
   "f:/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex" 1770716728 8893 e851de2175338fdf7c17f3e091d94618 ""
   "f:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex" 1770716728 11518 738408f795261b70ce8dd47459171309 ""
   "f:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex" 1770716728 186782 af500404a9edec4d362912fe762ded92 ""
+  "f:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex" 1770716729 58801 1e750fb0692eb99aaac45698bbec96b1 ""
   "f:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex" 1770716729 32995 ac577023e12c0e4bd8aa420b2e852d1a ""
   "f:/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfint.code.tex" 1770716729 3063 8c415c68a0f3394e45cfeca0b65f6ee6 ""
   "f:/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex" 1770716729 949 cea70942e7b7eddabfb3186befada2e6 ""
@@ -215,11 +216,11 @@
   "f:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1770714229 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "f:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1770718645 4149363 a6556be9f3bf89e0dc247d1c807409e1 ""
   "f:/texlive/2025/texmf.cnf" 1770718225 713 e69b156964470283e0530f5060668171 ""
-  "f:/yujun/github_file/EZlearn_in_ZJU/电工电子学实验/实验报告/第五次/main.tex" 1775108116 7028 9d1730213f5099d3af513554527309bf ""
+  "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/6th/main.tex" 1775720700 10935 c0ebf066a842d370358cbfc8a5ae4f41 ""
   "figures/head.jpg" 1759130320 100837 173dfb0f8e1a48958ab28a9ca421dc1f ""
-  "main.aux" 1775108130 1937 a1524e5070f69b3e4304c23347ef1b75 "xelatex"
-  "main.out" 1775108130 786 123848c790a5d235844c185faa5e3ffc "xelatex"
-  "main.tex" 1775108116 7028 9d1730213f5099d3af513554527309bf ""
+  "main.aux" 1775837705 1984 ec126149587088867dcfebdaac917923 "xelatex"
+  "main.out" 1775837705 1171 810d5166e1aef50ef5bed07fbe47fae8 "xelatex"
+  "main.tex" 1775720700 10935 c0ebf066a842d370358cbfc8a5ae4f41 ""
   (generated)
   "main.aux"
   "main.log"

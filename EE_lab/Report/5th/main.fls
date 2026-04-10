@@ -390,6 +390,9 @@ INPUT f:/texlive/2025/texmf-dist/tex/latex/ctex/config/ctex.cfg
 INPUT f:/texlive/2025/texmf-dist/tex/latex/ctex/config/ctex.cfg
 INPUT f:/texlive/2025/texmf-dist/tex/latex/makecell/makecell.sty
 INPUT f:/texlive/2025/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT f:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+INPUT f:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+INPUT f:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 INPUT ./main.aux
 INPUT ./main.aux
 INPUT main.aux
@@ -411,6 +414,9 @@ INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 OUTPUT main.xdv
+INPUT ./figures/lianxian.png
+INPUT ./figures/lianxian.png
+INPUT ./figures/lianxian.png
 INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
 INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
 INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
@@ -419,6 +425,9 @@ INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT f:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT ./figures/guanxi.png
+INPUT ./figures/guanxi.png
+INPUT ./figures/guanxi.png
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
