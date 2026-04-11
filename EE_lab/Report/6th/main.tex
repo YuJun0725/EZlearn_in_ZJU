@@ -21,7 +21,7 @@
 \name{韩颂义}
 \partner{} % 签名栏
 \stuid{3240104198}
-\date{2026.4.6}
+\date{2026.4.9}
 \lab{东3-308}
 \grades{}
 \course{电工电子学实验}
@@ -34,7 +34,7 @@
 
 \makeheader % 首页头部
 
-\section{一、 实验目的和要求}
+\section{实验目的和要求}
 
 \begin{enumerate}[label=\arabic*., leftmargin=2em]
     \item 理解并掌握一阶 RC 电路零状态响应、零输入响应、全响应的原理和特点。
@@ -42,7 +42,7 @@
     \item 掌握微分电路和积分电路的作用和特点。
 \end{enumerate}
 
-\section{二、 实验原理}
+\section{实验原理}
 
 \subsection*{1. 一阶 RC 电路的响应}
 
@@ -87,108 +87,184 @@
 \end{itemize}
 
 
-\section{三、 主要仪器设备}
+\section{主要仪器设备}
 \begin{enumerate}[label=\arabic*., leftmargin=2em]
     \item 电工电子综合实验台
     \item 双踪数字示波器
     \item 函数信号发生器
-    \item 电阻元件、电容元件、十进制电阻箱
-    \item 稳压电源
-    \item 数字式万用表
 \end{enumerate}
 
 
-\section{四、 操作方法和实验步骤}
+\section{操作方法和实验步骤}
 
 \begin{enumerate}[label=\arabic*., leftmargin=2em]
-    \item \textbf{RC响应曲线观察与时间常数测量：} 搭建基本一阶RC电路，取 $U_S = 5\mathrm{V}$， $R = 1\mathrm{k}\Omega$， $C = 1000\mu\mathrm{F}$。利用示波器观察并记录 $u_C(t)$ 的零输入响应、零状态响应和全响应曲线，并测出实际电路的时间常数 $\tau$。
+    \item \textbf{RC响应曲线观察与时间常数测量：} 搭建基本一阶RC电路，接入 $5\mathrm{V}$ 直流电源，取 $R = 2\mathrm{k}\Omega$， $C = 470\mu\mathrm{F}$。利用单刀双掷开关控制电路状态，用示波器观察并记录 $u_C(t)$ 的零输入响应、零状态响应，并测出实际电路的时间常数 $\tau$。
     
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{figures/lab1.png}
+        \caption{}
+        \label{fig:fangshu}
+    \end{figure}
+
     \item \textbf{微分电路实现条件探究：} 
     \begin{itemize}
-        \item 取 $R = 1\mathrm{k}\Omega$，$C = 0.1\mu\mathrm{F}$。输入信号 $u_S(t)$ 设为 $U_{PP} = 5\mathrm{V}$、频率为 $100\mathrm{Hz}$ 的单极性方波，同时观察 $u_S(t)$ 和 $u_R(t)$ 的波形。
-        \item 将方波频率分别更改为 $1\mathrm{kHz}$ 和 $10\mathrm{kHz}$，重复观察，体会参数变化对微分电路形成条件的影响。
+        \item 取 $R = 1\mathrm{k}\Omega$，$C = 0.1\mu\mathrm{F}$。输入信号 $u_S(t)$ 设为 $U_{P-P} = 5\mathrm{V}$、频率为 $100\mathrm{Hz}$ 的单极性方波，同时观察并记录 $u_S(t)$ 和 $u_R(t)$ 的波形。
+        \item 保持输入信号幅度不变，将方波频率分别更改为 $1\mathrm{kHz}$ 和 $10\mathrm{kHz}$，重复观察并记录 $u_S(t)$ 和 $u_R(t)$ 的波形，体会微分电路的实现条件。
     \end{itemize}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{figures/lab2.png}
+        \caption{}
+        \label{fig:fangshu}
+    \end{figure}
     
     \item \textbf{积分电路实现条件探究：}
     \begin{itemize}
-        \item 输入信号设定为 $U_{PP} = 5\mathrm{V}$、频率 $3\mathrm{kHz}$ 的单极性方波，取 $R = 20\mathrm{k}\Omega$，$C = 0.1\mu\mathrm{F}$。同时观察 $u_S(t)$ 和 $u_C(t)$ 的波形。
-        \item 依次改变电阻阻值为 $R = 10\mathrm{k}\Omega$ 和 $R = 1\mathrm{k}\Omega$，重复观察，体会积分电路成立的参数条件。
+        \item 输入信号设定为 $U_{P-P} = 5\mathrm{V}$、频率 $1\mathrm{kHz}$ 的单极性方波，取 $R = 1\mathrm{k}\Omega$，$C = 0.1\mu\mathrm{F}$。同时观察并记录 $u_S(t)$ 和 $u_C(t)$ 的波形。
+        \item 保持输入信号 $u_S(t)$ 和电容 $C$ 不变，依次改变电阻阻值为 $R = 5.1\mathrm{k}\Omega$ 和 $R = 10\mathrm{k}\Omega$，重复观察并记录波形，体会积分电路的实现条件。
     \end{itemize}
-
-    \item \textbf{阶跃响应与冲激响应观察：}
-    取 $u_S(t)$ 为频率 $200\mathrm{Hz}$、$U_{PP} = 5\mathrm{V}$ 的单极性方波，利用示波器同时观察电容输出 $u_{C2}(t)$ 与电阻输出 $u_{R1}(t)$ 波形，理解阶跃与冲激响应在特定电路条件下的相互转化。
 \end{enumerate}
 
-
-\section{五、 实验数据记录和处理}
-
-\subsection{1. 瞬态响应与时间常数测量}
-
-% 表1 瞬态响应测定
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \small
-    \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        参数设定 & $R (\Omega)$ & $C (\mu\mathrm{F})$ & 理论时间常数 $\tau$ & 实测时间常数 $\tau$ & 误差率 \\
-        \hline
-        零输入/零状态响应 & 1000 & 1000 & 1.0 $\mathrm{s}$ &  &  \\
-        \hline
-    \end{tabular}
-    \caption{时间常数 $\tau$ 的理论计算与实测对比}
-\end{table}
+    \includegraphics[width=0.6\textwidth]{figures/lab3.png}
+    \caption{}
+    \label{fig:fangshu}
+\end{figure}
 
-\textit{（请在此处插入示波器捕获的零输入、零状态及全响应波形截图）}
 
-\subsection{2. 微分与积分电路波形观测}
+\section{实验数据记录和处理}
 
-% 表2 方波响应参数表
-\begin{table}[H]
+\subsection{瞬态响应与时间常数测量}
+
+\begin{figure}[H]
     \centering
-    \small
-    \begin{tabular}{|c|c|c|c|c|c|c|c|}
-        \hline
-        电路类型 & 信号频率 $f$ & $R$ & $C$ & 方波周期 $T$ & 半周期 $t_w$ & 时间常数 $\tau$ & 条件判断 ($t_w$与$\tau$比值) \\
-        \hline
-        \multirow{3}{*}{观察 $u_R(t)$} 
-        & 100 Hz & $1\mathrm{k}\Omega$ & $0.1\mu\mathrm{F}$ & 10 $\mathrm{ms}$ & 5 $\mathrm{ms}$ & 0.1 $\mathrm{ms}$ & $t_w \gg \tau$ (微分成立) \\
-        \cline{2-8}
-        & 1 kHz & $1\mathrm{k}\Omega$ & $0.1\mu\mathrm{F}$ & 1 $\mathrm{ms}$ & 0.5 $\mathrm{ms}$ & 0.1 $\mathrm{ms}$ & 微分变差 \\
-        \cline{2-8}
-        & 10 kHz & $1\mathrm{k}\Omega$ & $0.1\mu\mathrm{F}$ & 0.1 $\mathrm{ms}$ & 0.05 $\mathrm{ms}$ & 0.1 $\mathrm{ms}$ & 微分失效 \\
-        \hline
-        \multirow{3}{*}{观察 $u_C(t)$} 
-        & 3 kHz & $20\mathrm{k}\Omega$ & $0.1\mu\mathrm{F}$ & 0.33 $\mathrm{ms}$ & 0.167 $\mathrm{ms}$ & 2.0 $\mathrm{ms}$ & $t_w \ll \tau$ (积分成立) \\
-        \cline{2-8}
-        & 3 kHz & $10\mathrm{k}\Omega$ & $0.1\mu\mathrm{F}$ & 0.33 $\mathrm{ms}$ & 0.167 $\mathrm{ms}$ & 1.0 $\mathrm{ms}$ & 积分变差 \\
-        \cline{2-8}
-        & 3 kHz & $1\mathrm{k}\Omega$ & $0.1\mu\mathrm{F}$ & 0.33 $\mathrm{ms}$ & 0.167 $\mathrm{ms}$ & 0.1 $\mathrm{ms}$ & 积分失效 \\
-        \hline
-    \end{tabular}
-    \caption{方波激励下的参数演化与电路状态}
-\end{table}
-
-\textit{（请在此处插入微分电路尖脉冲波形与积分电路三角波形的示波器截图）}
+    \includegraphics[width=0.6\textwidth]{figures/shu.jpg}
+    \caption{零输入响应波形}
+    \label{fig:shu}
+\end{figure}
 
 
-\section{六、 实验结果与分析}
+由图中可以看出，当电容两端电压为电源电压的0.368倍时，读出时间大致为1.007s，通过计算得到$\tau = RC = 0.94s$，可见，实验结果与计算结果较为吻合。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/zhuang.jpg}
+    \caption{零状态响应波形}
+    \label{fig:zhuang}
+\end{figure}
+
+由图中可以看出，当电容两端电压为电源电压的0.632倍时，读出时间大致为1.072s，通过计算得到$\tau = RC = 0.94s$，可见，实验结果与计算结果较为吻合。
+
+\vspace{1em}
+\noindent \textbf{在 MWORKS 中进行仿真：}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/fangzheng.png}
+    \caption{}
+    \label{fig:fangshu}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/fangzhuang.png}
+    \caption{零状态响应仿真波形}
+    \label{fig:fangzhuang}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/fangshu.png}
+    \caption{零输入响应仿真波形}
+    \label{fig:fangshu}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/fangquan.png}
+    \caption{全响应仿真波形}
+    \label{fig:fangquan}
+\end{figure}
+
+bool table设置的时间点是
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/shezhi.png}
+    \caption{}
+    \label{fig:fangquan}
+\end{figure}
+
+\subsection{微分与积分电路波形观测}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/2-1.jpg}
+    \caption{100Hz方波下的微分电路波形}
+    \label{fig:2-1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/2-2.jpg}
+    \caption{1kHz方波下的微分电路波形}
+    \label{fig:2-2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/2-3.jpg}
+    \caption{10kHz方波下的微分电路波形}
+    \label{fig:2-3}
+\end{figure}
+
+\vspace{1em}
+\noindent \textbf{【波形比较分析 - 微分电路】：} 
+对比图 \ref{fig:2-1} 至图 \ref{fig:2-3} 可知，随着输入方波频率的升高（从 100Hz 增加到 10kHz），信号周期变短。这导致方波脉宽 $t_w$ 逐渐减小，破坏了 $t_w \gg \tau$ 的微分必要条件。因此，电路输出波形从明显的双极性尖脉冲（微分效果良好）逐渐退化，过渡过程变得越来越不充分，微分效果变差。
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/3-1.jpg}
+    \caption{1k$\Omega$下的积分电路波形}
+    \label{fig:3-1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/3-2.jpg}
+    \caption{5.1k$\Omega$下的积分电路波形}
+    \label{fig:3-2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/3-3.jpg}
+    \caption{10k$\Omega$下的积分电路波形}
+    \label{fig:3-3}
+\end{figure}
+
+\vspace{1em}
+\noindent \textbf{【波形比较分析 - 积分电路】：} 
+对比图 \ref{fig:3-1} 至图 \ref{fig:3-3} 可知，在电容 $C$ 保持不变且输入频率固定的情况下，随着电阻 $R$ 的增加（从 1k$\Omega$ 增加到 10k$\Omega$），电路的时间常数 $\tau = RC$ 显著变大。这使得 $t_w \ll \tau$ 的积分条件得到更好的满足，电容充放电更加缓慢。因此，输出的 $u_C(t)$ 波形线性度变得更好，越来越接近标准的三角波，积分效果显著提升。
+
+
+\section{实验结果与分析}
 
 通过实验数据的测量与波形的记录，可以得出以下结论：
 \begin{itemize}[leftmargin=2em]
-    \item \textbf{时间常数决定瞬态长短：} 电路从一种稳态过渡到另一种稳态所需的时间由时间常数 $\tau = RC$ 唯一决定。$\tau$ 越大，充放电越缓慢；$\tau$ 越小，响应越迅速。实际测量的 $\tau$ 能够与理论值基本吻合。
+    \item \textbf{时间常数决定瞬态长短：} 电路从一种稳态过渡到另一种稳态所需的时间由时间常数 $\tau = RC$ 唯一决定。$\tau$ 越大，充放电越缓慢；$\tau$ 越小，响应越迅速。实际测量的 $\tau$ 能够与理论值基本吻合。例如，在积分电路的实验中，保持电容不变，将电阻从 $1\mathrm{k}\Omega$ 增大至 $10\mathrm{k}\Omega$ 后，由于 $\tau$ 显著增加，电容电压充放电明显变缓，波形更加接近线性三角波。
     \item \textbf{微分电路实现条件：} 当提取电容串联电阻两端电压 $u_R(t)$，且保证方波脉宽 $t_w \gg \tau$ 时，电容能够完成充分的充放电，电流呈冲击状，电路输出双极性尖脉冲，实现微分功能。频率增高导致 $t_w$ 减小，微分效果会被破坏。
     \item \textbf{积分电路实现条件：} 当提取串联电容两端电压 $u_C(t)$，且保证方波脉宽 $t_w \ll \tau$ 时，电容充放电极其缓慢，始终工作在指数曲线的线性起始段。此时输出的 $u_C(t)$ 波形逐渐演变为三角波，实现了对输入矩形波的积分。
 \end{itemize}
 
 
-\section{七、 讨论、心得}
-
-本次一阶 RC 电路瞬态分析实验不仅加深了我对底层电路动态过程物理意义的理解，更引发了我对工程学习方法论的深层思考。
-
-实验原理部分特别强调：引起电路瞬态过程的原因包括内因和外因，\textbf{电路参数和拓扑的改变是外因，而电路中存在的储能元件（如电容 $C$）才是内因}，外因必须通过内因才能起作用。这与个人的系统性学习与成长过程有着惊人的同构性。
-
-作为一名工程大类的学子，在涉猎机械设计、触觉传感乃至探索具身智能与机器人底层控制系统时，常常会面临技术快速更迭的冲击——这些繁杂的外部任务、前沿的编程框架（如 ROS 2）或算法模型，犹如电路中突然切换的“阶跃信号”或“外部激励”（外因）。而我所积累的数学分析能力、C语言与数据结构功底、以及对力学与电路原理的底层认知，则构成了我自身的“储能元件”（内因）。
-
-如果我们自身的知识“电容量”太小、底层逻辑不够扎实（$\tau$ 过小），在面对复杂的外部技术变革时，就容易产生剧烈的、不稳定的“微分尖峰”，陷入技术焦虑而无法沉淀；反之，如果我们不断夯实基础学科的“阻抗”与知识储备的“容值”，构建起足够坚韧的“内因”体系，就能在面对外界的知识冲击时，以更加平稳、深度的“积分”方式吸收外界信息，将陡峭的挑战转化为自身稳步上升的三角波轨迹，最终达到更高层次的知识稳态。工程的内核不仅仅是向外求取技术的应用，更是向内求索、培养独立思考与跨学科系统直觉的过程。
-
+\section{讨论、心得}
+这次 RC 电路实验让我明白，电路瞬态变化的关键在于内部储能元件，外部变化只是诱因。
+这也让我对工程学习有了新的理解：新技术、新任务只是外部挑战，而数学、编程、力学电路等底层基础，才是我们应对变化的根本。
+基础扎实，才能从容面对技术更新，稳步提升自己，形成系统的工程思维。
 \end{document}

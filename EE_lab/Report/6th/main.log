@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.10)  11 APR 2026 00:14
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.10)  11 APR 2026 13:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1025,7 +1025,23 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowlength=\dimen371
 \pgfarrowwidth=\dimen372
 \pgfarrowlinewidth=\dimen373
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `fig:fangshu' multiply defined.
+
+
+LaTeX Warning: Label `fig:fangshu' multiply defined.
+
+
+LaTeX Warning: Label `fig:fangshu' multiply defined.
+
+
+LaTeX Warning: Label `fig:fangshu' multiply defined.
+
+
+LaTeX Warning: Label `fig:fangquan' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -1177,13 +1193,67 @@ Overfull \hbox (28.72722pt too wide) in alignment at lines 35--35
 
 
 ]
+File: figures/lab1.png Graphic file (type bmp)
+<figures/lab1.png>
+
 
 [2]
+File: figures/lab2.png Graphic file (type bmp)
+<figures/lab2.png>
+
 
 [3]
+File: figures/lab3.png Graphic file (type bmp)
+<figures/lab3.png>
+File: figures/shu.jpg Graphic file (type bmp)
+<figures/shu.jpg>
+File: figures/zhuang.jpg Graphic file (type bmp)
+<figures/zhuang.jpg>
+
 
 [4]
-runsystem(latexminted cleantemp  --timestamp 20260411001442 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+File: figures/fangzheng.png Graphic file (type bmp)
+<figures/fangzheng.png>
+File: figures/fangzhuang.png Graphic file (type bmp)
+<figures/fangzhuang.png>
+
+
+[5]
+File: figures/fangshu.png Graphic file (type bmp)
+<figures/fangshu.png>
+File: figures/fangquan.png Graphic file (type bmp)
+<figures/fangquan.png>
+File: figures/shezhi.png Graphic file (type bmp)
+<figures/shezhi.png>
+
+
+[6]
+File: figures/2-1.jpg Graphic file (type bmp)
+<figures/2-1.jpg>
+File: figures/2-2.jpg Graphic file (type bmp)
+<figures/2-2.jpg>
+
+
+[7]
+File: figures/2-3.jpg Graphic file (type bmp)
+<figures/2-3.jpg>
+File: figures/3-1.jpg Graphic file (type bmp)
+<figures/3-1.jpg>
+
+
+[8]
+File: figures/3-2.jpg Graphic file (type bmp)
+<figures/3-2.jpg>
+File: figures/3-3.jpg Graphic file (type bmp)
+<figures/3-3.jpg>
+
+
+[9]
+
+[10]
+
+[11]
+runsystem(latexminted cleantemp  --timestamp 20260411134111 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
 
  (./main.aux)
  ***********
@@ -1195,16 +1265,19 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 810D5166E1AEF50EF5BED07FBE47FAE8;1171.
+(rerunfilecheck)             Checksum: 82496A910D911292A47EB3BCD8A617DA;967.
  ) 
 Here is how much of TeX's memory you used:
- 35692 strings out of 475796
- 784461 string characters out of 5774033
- 1373118 words of memory out of 5000000
- 58016 multiletter control sequences out of 15000+600000
- 565030 words of font info for 81 fonts, out of 8000000 for 9000
+ 35743 strings out of 475796
+ 781421 string characters out of 5774033
+ 1370120 words of memory out of 5000000
+ 58064 multiletter control sequences out of 15000+600000
+ 562715 words of font info for 68 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 111i,14n,115p,938b,928s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 111i,14n,115p,938b,950s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (4 pages, 78868 bytes).
+Output written on main.xdv (11 pages, 124872 bytes).
