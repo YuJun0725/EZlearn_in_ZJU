@@ -1,0 +1,168 @@
+\documentclass[10.5pt]{config}
+% 本实验报告采用 署名-相同方式共享 4.0 国际许可协议 (CC BY-SA 4.0)
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{ctex}
+\usepackage{graphicx} % 用于插入图片
+\usepackage{float}    % 用于控制图片位置
+\usepackage{makecell}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\titleformat{\subsubsection}[block]  % 设置为块级标题（自动换行）
+{\normalfont\bfseries}{\thesubsubsection}{1em}{} 
+\titlespacing*{\subsubsection}{1.5em}{3.25ex}{1.5ex}  % 调整缩进：左缩进2em
+\setstretch{1.5}
+
+% --- 请在这里填写您的个人信息 ---
+\major{机械工程} % 专业
+\name{韩颂义}
+\partner{} % 签名栏
+\stuid{3240104198}
+\date{2026.4.15} % 已更新为当前日期，可按需修改
+\lab{东3-308}
+\grades{}
+\course{电工电子学实验}
+\instructor{季瑞松} % 指导老师
+\exptype{基础实验} % 实验类型
+\expname{晶体管共射放大电路} % 实验名字
+
+
+\begin{document}
+
+\makeheader % 首页头部
+
+\section{实验目的}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em]
+    \item 掌握晶体管共射放大电路静态工作点的调整及测量方法，了解元件参数对静态工作点的影响。
+    \item 掌握晶体管共射放大电路电压放大倍数、输入电阻、输出电阻等动态指标的测量方法。
+    \item 熟悉双踪数字示波器和函数信号发生器的使用。
+\end{enumerate}
+
+\section{实验原理}
+
+\subsection*{1. 静态工作点的测量方法}
+
+\begin{itemize}[leftmargin=2em]
+    \item \textbf{直接测量法：} 实验电路接入直流电源 $U_{CC}=12\mathrm{V}$。在 $u_S=0$ 时，用数字式万用表的直流电压挡测量晶体管 C、E 之间的电压 $U_{CE}$，用微安表测量基极电流 $I_B$，毫安表测量集电极电流 $I_C$。
+    
+    \item \textbf{间接测量法：} 用数字式万用表的直流电压挡测量晶体管集电极电压 $U_C$ 和发射极电压 $U_E$，再利用公式 $U_{CE} = U_C - U_E$ 计算 $U_{CE}$。在放大电路中，通常利用测量集电极电阻 $R_C$ 两端的电压降 $U_{R_C}$ 来计算出 $I_C$，再利用公式 $U_{CE} = U_{CC} - R_C I_C$ 计算 $U_{CE}$。
+\end{itemize}
+
+\subsection*{2. 放大电路动态指标及测量}
+
+\begin{itemize}[leftmargin=2em]
+    \item \textbf{电压放大倍数 $A_u$：} 
+    在静态工作点合适及输出电压 $u_o$ 不失真的情况下，测得晶体管共射放大电路输入电压 $u_i$ 的有效值 $U_i$ 和输出电压 $u_o$ 的有效值 $U_o$，则电压放大倍数：
+    \begin{equation*}
+        A_u = \frac{U_o}{U_i}
+    \end{equation*}
+
+    \item \textbf{输入电阻 $r_i$：}
+    晶体管共射放大电路的输入电阻 $r_i$ 是指从放大电路输入端看进去的交流等效电阻。实验中一般采用换算法测量，通过在信号源和放大电路之间串接一个 $R_S$ 值取样电阻，测出 $U_S$ 和 $U_i$，则输入电阻：
+    \begin{equation*}
+        r_i = \frac{U_i}{U_S - U_i} R_S
+    \end{equation*}
+    测试时要注意 $U_S$ 不应取得太大，以免晶体管工作在非线性区。
+
+    \item \textbf{输出电阻 $r_o$：}
+    输出电阻 $r_o$ 是指将输入信号源短路，从输出端向电路看进去的交流等效电阻。采用换算法测量时，在输入、输出波形不失真的前提下，测得放大电路在空载和接入负载电阻 $R_L$ 两种情况下的输出电压 $U_o'$ 和 $U_o$，则输出电阻：
+    \begin{equation*}
+        r_o = \left( \frac{U_o'}{U_o} - 1 \right) R_L
+    \end{equation*}
+\end{itemize}
+
+\subsection*{3. 静态工作点与波形失真}
+
+在放大电路中，静态工作点的设置将直接影响电路是否能正常工作。
+\begin{itemize}[leftmargin=2em]
+    \item 当静态工作点电流 $I_C$ 过小时，此时 $U_{CE}$ 靠近 $U_{CC}$，随输入信号幅度的增大，将首先出现\textbf{截止失真}（输出波形 $u_o$ 正半周失真）。
+    \item 当静态工作点电流 $I_C$ 过大时，此时 $U_{CE}$ 靠近 $0\mathrm{V}$，随输入信号幅度的增大，将首先出现\textbf{饱和失真}（输出波形 $u_o$ 负半周失真）。
+\end{itemize}
+因此，在一定输入信号幅度下，为避免输出波形失真，设置静态工作点电流 $I_C$ 的大小要合适。
+
+
+\section{实验设备}
+\begin{enumerate}[label=\arabic*., leftmargin=2em]
+    \item 模拟电子技术实验箱
+    \item 双踪数字示波器
+    \item 函数信号发生器
+    \item 数字式万用表
+\end{enumerate}
+
+
+\section{实验内容与步骤}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em]
+    \item \textbf{静态工作点的调整和测量：} 
+    实验电路如图 5.8-1 所示，接入 $U_{CC} = 12\mathrm{V}$ 直流电源。在 $u_S = 0$ 时，调节电位器 $R_P$，使放大电路的静态工作点满足 $I_C = 1.5\mathrm{mA}$。测量 $I_C$ 时，采用间接测量法，用万用表监控 $U_{R_C} = I_C R_C$。用万用表测量晶体管 T 的集电极电压 $U_C$、基极电压 $U_B$ 和发射极电压 $U_E$，并将数据记录入表 5.8-1。
+    
+    \item \textbf{电压放大倍数 $A_u$、输入电阻 $r_i$、输出电阻 $r_o$ 的测量：} 
+    函数信号发生器输出 $u_S$ 为频率等于 $1\mathrm{kHz}$ 的正弦波信号，调节 $u_S$ 的幅度，使 $U_i = 10\mathrm{mV}$（有效值）。在输入 $u_i$、输出 $u_o$ 波形不失真的情况下，用示波器测量记录空载时的 $U_S$、$U_o'$ 和接入负载 $R_L$ 时的 $U_S$、$U_o$。数据记录到表 5.8-2。
+
+    \item \textbf{静态工作点对放大电路波形失真的影响：}
+    保持电路为空载状态。在 $u_S = 0$ 时，调节 $R_P$，使 $I_C$ 的值过大或过小，用万用表测量 $U_C$、$U_E$、$U_{CE}$，计算 $I_C$。分别在 $I_C$ 的值过大、过小两种状态下，函数信号发生器输出 $u_S$ 为频率等于 $1\mathrm{kHz}$ 的正弦波信号，逐渐增大输入信号幅度，使电路输出波形 $u_o$ 的底部或顶部出现明显失真。用示波器监视放大电路的输入波形 $u_i$ 和输出波形 $u_o$，测得 $u_i$ 的有效值 $U_i$。在表 5.8-3 中记录数据并判断波形的失真情况（饱和失真或截止失真）。
+    
+    \item \textbf{放大电路电压传输特性曲线的测量：}
+    保持电路为空载状态。调节 $R_P$，使放大电路的静态工作点满足 $I_C = 1.5\mathrm{mA}$。函数信号发生器输出 $u_S$ 为频率等于 $1\mathrm{kHz}$ 的正弦波信号。用示波器同时观察整个电路的输入 $u_S$ 和输出 $u_o$ 的波形，调节 $u_S$ 的幅度，使得 $u_o$ 同时出现饱和失真和截止失真。采用示波器 XY 显示模式观察整个电路的电压传输特性曲线，并记录。
+\end{enumerate}
+
+
+\section{实验数据记录和处理}
+
+\subsection{静态工作点的测量}
+
+\begin{table}[H]
+    \centering
+    \caption{静态工作点的测量}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        给定值 & \multicolumn{3}{c|}{测量值} & 计算值 \\ \hline
+        $I_C / \mathrm{mA}$ & $U_C / \mathrm{V}$ & $U_B / \mathrm{V}$ & $U_E / \mathrm{V}$ & $U_{CE} / \mathrm{V}$ \\ \hline
+        1.5 & & & & \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{电压放大倍数、输入电阻、输出电阻的测量}
+
+\begin{table}[H]
+    \centering
+    \caption{电压放大倍数、输入电阻、输出电阻的测量}
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $R_L / \mathrm{k}\Omega$ & $R_S / \mathrm{k}\Omega$ & $U_S / \mathrm{mV}$ & $U_i / \mathrm{mV}$ & $U_o' / \mathrm{V}$ & $U_o / \mathrm{V}$ & $A_u$ (计算) & $r_i$ (计算) & $r_o$ (计算) \\ \hline
+        $\infty$ & \multirow{2}{*}{5.1} & & \multirow{2}{*}{10} & & / & & & \\ \cline{1-1}\cline{3-3}\cline{5-9}
+        2 & & & & / & & & & \\ \hline
+    \end{tabular}
+    }
+\end{table}
+
+\subsection{静态工作点对放大电路波形失真的影响}
+
+\begin{table}[H]
+    \centering
+    \caption{静态工作点对放大电路波形失真的影响}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        $I_C / \mathrm{mA}$ (计算) & $U_C / \mathrm{V}$ & $U_E / \mathrm{V}$ & $U_{CE} / \mathrm{V}$ & $U_i / \mathrm{mV}$ & $u_o$ 波形 & 失真情况 \\ \hline
+        1 & & & & & & \\ \hline
+        2 & & & & & & \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\section{实验结果与分析}
+
+% 请在此处填写你的实验结果分析
+
+
+\section{讨论、心得}
+
+% 请在此处填写你的讨论与心得
+
+
+\end{document}
