@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1776242432.53282 "main.xdv" "main.pdf" "main" 1776242433.9486 0
-  "main.xdv" 1776242432 60200 2924cdd1de62c12d7b92fc7c980ff1d0 "xelatex"
+["xdvipdfmx"] 1776320864.93328 "main.xdv" "main.pdf" "main" 1776320867.42962 0
+  "main.xdv" 1776320864 115304 e6e32b3ce4ab2ab4b7061c4b3a061bd1 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1776242425.55953 "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/7th/main.tex" "main.xdv" "main" 1776242433.89605 0
+["xelatex"] 1776320858.27303 "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/7th/main.tex" "main.xdv" "main" 1776320867.38927 0
   "c:/Windows/Fonts/msyh.ttc" 1724000015 19704352 1e10e74402e59d54499af795caf0b135 ""
   "config.cls" 1773823681 8485 4c4c454e857eddab1ad2c3b3d1c12bea ""
   "f:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1770715415 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -209,11 +209,16 @@
   "f:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1770714229 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "f:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1770718645 4149363 a6556be9f3bf89e0dc247d1c807409e1 ""
   "f:/texlive/2025/texmf.cnf" 1770718225 713 e69b156964470283e0530f5060668171 ""
-  "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/7th/main.tex" 1776242420 8550 14651cd1ffbe5b26004dd6d4bb8da788 ""
+  "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/7th/main.tex" 1776320859 15050 25cd9e56979ab4d07858f2429097fd5d ""
+  "figures/baohe.jpg" 1776316176 246647 be147c9e306b81ff87e131ac315a03d5 ""
+  "figures/dianlu.png" 1776320074 172752 8245d201e92255dc8478afcb0ddee676 ""
   "figures/head.jpg" 1759130320 100837 173dfb0f8e1a48958ab28a9ca421dc1f ""
-  "main.aux" 1776242431 2190 21e8d52294c3ced0609ce22b654dd54e "xelatex"
-  "main.out" 1776242432 1145 8601dd02ea2aa01dc811d5aab7c3118c "xelatex"
-  "main.tex" 1776242420 8550 14651cd1ffbe5b26004dd6d4bb8da788 ""
+  "figures/jiezhi.jpg" 1776316188 224056 d3646a5e8de0a027a2b370141ed4ac7a ""
+  "figures/shizhen.png" 1776320092 148823 346bca3602a0da00d4b57df9f3c6a70c ""
+  "figures/xy.jpg" 1776316197 257030 7d8b3fd98d45310689c1173eaee37c8a ""
+  "main.aux" 1776320864 3910 319dcec359482d51c9d855fb37aa84bf "xelatex"
+  "main.out" 1776320864 1315 2020266595de88e24a1469a35e1a4bf0 "xelatex"
+  "main.tex" 1776320859 15050 25cd9e56979ab4d07858f2429097fd5d ""
   (generated)
   "main.aux"
   "main.log"
