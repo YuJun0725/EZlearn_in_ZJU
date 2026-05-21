@@ -1,0 +1,285 @@
+\documentclass[10.5pt]{config}
+% 本实验报告采用 署名-相同方式共享 4.0 国际许可协议 (CC BY-SA 4.0)
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{ctex}
+\usepackage{graphicx} % 用于插入图片
+\usepackage{float}    % 用于控制图片位置
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{enumitem} % 用于更灵活的列表环境
+\usetikzlibrary{arrows.meta}
+
+\titleformat{\subsubsection}[block]  % 设置为块级标题（自动换行）
+{\normalfont\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{1.5em}{3.25ex}{1.5ex}  % 调整缩进：左缩进2em
+\setstretch{1.5}
+
+% --- 请在这里填写您的个人信息 ---
+\major{机械工程} % 专业
+\name{韩颂义}
+\partner{} % 签名栏
+\stuid{3240104198}
+\date{2026.5.21} % 可根据实际实验日期修改
+\lab{东3-308}
+\grades{}
+\course{电工电子学实验}
+\instructor{季瑞松} % 指导老师
+\exptype{基础实验} % 实验类型
+\expname{集成定时器及其应用} % 按照PPT要求修改实验名称
+
+
+\begin{document}
+
+\makeheader % 首页头部
+
+\section{实验目的}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em]
+    \item 熟悉555集成定时器的组成结构和工作原理。
+    \item 掌握555集成定时器的典型应用和测试方法。
+\end{enumerate}
+
+\section{实验设备}
+\begin{enumerate}[label=\arabic*., leftmargin=2em]
+    \item 模拟电子技术实验箱
+    \item 双踪数字示波器
+    \item 函数信号发生器
+    \item 直流电源
+    \item 数字式万用表
+\end{enumerate}
+
+\section{实验原理}
+
+\subsection*{1. 数字触发器}
+用555集成定时器可构成基本R-S触发器。输入$R$、$S$加入数字电平（可以加+5V表示高电平“1”，接地表示低电平“0”），根据555原理可得到对应的逻辑输出功能。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{rs.png}
+    \caption{用555构成的R-S触发器及其功能表}
+    \label{fig:rs}
+\end{figure}
+
+\subsection*{2. 多谐振荡器}
+用555构成的多谐振荡器，输出为一定占空比的矩形波。矩形波的正、负脉宽分别为：
+$$T_1 = (R_1 + R_2) C_1 \ln 2 \approx 0.693 (R_1 + R_2) C_1$$
+$$T_2 = R_2 C_1 \ln 2 \approx 0.693 R_2 C_1$$
+周期为：
+$$T = T_1 + T_2 \approx 0.693 (R_1 + 2R_2) C_1$$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{duoxie.png}
+    \caption{用555构成的多谐振荡器}
+    \label{fig:duoxie}
+\end{figure}
+
+\subsection*{3. 单稳态触发器}
+用555构成的单稳态触发器，2脚输入加一触发脉冲的作用下，输出一定幅度和宽度的脉冲。单稳脉宽为：
+$$t_w \approx 1.1 R_T C_T$$
+若输入加入周期性矩形波，输入的周期性矩形波周期与脉宽的数值关系应满足电路要求，同时要使幅度满足要求。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{danwen.png}
+    \caption{用555构成的单稳态触发器}
+    \label{fig:danwen}
+\end{figure}
+
+\subsection*{4. 施密特触发器}
+用555构成的施密特触发器，当输入$u_i$加一周期性三角波时，输出为同周期的方波。实验中信号源产生三角波时应加入直流偏置，使三角波整个周期内为正。另外三角波幅度的变化要满足施密特触发器的正向阈值电压 $U_{T+} = \frac{2}{3}U_{CC}$ ，负向阈值电压 $U_{T-} = \frac{1}{3}U_{CC}$。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{smt.png}
+    \caption{用555构成的施密特触发器}
+    \label{fig:smt}
+\end{figure}
+
+
+\section{实验内容}
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em]
+    \item 按图电路接线，验证基本R-S触发器功能。
+    \item 按图电路接线，用示波器双踪观察并记录$u_c$、$u_o$波形，记录正脉宽、负脉宽、周期、振荡幅度。
+    \item 单稳态触发器电路接线：
+    \begin{enumerate}
+        \item 按一下按钮$S_1$，观察发光二极管发光情况，记录发光时长。
+        \item 将图电路中的电容$C_T$改为0.01$\mu$F，输入端$u_i$加一周期为2ms，占空比为90\%的矩形波（幅度要求高电平为+5V，低电平为0V），观察并记录$u_i$、$u_{TH}$、$u_o$的工作波形。标出它们的幅度、脉冲宽度和周期。
+    \end{enumerate}
+    \item 施密特触发器电路接线：
+    \begin{enumerate}
+        \item 输入端$u_i$加一频率为500Hz，直流偏置为2.5V，峰-峰值为5V的三角波，用示波器观察并记录$u_i$和$u_o$波形，标出输出电压的幅度。
+        \item 将示波器显示设置为XY方式，观察并记录电压传输特性 $u_o = f(u_i)$ 曲线。测量并记录正向阈值电压，负向阈值电压和回差。
+    \end{enumerate}
+\end{enumerate}
+
+\section{实验数据记录与波形}
+
+\subsection*{1. 基本R-S触发器功能验证}
+\begin{table}[H]
+    \centering
+    \caption{基本R-S触发器功能测试表}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{输入} & \multicolumn{2}{c|}{输出 $Q$} \\ \hline
+        $R$ & $S$ & 理论值 & 实测值 \\ \hline
+        0 & 0 & 1 & 1 \\ \hline
+        0 & 1 & 保持 ($Q^n$) & 保持 ($Q^n$) \\ \hline
+        1 & 0 & 不定 & 不定 \\ \hline
+        1 & 1 & 0 & 0 \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection*{2. 多谐振荡器}
+% 提示：请取消下面两行的注释并替换为实际的示波器波形截图文件名
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{2.jpg}
+    \caption{多谐振荡器 $u_c$ 与 $u_o$ 波形图}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{多谐振荡器参数测量}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        参数 & 正脉宽 $T_1$ / ms & 负脉宽 $T_2$ / ms & 周期 $T$ / ms & 振荡幅度 / V \\ \hline
+        理论值 &0.76 & 0.693&1.46 & \\ \hline
+        实测值 &0.7924 &0.7 &1.4832 &4.4 \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection*{3. 单稳态触发器}
+\subsubsection*{(1) 手动触发测试}
+闭合开关 $S_2$，按一下按钮 $S_1$。
+发光二极管发光时长理论值为：$t_w \approx 1.1 R_T C_T = 5.17 s$。
+实际观察并记录的发光时长约为：5.32 s。
+
+\subsubsection*{(2) 连续脉冲触发测试}
+% 提示：请取消下面两行的注释并替换为实际的示波器波形截图文件名
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{3.jpg}
+    \caption{单稳态触发器 $u_i$、$u_{TH}$、$u_o$ 波形图}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{单稳态触发器连续脉冲参数测量}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        信号 & 幅度 / V & 脉冲宽度 / ms & 周期 / ms \\ \hline
+        输入 $u_i$ &5.2856 &1.8000 & 2.0000\\ \hline
+        输出 $u_o$ & 3.7977&1.2335 &1.9988 \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection*{4. 施密特触发器}
+\subsubsection*{(1) 波形观察 (YT模式)}
+% 提示：请取消下面两行的注释并替换为实际的示波器波形截图文件名
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{yt.jpg}
+    \caption{施密特触发器输入 $u_i$ 与输出 $u_o$ 波形图}
+\end{figure}
+实测记录：输出电压 $u_o$ 的幅度为 4.8 V。
+
+\subsubsection*{(2) 电压传输特性观察 (XY模式)}
+% 提示：请取消下面两行的注释并替换为实际的示波器波形截图文件名
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{xy.jpg}
+    \caption{施密特触发器电压传输特性 $u_o = f(u_i)$ 曲线}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{施密特触发器阈值电压测量}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        参数 & 正向阈值电压 $U_{T+}$ / V & 负向阈值电压 $U_{T-}$ / V & 回差 $\Delta U_T$ / V \\ \hline
+        理论值 & 3.33 & 1.67 & 1.67 \\ \hline
+        实测值 & 3.4&1.72 &1.68 \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{实验结果与分析}
+
+\subsection{实测数据与理论值对比}
+通过对实验数据的整理，各项测量结果与理论计算值基本吻合：
+\begin{enumerate}
+    \item \textbf{基本R-S触发器}：实测逻辑功能与理论真值表完全一致，验证了555定时器内部比较器与锁存器的基本协作关系。
+    \item \textbf{多谐振荡器}：理论周期为 $1.46\text{ ms}$，实测值为 $1.4832\text{ ms}$，误差约为 $1.6\%$。理论正脉宽 $T_1 = 0.76\text{ ms}$，实测 $0.7924\text{ ms}$。误差主要来源于电容 $C_1$ 的容量偏差以及电阻的精度限制。
+    \item \textbf{单稳态触发器}：手动触发时长实测为 $5.32\text{s}$，略大于理论值 $5.17\text{s}$，这与电解电容的漏电流、容量偏差以及手动计时的系统误差有关。脉冲触发下，理论脉宽 $t_w \approx 1.1\text{ ms}$，实测 $1.2335\text{ms}$，波形平整，触发可靠。
+    \item \textbf{施密特触发器}：理论回差电压 $\Delta U_T = 1.67\text{ V}$，实测为 $1.68\text{ V}$，准确度极高，体现了555定时器作为波形整形器件的优越性能。
+\end{enumerate}
+
+
+
+\section{实验总结}
+
+\subsection{预习要求与思考题解答（P183 四）}
+根据教材“四、预习要求”的内容，各项问题的理论分析与解答如下：
+
+\begin{enumerate}[label=\arabic*., leftmargin=2em]
+    \item[2.] \textbf{问题：}分析用555集成定时器实现基本 $\bar{\text{D}}$ 触发器（或作非门）的原理。（选做）
+    \\ \textbf{解答：}将555定时器的阈值输入端（TH，6脚）与触发输入端（$\overline{\text{TR}}$，2脚）短接在一起作为信号输入端 $D$。
+    根据555定时器的功能表：
+    \begin{itemize}
+        \item 当输入 $D = 0$（低电平 $< \frac{1}{3}V_{CC}$）时，触发端 $\overline{\text{TR}} < \frac{1}{3}V_{CC}$，输出端 OUT（3脚）强行翻转为高电平“1”；
+        \item 当输入 $D = 1$（高电平 $> \frac{2}{3}V_{CC}$）时，阈值端 $\text{TH} > \frac{2}{3}V_{CC}$，输出端 OUT（3脚）翻转为低电平“0”。
+    \end{itemize}
+    综上所述，输出端的状态永远与输入端相反（$Q = \bar{D}$），从而实现了非门（反相器）及基本 $\bar{\text{D}}$ 触发器的逻辑功能。
+
+    \item[3.] \textbf{思考以下问题：}
+    \begin{enumerate}[label=(\arabic*)]
+        \item \textbf{问题：}分析图5.20-9电路，问该电路能输出方波吗？输出波形的正脉宽 $T_1 = \_\_\_\_\_$，负脉宽 $T_2 = \_\_\_\_\_$，周期 $T = \_\_\_\_\_$。
+        \\ \textbf{解答：}\textbf{该电路可以输出占空比为50\%的无失真方波。}
+        图5.20-9中，定时电阻 $R_A$ 直接连接在输出端 OUT（3脚）与定时电容 $C$ 之间，且放电端（7脚）悬空。
+        当输出为高电平时，$V_{CC}$ 通过 $R_A$ 向 $C$ 充电；当电容电压达到 $\frac{2}{3}V_{CC}$ 时，输出翻转为低电平（0V），此时电容 $C$ 通过相同的电阻 $R_A$ 向输出端放电，直到电压降至 $\frac{1}{3}V_{CC}$。
+        由于充电和放电走的是完全相同的阻容路径（均通过 $R_A$ 和 $C$），因此充电时间（正脉宽）与放电时间（负脉宽）完全相等：
+        $$T_1 = R_A C \ln 2 \approx 0.693 R_A C$$
+        $$T_2 = R_A C \ln 2 \approx 0.693 R_A C$$
+        总周期为：$T = T_1 + T_2 = 2 R_A C \ln 2 \approx 1.386 R_A C$。因为 $T_1 = T_2$，故输出为标准方波。
+
+        \item \textbf{问题：}图5.20-3电路中，闭合开关 $S_2$，当按一下按钮 $S_1$ 时，发光二极管发光时间为多长？
+        \\ \textbf{解答：}发光二极管的发光时间取决于单稳态触发器输出暂态高电平的维持时间 $t_w$。
+        代入图5.20-3电路中的标称参数（$R_T = 100\text{ k}\Omega$，$C_T = 47\mu\text{F}$）：
+        $$t_w = 1.1 R_T C_T = 1.1 \times (100 \times 10^3\,\Omega) \times (47 \times 10^{-6}\,\text{F}) = 5.17\text{ s}$$
+        因此，理论上发光二极管每次被手动触发后的发光时间为 \textbf{5.17秒}。
+
+        \item \textbf{问题：}图5.20-3电路中，若电容 $C_T$ 改为 $0.01\mu\text{F}$，输入端 $u_i$ 加一周期为 $2\text{ms}$，占空比为 $90\%$ 的矩形波，输出端 $u_o$ 的波形周期为多少？
+        \\ \textbf{解答：}此时单稳态电路的高电平暂态维持时间为：
+        $$t_w = 1.1 R_T C_T = 1.1 \times 100\text{ k}\Omega \times 0.01\mu\text{F} = 1.1\text{ ms}$$
+        输入的周期性矩形波周期 $T_{in} = 2\text{ ms}$，占空比 $90\%$，对应的触发负脉冲宽度为 $2 \times (1 - 90\%) = 0.2\text{ ms}$。
+        因为暂态时间 $t_w (1.1\text{ ms}) < T_{in} (2\text{ ms})$，说明在下一个时钟下降沿到来之前，电路已经完全恢复到了稳态；同时触发负脉宽 $(0.2\text{ ms}) < t_w (1.1\text{ ms})$，满足窄脉冲触发条件。因此电路在每一个时钟周期都会被成功触发一次，输出波形的周期与输入时钟完全同步，即 \textbf{2 ms}。
+
+        \item \textbf{问题：}图5.20-3电路中，若电阻 $R_T$ 改为 $250\text{ k}\Omega$，$C_T$ 改为 $0.01\mu\text{F}$，输入端 $u_i$ 加一周期为 $2\text{ms}$，占空比为 $80\%$ 的矩形波，输出端 $u_o$ 的波形周期为多少？
+        \\ \textbf{解答：}更改电阻参数后，单稳态电路的暂态维持时间变为：
+        $$t_w = 1.1 R_T C_T = 1.1 \times 250\text{ k}\Omega \times 0.01\mu\text{F} = 2.75\text{ ms}$$
+        此时输入的时钟脉冲周期仍为 $T_{in} = 2\text{ ms}$。当第一个脉冲的下降沿触发电路后，输出变为高电平并维持 $2.75\text{ ms}$。
+        在 $t = 2\text{ ms}$ 时，第二个时钟脉冲的下降沿到来，由于此时电路仍处于暂态高电平期间，内部锁存器无法响应外部触发，因此第二个触发脉冲被完全“屏蔽”。
+        直到 $t = 2.75\text{ ms}$ 电路恢复低电平稳态，并在 $t = 4\text{ ms}$ 接收到第三个脉冲时才再次被触发。
+        这种“隔团触发”的现象实现了电路的**二分频**，输出波形 $u_o$ 的周期为输入周期的2倍，即 \textbf{4 ms}。
+    \end{enumerate}
+
+    \item[4.] \textbf{问题：}预习“实验原理”中 F/V 变换器内容，预先合理选择好 $R_1$、$C_1$、$R_2$、$C_2$ 参数。
+    \\ \textbf{解答：}根据线性 V/F 变换器的工作原理，系统输出频率 $f_0 = \frac{3}{2 U_{CC} R_1 C_1} U_i$ 的线性度完全建立在“积分暂态时间远大于555放电复位时间”的假设之上。因此，参数选择的核心判据为：
+    $$R_1 C_1 \gg R_2 C_2$$
+    在实验室通用测试环境中（输入直流电压 $-U_i = -1 \sim -5\text{V}$，希望输出方波在数百赫兹以内时），一套理论上非常合理的标准元件阻容参数配置如下：
+    \begin{itemize}
+        \item \textbf{积分器参数}：选择积分电阻 $R_1 = 10\text{ k}\Omega$，积分电容 $C_1 = 0.1\mu\text{F}$。此时积分时间常数 $\tau_1 = R_1 C_1 = 1\text{ ms}$。
+        \item \textbf{放电复位参数}：选择放电电阻 $R_2 = 1\text{ k}\Omega$，放电电容 $C_2 = 0.01\mu\text{F}$。此时放电时间常数 $\tau_2 = R_2 C_2 = 0.01\text{ ms}$。
+    \end{itemize}
+    此配置下 $\frac{R_1 C_1}{R_2 C_2} = 100 \gg 1$，放电恢复时间仅占周期的极小比例（约1\%），完美满足了高线性度转换的设计指标。
+\end{enumerate}
+
+\subsection{实验心得}
+本次实验通过对555定时器四种典型电路的搭建，我深刻理解了“电压比较器确定电平、RS 锁存器记忆状态、放电管提供路径”的协同工作机制。在调试施密特触发器时，我注意到必须加入合适的直流偏置，否则无法使输入信号跨越 $\frac{1}{3}V_{CC}$ 和 $\frac{2}{3}V_{CC}$ 的阈值，导致波形无法翻转。通过XY模式观察传输特性曲线，直观地看到了电压回差现象，这对于滤除输入信号中的噪声具有重要意义。
+% TODO: 填写实验结果与分析。比较理论值与实测值，并分析误差原因，总结电路的特点。
+
+\end{document}

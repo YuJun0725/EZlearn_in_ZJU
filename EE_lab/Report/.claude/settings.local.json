@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(\"C:/Users/13736/anaconda3/envs/test/python.exe\" \"f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/10th/Q_pic/ocr.py\")"
+      "Bash(\"C:/Users/13736/anaconda3/envs/test/python.exe\" \"f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/10th/Q_pic/ocr.py\")",
+      "Bash(sed -i 's/ \\\\[cite: [0-9, ]*\\\\]//g' \"f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/11th/main.tex\")",
+      "Bash(mkdir -p \"f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/12th/figures\")"
+    ],
+    "additionalDirectories": [
+      "f:\\yujun\\github_file\\EZlearn_in_ZJU\\EE_lab\\Report\\11th",
+      "f:\\yujun\\github_file\\EZlearn_in_ZJU\\EE_lab\\Report\\12th"
     ]
   }
 }

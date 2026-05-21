@@ -1,12 +1,12 @@
 # Fdb version 4
-["xdvipdfmx"] 1778134306.0509 "main.xdv" "main.pdf" "main" 1778134308.09817 0
-  "main.xdv" 1778134305 120540 70643668339729501fe0ce3c4136f8f5 "xelatex"
+["xdvipdfmx"] 1779344292.94448 "main.xdv" "main.pdf" "main" 1779344296.35988 0
+  "main.xdv" 1779344292 142644 edee9c7ca2ea2def7b749b8d86c25299 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1778134298.50834 "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/10th/main.tex" "main.xdv" "main" 1778134308.03731 0
+["xelatex"] 1779344284.69237 "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/12th/main.tex" "main.xdv" "main" 1779344296.29999 0
   "c:/Windows/Fonts/msyh.ttc" 1724000015 19704352 1e10e74402e59d54499af795caf0b135 ""
-  "config.cls" 1773823681 8485 4c4c454e857eddab1ad2c3b3d1c12bea ""
+  "config.cls" 1779337632 8485 4c4c454e857eddab1ad2c3b3d1c12bea ""
   "f:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1770715415 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "f:/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1770718197 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "f:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1770714310 1004 54797486969f23fa377b128694d548df ""
@@ -209,23 +209,19 @@
   "f:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1770714229 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "f:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1770718645 4149363 a6556be9f3bf89e0dc247d1c807409e1 ""
   "f:/texlive/2025/texmf.cnf" 1770718225 713 e69b156964470283e0530f5060668171 ""
-  "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/10th/main.tex" 1778134281 13790 75b1c1bb461117efaa0edbab1966a12f ""
-  "figures/fanxiangdianlu.png" 1778133027 23028 5cf6828ba002e109f7802385d9fe0d7b ""
-  "figures/head.jpg" 1759130320 100837 173dfb0f8e1a48958ab28a9ca421dc1f ""
-  "figures/huang.jpg" 1778131668 250451 729d64b954850acb6b01bd0c9749f5b0 ""
-  "figures/jianfa.jpg" 1778131413 225880 20b4ef202727940badffa948fd440108 ""
-  "figures/jianfadianlu.png" 1778133035 23099 3b69aea8960bbf5593c605aa730b0eb0 ""
-  "figures/jifen100.jpg" 1778131828 245669 75049e0bbbad45fa66a5384d5b5cfe4c ""
-  "figures/jifen2k.jpg" 1778131775 249530 9171af9ddd3930e12e1a26bf403ce13d ""
-  "figures/jifen5k.jpg" 1778131816 263031 4f5484b6615db477994191b83c1ab0f1 ""
-  "figures/jifendianlu.png" 1778133051 19466 7e729add1a994be514d3ad9f68cf8e9a ""
-  "figures/lan.jpg" 1778131660 225015 563756adf6a7bb45e039a451615f309d ""
-  "figures/lv.jpg" 1778131678 256379 5397ebf48c56d14d52d01936e987a8f7 ""
-  "figures/tongxiang.jpg" 1778131366 231469 79dfa67df9b021069808934b507c9e35 ""
-  "figures/tongxiangdianlu.png" 1778133018 14883 103ee06fa3e7ee827b76b221b4007678 ""
-  "main.aux" 1778134305 4272 05dfef2901b5384d59d5b44367e6f0e3 "xelatex"
-  "main.out" 1778134305 490 353175302beaec56821a94004fd0ea63 "xelatex"
-  "main.tex" 1778134281 13790 75b1c1bb461117efaa0edbab1966a12f ""
+  "f:/yujun/github_file/EZlearn_in_ZJU/EE_lab/Report/12th/main.tex" 1779344284 16182 0242ec1286d9f83857e90924480505af ""
+  "figures/2.jpg" 1779342150 214286 5135c586d73512e3277d07f93650e356 ""
+  "figures/3.jpg" 1779342454 227674 41be90eb20f78dc30a99aa8c3e12e704 ""
+  "figures/danwen.png" 1779341890 136470 ef0ecfcae418dca8a2b242433ada509c ""
+  "figures/duoxie.png" 1779341850 131742 61ae5a873645b988052f5932d12c1ac5 ""
+  "figures/head.jpg" 1779337633 100837 173dfb0f8e1a48958ab28a9ca421dc1f ""
+  "figures/rs.png" 1779341807 61153 08fb80c750b29d38cc1b6e467fa19e76 ""
+  "figures/smt.png" 1779341929 96786 0df487c8410a4ecf2771c1325341b0e5 ""
+  "figures/xy.jpg" 1779342900 252367 6c5bfcf1cf0b022ced2fad480619a5ca ""
+  "figures/yt.jpg" 1779342878 222673 3260ac80261c2e9368f3bcc2b1672198 ""
+  "main.aux" 1779344292 4265 b2ecb5875a27e6c90c7d5d1d4834235b "xelatex"
+  "main.out" 1779344292 1005 b4cc7c8538e83204901fbef67ea277dd "xelatex"
+  "main.tex" 1779344284 16182 0242ec1286d9f83857e90924480505af ""
   (generated)
   "main.aux"
   "main.log"
