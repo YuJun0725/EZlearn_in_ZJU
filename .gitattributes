@@ -1,0 +1,5 @@
+blockchain/lab6/fabric-resources.zip filter=lfs diff=lfs merge=lfs -text
+blockchain/lab7/fabric-resources/fabric-resources/docker-compose filter=lfs diff=lfs merge=lfs -text
+短学期/设计制造实践14-1/14-1-3RRR球面并联关节PPT.pptx filter=lfs diff=lfs merge=lfs -text
+短学期/设计制造实践14-1/14-1-3RRR球面并联关节视频.mp4 filter=lfs diff=lfs merge=lfs -text
+blockchain/lab7/fabric-resources.zip filter=lfs diff=lfs merge=lfs -text

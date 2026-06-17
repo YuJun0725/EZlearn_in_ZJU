@@ -1,0 +1,36 @@
+\contentsline {section}{\numberline {第一章}引言}{1}{section.1}%
+\contentsline {section}{\numberline {第二章}信息理论的基本视角：机械状态就是随机变量}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}自信息：罕见故障为什么更有信息量}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}熵：设备状态的不确定性}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}条件熵：传感器观测之后还剩多少不确定性}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}互信息：传感器到底告诉了我们多少}{3}{subsection.2.4}%
+\contentsline {section}{\numberline {第三章}机械传感数据作为信源：冗余、压缩与特征提取}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}机械传感数据为什么通常有冗余}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}熵率：机械信号不是孤立样本，而是随机过程}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}无损压缩：边缘设备上传原始数据的极限}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}有损压缩：特征提取本质上是在丢弃信息}{5}{subsection.3.4}%
+\contentsline {section}{\numberline {第四章}机械故障诊断中的信息瓶颈}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}从采数据到减小不确定性}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}多传感器融合：联合熵和条件互信息}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}故障分类错误率与 Fano 不等式的启发}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {第五章}工业通信中的信道容量：机械数据能不能可靠传出去}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}机械运维系统也是通信系统}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}信道容量：可靠传输的上限}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}AWGN 信道与工业无线传感}{9}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}功率与带宽的交换}{9}{subsection.5.4}%
+\contentsline {section}{\numberline {第六章}从信息理论重新理解机械智能运维架构}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}一个统一的信息链路模型}{11}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}传感器设计：提高源头互信息}{11}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}边缘计算：在容量受限前提下保留有效信息}{12}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}故障诊断模型：最大化有效信息利用率}{12}{subsection.6.4}%
+\contentsline {section}{\numberline {第七章}案例化分析：轴承故障诊断的信息理论解释}{14}{section.7}%
+\contentsline {subsection}{\numberline {7.1}真实状态与观测数据}{14}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}包络谱是有损但有效的表示}{14}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}早期故障为什么难}{14}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}为什么工况变化会降低泛化能力}{15}{subsection.7.4}%
+\contentsline {section}{\numberline {第八章}信息理论对机械工程的设计启示}{16}{section.8}%
+\contentsline {subsection}{\numberline {8.1}数据采集阶段：先问信息在哪里}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}压缩阶段：区分冗余和有效信息}{16}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}通信阶段：容量有限时要做优先级}{16}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}模型阶段：准确率不是唯一指标}{16}{subsection.8.4}%
+\contentsline {section}{\numberline {第九章}结论}{17}{section.9}%
