@@ -1,0 +1,419 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+
+\usepackage{geometry}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  columns=fullflexible,
+  keepspaces=true,
+  backgroundcolor=\color{gray!6},
+  rulecolor=\color{gray!45},
+  keywordstyle=\color{blue!60!black},
+  commentstyle=\color{green!40!black},
+  stringstyle=\color{red!50!black}
+}
+
+\newcommand{\stress}{\bm{\sigma}}
+\newcommand{\vect}[1]{\bm{#1}}
+\newcommand{\figplaceholder}[2]{%
+  \begin{figure}[H]
+    \centering
+    \IfFileExists{#1}{%
+      \includegraphics[width=0.50\textwidth,height=0.30\textheight,keepaspectratio]{#1}
+    }{%
+      \fbox{\parbox[c][4.2cm][c]{0.78\textwidth}{\centering #2\\[0.5em]\small 运行 MATLAB 程序后重新编译，图片会自动插入。}}%
+    }
+    \caption{#2}
+  \end{figure}
+}
+
+\newcommand{\subfigimage}[2]{%
+  \IfFileExists{#1}{%
+    \includegraphics[width=\linewidth,height=0.24\textheight,keepaspectratio]{#1}
+  }{%
+    \fbox{\parbox[c][3.2cm][c]{0.9\linewidth}{\centering #2}}%
+  }%
+}
+
+\title{\heiti 空间应力状态主应力分析及可视化研究}
+\author{姓名：韩颂义\quad 学号：3240104198\quad 班级：机械2404}
+\date{}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{研究背景与目的}
+
+材料受力后，构件内部一点处的应力状态通常并不只表现为某一个方向上的拉压应力，而是由多个正应力和切应力共同组成。对于复杂受力构件，仅观察原坐标面上的应力分量往往难以直接判断该点的危险程度。主应力分析的意义在于，通过适当的坐标变换，寻找切应力为零的三个互相垂直截面，并得到对应的极值正应力。主应力及其方向既是材料力学中应力状态分析的基本内容，也是强度理论和失效判断的重要基础。
+
+本文以三维空间应力状态为研究对象，建立应力张量的主值求解模型，编写 MATLAB 程序完成主应力、主方向、应力不变量、最大切应力、von Mises 等效应力以及任意斜截面应力的计算。为便于检查计算结果，程序还给出应力单元、主方向矢量、三维莫尔圆以及坐标旋转过程的图形结果。通过算例计算和图形分析，说明切应力分量对主应力大小和方向的影响。
+
+\section{理论基础}
+
+\subsection{三维应力张量}
+
+空间一点处的应力状态可写成对称矩阵：
+\begin{equation}
+\stress =
+\begin{bmatrix}
+\sigma_x & \tau_{xy} & \tau_{zx} \\
+\tau_{xy} & \sigma_y & \tau_{yz} \\
+\tau_{zx} & \tau_{yz} & \sigma_z
+\end{bmatrix}.
+\end{equation}
+
+其中，$\sigma_x,\sigma_y,\sigma_z$ 为三个坐标面上的正应力，$\tau_{xy},\tau_{yz},\tau_{zx}$ 为切应力。由于微元转动平衡，切应力满足对称关系，因此应力张量为实对称矩阵。
+
+\subsection{主应力和主方向}
+
+若某一截面上的切应力为零，该截面法线方向称为主方向，该截面上的正应力称为主应力。设主方向单位向量为 $\vect n$，主应力为 $\sigma_p$，则牵引力满足：
+\begin{equation}
+\stress \vect n = \sigma_p \vect n .
+\end{equation}
+
+这正是矩阵特征值问题。三个主应力为应力张量的三个特征值，三个主方向为对应的单位特征向量。程序中使用 MATLAB 的 \verb|eig| 函数求解，并按从大到小排序：
+\begin{equation}
+\sigma_1 \geq \sigma_2 \geq \sigma_3 .
+\end{equation}
+
+主方向矩阵 $\vect Q$ 由三个单位特征向量组成，应力张量在主坐标系中的表达式为：
+\begin{equation}
+\stress' = \vect Q^{\mathrm T} \stress \vect Q .
+\end{equation}
+
+理论上 $\stress'$ 应为对角矩阵，对角线元素即三个主应力，非对角线切应力为零。
+
+\subsection{应力不变量}
+
+应力状态的三个不变量为：
+\begin{align}
+I_1 &= \sigma_x+\sigma_y+\sigma_z,\\
+I_2 &= \sigma_x\sigma_y+\sigma_y\sigma_z+\sigma_z\sigma_x
+      -\tau_{xy}^2-\tau_{yz}^2-\tau_{zx}^2,\\
+I_3 &= \det(\stress).
+\end{align}
+
+无论坐标系如何旋转，$I_1,I_2,I_3$ 都保持不变。程序也计算平均应力、最大切应力和 von Mises 等效应力：
+\begin{align}
+\sigma_m &= \frac{I_1}{3},\\
+\tau_{\max} &= \frac{\sigma_1-\sigma_3}{2},\\
+\sigma_v &= \sqrt{
+\frac{(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2}{2}
+}.
+\end{align}
+
+这些量可用于进一步讨论材料是否更接近拉压破坏或剪切屈服。
+
+\subsection{任意斜截面应力}
+
+若斜截面单位法向量为 $\vect n$，则该截面上的全应力矢量为：
+\begin{equation}
+\vect T = \stress \vect n .
+\end{equation}
+
+正应力为全应力在法向上的投影：
+\begin{equation}
+\sigma_n = \vect n^{\mathrm T}\vect T .
+\end{equation}
+
+切应力矢量为：
+\begin{equation}
+\vect \tau_n = \vect T-\sigma_n \vect n ,
+\end{equation}
+切应力大小为 $\lVert\vect\tau_n\rVert$。这个部分可以把抽象的三维应力张量与具体截面上的应力联系起来。
+
+\section{计算方法与程序实现}
+
+根据前述理论，程序的计算过程可归纳为以下步骤：
+\begin{enumerate}[label=\arabic*.]
+\item 由输入的六个独立应力分量构造三维对称应力张量；
+\item 求解应力张量的特征值和特征向量，并将特征值按从大到小排列；
+\item 根据主方向矩阵完成坐标变换，检查主坐标系下非对角项是否趋近于零；
+\item 计算应力不变量、最大切应力和 von Mises 等效应力；
+\item 对给定斜截面法向量进行单位化，计算该截面上的全应力、正应力和切应力；
+\item 绘制应力单元、主方向、莫尔圆和坐标旋转过程，用图形辅助分析结果。
+\end{enumerate}
+
+程序采用 MATLAB 编写，核心计算封装为若干局部函数。主要模块及作用见表 \ref{tab:functions}。
+
+\begin{table}[H]
+\centering
+\caption{程序主要函数}
+\label{tab:functions}
+\begin{tabular}{ll}
+\toprule
+函数名 & 功能 \\
+\midrule
+\verb|calcPrincipalStress| & 求主应力和主方向 \\
+\verb|calcStressInvariants| & 求应力不变量、最大切应力和等效应力 \\
+\verb|calcSectionStress| & 求任意斜截面上的正应力和切应力 \\
+\verb|drawStressCube| & 绘制三维应力单元 \\
+\verb|plotPrincipalDirections| & 绘制主方向矢量 \\
+\verb|plotMohrCircles| & 绘制三维应力状态莫尔圆 \\
+\verb|animatePrincipalRotation| & 展示坐标系逐步转向主方向的过程 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+程序开头设置了两个默认算例，单位均为 MPa。第一个算例为三维空间耦合应力状态，第二个算例为平面应力状态：
+\begin{lstlisting}[language=Matlab]
+useDefaultExamples = true;
+
+examples(1).name = '算例一：三维空间耦合应力状态';
+examples(1).components = [55, 55, 20, 5, 40, 40];
+examples(1).planeNormal = [2; -1; 2];
+
+examples(2).name = '算例二：平面应力状态';
+examples(2).components = [80, -20, 0, 30, 0, 0];
+examples(2).planeNormal = [1; 1; 0];
+\end{lstlisting}
+
+其中 \verb|components| 按
+$[\sigma_x,\sigma_y,\sigma_z,\tau_{xy},\tau_{yz},\tau_{zx}]$
+排列。若需分析其他应力状态，可直接修改输入区数据；也可将：
+\begin{lstlisting}[language=Matlab]
+useDefaultExamples = true;
+\end{lstlisting}
+改成：
+\begin{lstlisting}[language=Matlab]
+useDefaultExamples = false;
+\end{lstlisting}
+
+然后就可以在命令行手动输入参数。
+
+程序运行后会依次输出各算例的数值结果，并保存相应图形，便于对计算结果进行复核。动画默认对算例一生成，用来展示坐标系逐渐转到主方向时切应力项消失的过程。
+
+\section{算例计算与结果分析}
+
+\subsection{算例设置}
+
+为比较不同应力状态下主应力和主方向的变化，本文取两个算例。算例一为具有明显空间耦合特征的三维应力状态：
+\begin{equation}
+\stress_1 =
+\begin{bmatrix}
+55 & 5 & 40 \\
+5 & 55 & 40 \\
+40 & 40 & 20
+\end{bmatrix}\ \mathrm{MPa},\qquad
+\vect n_{01}=\begin{bmatrix}2 & -1 & 2\end{bmatrix}^{\mathrm T}.
+\end{equation}
+该例中 $yz$ 和 $zx$ 方向切应力较大，主方向不会与原坐标轴重合，可以反映空间应力状态的三维旋转特征。
+
+算例二取 $xy$ 平面应力状态：
+\begin{equation}
+\stress_2 =
+\begin{bmatrix}
+80 & 30 & 0 \\
+30 & -20 & 0 \\
+0 & 0 & 0
+\end{bmatrix}\ \mathrm{MPa},\qquad
+\vect n_{02}=\begin{bmatrix}1 & 1 & 0\end{bmatrix}^{\mathrm T}.
+\end{equation}
+该例只有 $xy$ 面内的正应力和切应力，$z$ 方向没有直接应力作用。与算例一相比，它的主方向分析主要发生在 $xy$ 平面内，并保留一个与 $z$ 轴重合的主方向。
+
+\subsection{算例一：三维空间耦合应力状态}
+
+对 $\stress_1$ 求特征值，得到主应力：
+\begin{equation}
+\sigma_1=100\ \mathrm{MPa},\qquad
+\sigma_2=50\ \mathrm{MPa},\qquad
+\sigma_3=-20\ \mathrm{MPa}.
+\end{equation}
+最小主应力为负，说明该点在某一主方向上处于压应力状态；最大主应力达到 $100\ \mathrm{MPa}$，明显大于原坐标正应力最大值 $55\ \mathrm{MPa}$，说明切应力分量对主应力大小有显著影响。
+
+程序输出的主方向方向余弦为：
+\begin{align}
+\vect e_1 &= \begin{bmatrix}0.577350 & 0.577350 & 0.577350\end{bmatrix}^{\mathrm T},\\
+\vect e_2 &= \begin{bmatrix}0.707107 & -0.707107 & 0\end{bmatrix}^{\mathrm T},\\
+\vect e_3 &= \begin{bmatrix}-0.408248 & -0.408248 & 0.816497\end{bmatrix}^{\mathrm T}.
+\end{align}
+其中第三个特征向量也可取反号，物理意义不变。按程序采用的符号约定，其精确形式为：
+\begin{align}
+\vect e_1 &= \begin{bmatrix}1/\sqrt 3 & 1/\sqrt 3 & 1/\sqrt 3\end{bmatrix}^{\mathrm T},\\
+\vect e_2 &= \begin{bmatrix}1/\sqrt 2 & -1/\sqrt 2 & 0\end{bmatrix}^{\mathrm T},\\
+\vect e_3 &= \begin{bmatrix}-1/\sqrt 6 & -1/\sqrt 6 & 2/\sqrt 6\end{bmatrix}^{\mathrm T}.
+\end{align}
+将应力张量变换到主坐标系，得到：
+\begin{equation}
+\stress'_1 =
+\begin{bmatrix}
+100 & 0 & 0 \\
+0 & 50 & 0 \\
+0 & 0 & -20
+\end{bmatrix}\ \mathrm{MPa}.
+\end{equation}
+非对角线元素为零，说明在三个主平面上切应力消失。
+
+算例一的应力不变量和强度相关量为：
+\begin{align}
+I_1 &= 130\ \mathrm{MPa},\\
+I_2 &= 2000\ \mathrm{MPa}^2,\\
+I_3 &= -100000\ \mathrm{MPa}^3,\\
+\sigma_m &= 43.333333\ \mathrm{MPa},\\
+\tau_{\max} &= 60\ \mathrm{MPa},\\
+\sigma_v &= 104.403065\ \mathrm{MPa}.
+\end{align}
+
+对给定斜截面法向量 $\vect n_{01}$ 单位化后：
+\begin{equation}
+\vect n_1=\begin{bmatrix}0.666667 & -0.333333 & 0.666667\end{bmatrix}^{\mathrm T}.
+\end{equation}
+该截面上的应力计算结果为：
+\begin{align}
+\vect T_1 &= \begin{bmatrix}61.666667 & 11.666667 & 26.666667\end{bmatrix}^{\mathrm T}\ \mathrm{MPa},\\
+\sigma_{n1} &= 55\ \mathrm{MPa},\\
+\vect\tau_{n1} &= \begin{bmatrix}25 & 30 & -10\end{bmatrix}^{\mathrm T}\ \mathrm{MPa},\\
+\lVert\vect\tau_{n1}\rVert &= 40.311289\ \mathrm{MPa}.
+\end{align}
+
+\subsection{算例二：平面应力状态}
+
+对 $\stress_2$ 求特征值，得到主应力：
+\begin{equation}
+\sigma_1=88.309519\ \mathrm{MPa},\qquad
+\sigma_2=0\ \mathrm{MPa},\qquad
+\sigma_3=-28.309519\ \mathrm{MPa}.
+\end{equation}
+这里 $\sigma_2=0$ 对应 $z$ 方向主应力，体现了平面应力状态的典型特征。虽然 $x$ 向正应力为 $80\ \mathrm{MPa}$，但由于 $xy$ 面内存在 $30\ \mathrm{MPa}$ 的切应力，最大主应力提高到 $88.309519\ \mathrm{MPa}$，最小主应力也成为压应力。
+
+对应的主方向为：
+\begin{align}
+\vect e_1 &= \begin{bmatrix}0.963715 & 0.266934 & 0\end{bmatrix}^{\mathrm T},\\
+\vect e_2 &= \begin{bmatrix}0 & 0 & 1\end{bmatrix}^{\mathrm T},\\
+\vect e_3 &= \begin{bmatrix}-0.266934 & 0.963715 & 0\end{bmatrix}^{\mathrm T}.
+\end{align}
+可见第一、第三主方向位于 $xy$ 平面内，第二主方向与 $z$ 轴一致。主坐标系中的应力张量为：
+\begin{equation}
+\stress'_2 =
+\begin{bmatrix}
+88.309519 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & -28.309519
+\end{bmatrix}\ \mathrm{MPa}.
+\end{equation}
+
+算例二的应力不变量和强度相关量为：
+\begin{align}
+I_1 &= 60\ \mathrm{MPa},\\
+I_2 &= -2500\ \mathrm{MPa}^2,\\
+I_3 &= 0\ \mathrm{MPa}^3,\\
+\sigma_m &= 20\ \mathrm{MPa},\\
+\tau_{\max} &= 58.309519\ \mathrm{MPa},\\
+\sigma_v &= 105.356538\ \mathrm{MPa}.
+\end{align}
+
+对给定斜截面法向量 $\vect n_{02}$ 单位化后：
+\begin{equation}
+\vect n_2=\begin{bmatrix}0.707107 & 0.707107 & 0\end{bmatrix}^{\mathrm T}.
+\end{equation}
+该截面上的应力计算结果为：
+\begin{align}
+\vect T_2 &= \begin{bmatrix}77.781746 & 7.071068 & 0\end{bmatrix}^{\mathrm T}\ \mathrm{MPa},\\
+\sigma_{n2} &= 60\ \mathrm{MPa},\\
+\vect\tau_{n2} &= \begin{bmatrix}35.355339 & -35.355339 & 0\end{bmatrix}^{\mathrm T}\ \mathrm{MPa},\\
+\lVert\vect\tau_{n2}\rVert &= 50\ \mathrm{MPa}.
+\end{align}
+
+\subsection{两类应力状态对比}
+
+\begin{table}[H]
+\centering
+\caption{两个算例的主要结果对比}
+\label{tab:case_compare}
+\small
+\begin{tabular}{p{0.22\textwidth}p{0.34\textwidth}p{0.34\textwidth}}
+\toprule
+项目 & 算例一 & 算例二 \\
+\midrule
+应力状态特点 & 三个坐标方向均参与受力，$yz$、$zx$ 切应力较大 & $xy$ 平面应力状态，$z$ 方向应力分量为零 \\
+主应力 / MPa & $100,\ 50,\ -20$ & $88.309519,\ 0,\ -28.309519$ \\
+主方向特点 & 三个主方向均为空间方向，整体发生三维旋转 & 两个主方向位于 $xy$ 平面内，一个主方向与 $z$ 轴重合 \\
+最大切应力 / MPa & $60$ & $58.309519$ \\
+von Mises 应力 / MPa & $104.403065$ & $105.356538$ \\
+斜截面切应力 / MPa & $40.311289$ & $50$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+两个算例说明，主应力结果不仅取决于原坐标正应力的大小，也取决于切应力如何与各方向耦合。算例一的最大主应力最高，来源于明显的三维切应力耦合；算例二虽然是平面应力状态，但其最大切应力和 von Mises 应力与算例一接近，说明平面内切应力同样会显著改变强度相关指标。
+
+\section{图形结果分析}
+
+图形结果主要用于从几何角度观察应力状态的变化。以下以算例一为代表给出图形结果。原坐标方向下的应力单元反映输入应力分量的组合情况；主方向应力单元反映坐标轴转到主方向后切应力消失的状态；主方向矢量图给出三个主方向在原坐标系中的空间方位；三维莫尔圆则从应力圆角度给出主应力差和最大切应力。程序还生成了坐标系转向主方向的 GIF 动画，用于观察应力张量非对角项随旋转过程逐渐减小的变化。
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \subfigimage{results/original_stress_cube.png}{原坐标方向下的三维应力单元}
+  \caption{原坐标方向下的三维应力单元}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \subfigimage{results/principal_stress_cube.png}{主应力方向下的三维应力单元}
+  \caption{主应力方向下的三维应力单元}
+\end{subfigure}
+
+\vspace{0.8em}
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \subfigimage{results/principal_directions.png}{主应力方向矢量}
+  \caption{主应力方向矢量}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \subfigimage{results/mohr_circles.png}{三维应力状态莫尔圆}
+  \caption{三维应力状态莫尔圆}
+\end{subfigure}
+\caption{算例一空间应力状态主应力分析图形结果}
+\end{figure}
+
+坐标旋转过程中，每一帧根据当前旋转矩阵计算：
+\begin{equation}
+\stress_{\mathrm{current}}=\vect R^{\mathrm T}\stress\vect R .
+\end{equation}
+随着坐标轴逐渐接近主方向，应力矩阵的非对角项逐渐减小。最终在主坐标系中，矩阵被对角化，三个坐标面均为主平面。这一过程与特征值分解的代数结果相互对应。
+
+从力学意义上看，主应力分析并不是单纯的数值排序，而是在所有可能的空间截面中寻找切应力为零的特殊截面。图形结果说明，坐标变换后正应力和切应力的分配方式发生变化，但应力不变量保持不变。
+
+\section{结果讨论与体会}
+
+\begin{enumerate}[label=\arabic*.]
+\item 主应力不是简单地取原坐标正应力最大值。算例一中原坐标正应力最大为 $55\ \mathrm{MPa}$，最大主应力却达到 $100\ \mathrm{MPa}$；算例二中原 $x$ 向正应力为 $80\ \mathrm{MPa}$，最大主应力也提高到 $88.309519\ \mathrm{MPa}$。这说明切应力分量会改变截面上的正应力极值。
+\item 主方向由应力张量整体决定。算例一的三个主方向均为空间方向，说明需要完整的三维坐标变换；算例二的主方向则主要在 $xy$ 平面内旋转，同时保留 $z$ 轴方向的主方向。
+\item 主坐标系中的切应力为零，但这不表示材料内部没有剪切效应。最大切应力仍由主应力差决定，算例一为 $60\ \mathrm{MPa}$，算例二为 $58.309519\ \mathrm{MPa}$。
+\item 应力不变量在坐标变换下保持不变，因此可作为程序结果核对依据。程序通过 $\vect Q^{\mathrm T}\stress\vect Q$ 将应力张量对角化，同时保留 $I_1,I_2,I_3$ 的数值不变。
+\item 任意斜截面的正应力和切应力依赖于截面法向量。两个算例中给定截面的切应力分别为 $40.311289\ \mathrm{MPa}$ 和 $50\ \mathrm{MPa}$，说明同一应力状态下不同截面会表现出不同的应力分解结果。
+\end{enumerate}
+
+\section{结论}
+
+本文围绕空间应力状态的主应力分析建立了计算模型，并用 MATLAB 实现了主应力、主方向、应力不变量以及任意斜截面应力的求解。两个算例分别代表三维空间耦合应力状态和平面应力状态，计算结果表明，切应力分量会显著影响主应力大小和主方向，因此在复杂受力问题中不能只根据原坐标面上的正应力分量判断危险程度。
+
+通过主坐标变换，应力张量可化为对角形式，主平面上的切应力为零；同时 $I_1,I_2,I_3$ 等不变量保持不变，验证了计算过程的正确性。算例一体现了完整三维旋转下的主应力分析，算例二则体现了平面应力状态中面内主方向旋转和零主应力的特点。整体来看，主应力分析能够把复杂应力状态转化为三个互相垂直主平面上的正应力问题，是进行材料强度分析的重要基础。
+
+\end{document}
