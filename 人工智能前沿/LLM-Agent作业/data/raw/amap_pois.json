@@ -1,0 +1,3545 @@
+{
+  "metadata": {
+    "provider": "amap",
+    "api": "place/text-v5",
+    "city": "杭州市",
+    "region": "330100",
+    "retrieved_at": "2026-07-25T06:54:26+00:00",
+    "keywords": [
+      "博物馆",
+      "美术馆",
+      "展览馆",
+      "历史遗址",
+      "寺庙",
+      "古镇",
+      "风景名胜",
+      "公园",
+      "湿地公园",
+      "文化街区",
+      "步行街",
+      "动物园"
+    ],
+    "fetched_count": 570,
+    "unique_count": 536,
+    "selected_count": 100,
+    "api_key_stored": false
+  },
+  "pois": [
+    {
+      "parent": "",
+      "address": "望江路228-264号(江城路地铁站E口步行460米)",
+      "business": {
+        "keytag": "博物馆",
+        "rating": "4.7",
+        "business_area": "紫阳",
+        "tel": "0571-86521875",
+        "rectag": "博物馆",
+        "opentime_week": "周二至周日 09:30-17:00 最晚进入16:30；周一 全天关闭,节假日营业时间以官方通知为准"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;博物馆;博物馆",
+      "typecode": "140100",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "南宋德寿宫遗址博物馆",
+      "location": "120.173273,30.238678",
+      "id": "B0HGNGK3FG",
+      "_collector": {
+        "keyword": "博物馆",
+        "category": "museum",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "博物馆",
+          "历史遗址"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "南山路138号",
+      "business": {
+        "opentime_today": "09:00-17:00 09:00-17:00",
+        "keytag": "美术馆",
+        "rating": "4.9",
+        "business_area": "杭州西湖风景名胜区-柳浪闻莺",
+        "tel": "0571-87078700",
+        "rectag": "美术馆",
+        "opentime_week": "周二至周日 09:00-17:00 2026-05-01至2026-05-05 周二至周日 09:00-17:00；2026-05-01至2026-05-05 周一 全天关闭"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;美术馆;美术馆",
+      "typecode": "140400",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "浙江美术馆",
+      "location": "120.156894,30.231049",
+      "id": "B023B0BMJ6",
+      "_collector": {
+        "keyword": "美术馆",
+        "category": "art_gallery",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "美术馆"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFG18EXS",
+      "address": "盈丰街道奔竞大道353号杭州国际博览中心A座1104号",
+      "business": {
+        "keytag": "展览馆",
+        "rating": "4.4",
+        "rectag": "展览馆"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330109",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;展览馆;展览馆",
+      "typecode": "140200",
+      "adname": "萧山区",
+      "citycode": "0571",
+      "name": "杭州国际博览中心A座",
+      "location": "120.237875,30.231569",
+      "id": "B0FFH4JQL4",
+      "_collector": {
+        "keyword": "展览馆",
+        "category": "exhibition",
+        "recommended_duration_min": 90,
+        "indoor": true,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B05MJE",
+      "address": "法云弄1号",
+      "business": {
+        "keytag": "寺庙",
+        "rating": "4.9",
+        "business_area": "灵隐",
+        "tel": "0571-87969691",
+        "rectag": "禅茶一味",
+        "opentime_week": "周一至周日 07:30-17:30 最晚进入17:00；在以上开放时间基础上，每逢国家法定节假日，景区将提前半小时开门，推迟半小时关门"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;国家级景点",
+      "typecode": "110202",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "灵隐寺",
+      "location": "120.101406,30.240826",
+      "id": "B023B02842",
+      "_collector": {
+        "keyword": "历史遗址",
+        "category": "historic_site",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "历史遗址",
+          "寺庙"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "西湖街道龙井路1号",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "5A景区",
+        "rating": "4.9",
+        "business_area": "龙井",
+        "alias": "西湖景区",
+        "tel": "0571-87179617",
+        "rectag": "天容水色西湖好",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;国家级景点",
+      "typecode": "110202",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州西湖风景名胜区",
+      "location": "120.121358,30.222692",
+      "id": "B023B13L9M",
+      "_collector": {
+        "keyword": "寺庙",
+        "category": "temple",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "寺庙",
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "B023B14O96",
+      "address": "良渚古城遗址公园内(东侧)",
+      "business": {
+        "opentime_today": "09:00-17:00",
+        "keytag": "文物古迹",
+        "rating": "3.6",
+        "tel": "0571-85855300",
+        "rectag": "文物古迹",
+        "opentime_week": "周一至周日 09:00-17:00 最晚进入16:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚古城遗址公园-河道与作坊",
+      "location": "119.996667,30.389561",
+      "id": "B0FFKQLV24",
+      "_collector": {
+        "keyword": "古镇",
+        "category": "ancient_town",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "古镇"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "小营街道斗富二桥西河下9号附近",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "景区",
+        "rating": "4.6",
+        "business_area": "望江",
+        "rectag": "景区",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "五柳巷历史街区",
+      "location": "120.176615,30.242162",
+      "id": "B0FFFA3PD5",
+      "_collector": {
+        "keyword": "风景名胜",
+        "category": "scenic_area",
+        "recommended_duration_min": 150,
+        "indoor": false,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "秋韵路a7-2号",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "滨江公园",
+        "rating": "4.7",
+        "business_area": "奥体中心",
+        "rectag": "滨江公园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330109",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "萧山区",
+      "citycode": "0571",
+      "name": "钱江世纪公园",
+      "location": "120.237194,30.244685",
+      "id": "B0FFHJTKKP",
+      "_collector": {
+        "keyword": "公园",
+        "category": "park",
+        "recommended_duration_min": 90,
+        "indoor": false,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "公园"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFKQ1MAC",
+      "address": "杭州沿江景观公园内(西侧)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "湿地",
+        "rating": "4.3",
+        "rectag": "湿地",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330114",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "钱塘区",
+      "citycode": "0571",
+      "name": "杭州沿江湿地公园-西区",
+      "location": "120.354734,30.262239",
+      "id": "B0FFKRLAVQ",
+      "_collector": {
+        "keyword": "湿地公园",
+        "category": "wetland",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "河坊街180号",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "特色街区",
+        "rating": "4.7",
+        "business_area": "清河坊片区",
+        "alias": "南宋皇城小镇|清河坊特色街区",
+        "tel": "0571-87822494;12301",
+        "rectag": "品杭城老味道",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;国家级景点",
+      "typecode": "110202",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "清河坊历史文化特色街区",
+      "location": "120.169899,30.239827",
+      "id": "B023B07SJZ",
+      "_collector": {
+        "keyword": "文化街区",
+        "category": "cultural_district",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "文化街区"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "凤起路539-4号(龙翔桥地铁站C口步行120米)",
+      "business": {
+        "opentime_today": "10:00-22:00",
+        "keytag": "特色街区",
+        "rating": "4.8",
+        "business_area": "湖滨",
+        "tel": "0571-88161688",
+        "rectag": "特色街区",
+        "opentime_week": "周一至周日 10:00-22:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "购物服务;特色商业街;步行街",
+      "typecode": "061001",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "湖滨步行街",
+      "location": "120.162923,30.254158",
+      "id": "B0FFL9RQ5O",
+      "_collector": {
+        "keyword": "步行街",
+        "category": "pedestrian_street",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 1,
+        "keywords": [
+          "步行街"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02349",
+      "address": "虎跑路40号杭州动物园内(西侧)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "动物园",
+        "rating": "4.1",
+        "business_area": "虎跑",
+        "tel": "0571-87981257",
+        "rectag": "动物园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;动物园",
+      "typecode": "110102",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州动物园-虎山",
+      "location": "120.130873,30.212474",
+      "id": "B0FFK1AXQY",
+      "_collector": {
+        "keyword": "动物园",
+        "category": "zoo",
+        "recommended_duration_min": 240,
+        "indoor": false,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "动物园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "粮道山18号",
+      "business": {
+        "keytag": "博物馆",
+        "rating": "4.7",
+        "business_area": "吴山",
+        "tel": "0571-87555637",
+        "rectag": "春节亲子",
+        "opentime_week": "全年 周一, 周三-周日 09:00-16:30开放 最晚进入16:00；全年 周二 全天不开放；劳动节,元旦节,春节,清明节,端午节,中秋节,国庆节 09:00-16:30开放 最晚进入16:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;博物馆;博物馆",
+      "typecode": "140100",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "杭州博物馆",
+      "location": "120.166525,30.239091",
+      "id": "B0FFFWQGI8",
+      "_collector": {
+        "keyword": "博物馆",
+        "category": "museum",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "博物馆",
+          "寺庙"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "双浦镇新塘村灵山中路108号",
+      "business": {
+        "keytag": "美术馆",
+        "rating": "4.6",
+        "tel": "19106797200",
+        "rectag": "美术馆",
+        "opentime_week": "6月至12月 周一至周日 09:30-18:30；1月 周一至周日 全天关闭 05-29至05-31 周一至周日 全天关闭；01-01至01-30 周一至周日 09:30-18:30；02-01至05-28 周一至周日 09:30-18:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;美术馆;美术馆",
+      "typecode": "140400",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "山下美术馆",
+      "location": "120.048992,30.109660",
+      "id": "B0FFMBRPNX",
+      "_collector": {
+        "keyword": "美术馆",
+        "category": "art_gallery",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "美术馆"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "港城大道与美狮路交叉口东380米",
+      "business": {
+        "opentime_today": "09:00-17:30",
+        "keytag": "展览馆",
+        "rating": "4.8",
+        "tel": "0571-82808280",
+        "rectag": "展览馆",
+        "opentime_week": "周一至周日 09:00-17:30；开放时间以当天展览为准"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330109",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;会展中心;会展中心",
+      "typecode": "140300",
+      "adname": "萧山区",
+      "citycode": "0571",
+      "name": "杭州大会展中心",
+      "location": "120.419314,30.271131",
+      "id": "B0HBLG930H",
+      "_collector": {
+        "keyword": "展览馆",
+        "category": "exhibition",
+        "recommended_duration_min": 90,
+        "indoor": true,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02842",
+      "address": "灵隐路法云弄1号灵隐景区东北角",
+      "business": {
+        "opentime_today": "07:00-17:00",
+        "keytag": "文物古迹",
+        "rating": "4.2",
+        "business_area": "西湖旅游区中心片区",
+        "alias": "灵隐寺-济公殿",
+        "tel": "0571-87968665",
+        "rectag": "文物古迹",
+        "opentime_week": "周一至周日 07:00-17:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;寺庙道观",
+      "typecode": "110205",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "济公殿",
+      "location": "120.101678,30.241442",
+      "id": "B0FFFWXTX3",
+      "_collector": {
+        "keyword": "历史遗址",
+        "category": "historic_site",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "历史遗址"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "西湖街道西湖街道天竺路338号",
+      "business": {
+        "opentime_today": "06:00-18:00",
+        "keytag": "寺庙",
+        "rating": "4.8",
+        "alias": "法喜寺",
+        "tel": "0571-87986176",
+        "rectag": "寺庙",
+        "opentime_week": "周一至周日 06:00-18:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;寺庙道观",
+      "typecode": "110205",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "上天竺法喜讲寺",
+      "location": "120.095362,30.227208",
+      "id": "B023B02054",
+      "_collector": {
+        "keyword": "寺庙",
+        "category": "temple",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "寺庙"
+        ]
+      }
+    },
+    {
+      "parent": "B023B14O96",
+      "address": "良渚古城遗址公园(西北角)",
+      "business": {
+        "keytag": "文物古迹",
+        "rating": "3.4",
+        "rectag": "文物古迹"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;观景点",
+      "typecode": "110209",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚古城遗址公园内城区域-观景台",
+      "location": "119.983469,30.393103",
+      "id": "B0GRMC1MFG",
+      "_collector": {
+        "keyword": "古镇",
+        "category": "ancient_town",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "古镇"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "清波街道吴山广场2号杭州吴山艺术团附近",
+      "business": {
+        "opentime_today": "07:30-18:00",
+        "keytag": "景区",
+        "rating": "4.6",
+        "business_area": "吴山",
+        "tel": "0571-87035091",
+        "rectag": "景区",
+        "opentime_week": "周一至周日 07:30-18:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "吴山景区",
+      "location": "120.165134,30.234120",
+      "id": "B023B17WXC",
+      "_collector": {
+        "keyword": "风景名胜",
+        "category": "scenic_area",
+        "recommended_duration_min": 150,
+        "indoor": false,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "五星路181号(市民中心地铁站N3B口步行460米)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "滨江公园",
+        "rating": "4.6",
+        "business_area": "近江",
+        "rectag": "滨江公园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "CBD公园",
+      "location": "120.212285,30.237933",
+      "id": "B023B0BIO8",
+      "_collector": {
+        "keyword": "公园",
+        "category": "park",
+        "recommended_duration_min": 90,
+        "indoor": false,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "天目山路518号",
+      "business": {
+        "keytag": "5A景区",
+        "rating": "4.8",
+        "business_area": "西溪",
+        "alias": "西溪湿地公园",
+        "tel": "0571-88106696;0571-88106688",
+        "rectag": "江南诗画渔家野趣",
+        "opentime_week": "4月1日至10月8日:周一至周日:7:30-18:30，10月9日至次年3月31日:周一至周日:8:00-17:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;国家级景点",
+      "typecode": "110202",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "西溪国家湿地公园",
+      "location": "120.061159,30.255079",
+      "id": "B023B06P06",
+      "_collector": {
+        "keyword": "湿地公园",
+        "category": "wetland",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B07SJZ",
+      "address": "南宋御街45-47号附近",
+      "business": {
+        "keytag": "特色街区",
+        "rating": "3.6",
+        "business_area": "清河坊片区",
+        "tel": "0571-87822494",
+        "rectag": "特色街区"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "清河坊历史文化街区-中山中路47号",
+      "location": "120.170807,30.239317",
+      "id": "B023B1BJ5L",
+      "_collector": {
+        "keyword": "文化街区",
+        "category": "cultural_district",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "文化街区"
+        ]
+      }
+    },
+    {
+      "parent": "B023B07SJZ",
+      "address": "河坊街",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "特色商业街",
+        "rating": "4.7",
+        "business_area": "西湖",
+        "tel": "0571-88218507",
+        "rectag": "特色商业街",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "购物服务;特色商业街;步行街",
+      "typecode": "061001",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "清河坊步行街",
+      "location": "120.168923,30.240073",
+      "id": "B023B1E89A",
+      "_collector": {
+        "keyword": "步行街",
+        "category": "pedestrian_street",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 2,
+        "keywords": [
+          "步行街"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02349",
+      "address": "虎跑路40号杭州动物园内(北侧)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "动物园",
+        "rating": "4.1",
+        "business_area": "虎跑",
+        "alias": "海狮训练馆",
+        "tel": "0571-87981257",
+        "rectag": "动物园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;动物园",
+      "typecode": "110102",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州动物园-海狮训练馆",
+      "location": "120.133335,30.214028",
+      "id": "B0FFI1Z3OS",
+      "_collector": {
+        "keyword": "动物园",
+        "category": "zoo",
+        "recommended_duration_min": 240,
+        "indoor": false,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "动物园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "杭州奥体中心体育场西南角B1层",
+      "business": {
+        "opentime_today": "09:00-16:30",
+        "keytag": "博物馆",
+        "rating": "4.6",
+        "business_area": "奥体博览中心",
+        "tel": "0571-88363811",
+        "rectag": "博物馆",
+        "opentime_week": "周二至周日 09:00-16:30 最晚进入16:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330108",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;博物馆;博物馆",
+      "typecode": "140100",
+      "adname": "滨江区",
+      "citycode": "0571",
+      "name": "杭州亚运会博物馆",
+      "location": "120.229057,30.228256",
+      "id": "B0JAO7X58K",
+      "_collector": {
+        "keyword": "博物馆",
+        "category": "museum",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "博物馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B09LTB",
+      "address": "玉古路桃源岭1号杭州植物园(东南角)",
+      "business": {
+        "keytag": "美术馆",
+        "rating": "4.8",
+        "business_area": "西湖",
+        "tel": "0571-87972353;0571-87972520",
+        "rectag": "美术馆",
+        "opentime_week": "周一、周三至周日 09:00-17:00(夏令时),09:00-16:30(冬令时)"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;美术馆;美术馆",
+      "typecode": "140400",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "韩美林艺术馆",
+      "location": "120.119986,30.251214",
+      "id": "B023B09UVH",
+      "_collector": {
+        "keyword": "美术馆",
+        "category": "art_gallery",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "美术馆"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "杭氧街33号",
+      "business": {
+        "keytag": "展览馆",
+        "rating": "4.8",
+        "business_area": "东新",
+        "tel": "0571-56578956",
+        "rectag": "展览馆",
+        "opentime_week": "周一至周五 09:00-17:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330105",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;展览馆;展览馆",
+      "typecode": "140200",
+      "adname": "拱墅区",
+      "citycode": "0571",
+      "name": "武林之星博览中心",
+      "location": "120.182582,30.299164",
+      "id": "B0H6PCS3J8",
+      "_collector": {
+        "keyword": "展览馆",
+        "category": "exhibition",
+        "recommended_duration_min": 90,
+        "indoor": true,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02842",
+      "address": "西湖街道西湖街道法云弄1号灵隐寺内(北侧)",
+      "business": {
+        "opentime_today": "07:00-18:00",
+        "keytag": "文物古迹",
+        "rating": "4.2",
+        "business_area": "灵隐",
+        "alias": "华严殿",
+        "tel": "0571-87968665",
+        "rectag": "文物古迹",
+        "opentime_week": "周一至周日 07:00-18:00 最晚进入17:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;寺庙道观",
+      "typecode": "110205",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "灵隐寺-华严殿",
+      "location": "120.100851,30.242260",
+      "id": "B023B17X80",
+      "_collector": {
+        "keyword": "历史遗址",
+        "category": "historic_site",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "历史遗址",
+          "寺庙"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "灵隐路法云弄1号",
+      "business": {
+        "opentime_today": "06:30-16:00",
+        "keytag": "人文景观",
+        "rating": "4.7",
+        "business_area": "灵隐",
+        "tel": "0571-87973280",
+        "rectag": "春节亲子",
+        "opentime_week": "周一至周日 06:30-16:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "灵隐景区",
+      "location": "120.100804,30.240882",
+      "id": "B023B14CB8",
+      "_collector": {
+        "keyword": "寺庙",
+        "category": "temple",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "寺庙"
+        ]
+      }
+    },
+    {
+      "parent": "B023B14O96",
+      "address": "良渚古城遗址公园",
+      "business": {
+        "keytag": "文物古迹",
+        "rating": "2.7",
+        "rectag": "文物古迹"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;观景点",
+      "typecode": "110209",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚古城遗址公园-池中寺粮仓晨昏时刻(打卡点)",
+      "location": "119.988285,30.388643",
+      "id": "B0MUF7HVGM",
+      "_collector": {
+        "keyword": "古镇",
+        "category": "ancient_town",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "古镇"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "十五奎巷与中山南路交叉口西140米",
+      "business": {
+        "keytag": "景区",
+        "rating": "4.7",
+        "business_area": "西湖",
+        "rectag": "景区"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "晓霞弄",
+      "location": "120.169858,30.237603",
+      "id": "B0IAVN9P4G",
+      "_collector": {
+        "keyword": "风景名胜",
+        "category": "scenic_area",
+        "recommended_duration_min": 150,
+        "indoor": false,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "世纪花园北门",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "公园",
+        "rating": "4.3",
+        "business_area": "钱江新城",
+        "tel": "15190729363",
+        "rectag": "公园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "世纪花园",
+      "location": "120.217398,30.248649",
+      "id": "B023B09YVJ",
+      "_collector": {
+        "keyword": "公园",
+        "category": "park",
+        "recommended_duration_min": 90,
+        "indoor": false,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "东洲街道东洲街道东洲街道东洲街道东洲街道东洲街道春永线咕噜咕噜岛内",
+      "business": {
+        "opentime_today": "07:00-17:00",
+        "keytag": "湿地公园",
+        "rating": "4.2",
+        "rectag": "湿地公园",
+        "opentime_week": "周一至周日 07:00-17:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330111",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "富阳区",
+      "citycode": "0571",
+      "name": "浙江富春江咕噜咕噜岛湿地公园",
+      "location": "120.055502,30.050303",
+      "id": "B0FFFDSY6C",
+      "_collector": {
+        "keyword": "湿地公园",
+        "category": "wetland",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "大兜路(香积寺地铁站出入口步行250米)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "特色街区",
+        "rating": "4.7",
+        "business_area": "大关",
+        "rectag": "春节游园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330105",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "拱墅区",
+      "citycode": "0571",
+      "name": "大兜路历史文化街区",
+      "location": "120.144891,30.300095",
+      "id": "B023B0BDGD",
+      "_collector": {
+        "keyword": "文化街区",
+        "category": "cultural_district",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "文化街区"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "塘栖镇广济路",
+      "business": {
+        "keytag": "特色商业街",
+        "rating": "4.6",
+        "business_area": "塘栖",
+        "tel": "0571-86375531",
+        "rectag": "特色商业街",
+        "opentime_week": "00:00-24:00,2026年春节期间 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330113",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "购物服务;特色商业街;特色商业街",
+      "typecode": "061000",
+      "adname": "临平区",
+      "citycode": "0571",
+      "name": "塘栖古镇步行街",
+      "location": "120.184216,30.476538",
+      "id": "B023B09PZI",
+      "_collector": {
+        "keyword": "步行街",
+        "category": "pedestrian_street",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 3,
+        "keywords": [
+          "步行街"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02349",
+      "address": "虎跑路40号杭州动物园内(东侧)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "动物园",
+        "rating": "4.0",
+        "business_area": "虎跑",
+        "tel": "0571-87981257",
+        "rectag": "动物园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州动物园-两栖爬行动物馆",
+      "location": "120.134340,30.212008",
+      "id": "B0FFK1AXR3",
+      "_collector": {
+        "keyword": "动物园",
+        "category": "zoo",
+        "recommended_duration_min": 240,
+        "indoor": false,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "动物园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B0BIT8",
+      "address": "西湖文化广场6号",
+      "business": {
+        "keytag": "博物馆",
+        "rating": "4.7",
+        "business_area": "朝晖",
+        "tel": "0571-88050941;0571-88212712",
+        "rectag": "第二课堂",
+        "opentime_week": "杭州馆:周一闭馆（遇国定假日照常开放，顺延休馆）4月1日-10月31日 09:00-17:00(16:00停止入馆)，11月1日-3月31日 09:30-17:00(16:00停止入馆)；安吉馆:周一、周二闭馆（遇国定假日照常开放，延顺休馆；冬季（11月1日-3月31日） 09:30-17:00(16:00停止入馆)；夏季（4月1日-10月31日） 09:00-17:00(16:00停止入馆)；"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330105",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;博物馆;博物馆",
+      "typecode": "140100",
+      "adname": "拱墅区",
+      "citycode": "0571",
+      "name": "浙江自然博物院",
+      "location": "120.164581,30.276814",
+      "id": "B023B15DKJ",
+      "_collector": {
+        "keyword": "博物馆",
+        "category": "museum",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "博物馆"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFF8B93M",
+      "address": "玉鸟路12号良渚文化村内(东侧)",
+      "business": {
+        "opentime_today": "09:00-22:00",
+        "keytag": "活动中心",
+        "rating": "4.8",
+        "business_area": "良渚街道",
+        "alias": "大屋顶",
+        "tel": "0571-88763685",
+        "rectag": "春节亲子",
+        "opentime_week": "周一至周日 09:00-22:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;科教文化场所;科教文化场所",
+      "typecode": "140000",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚文化艺术中心",
+      "location": "120.032341,30.365111",
+      "id": "B0FFF0DY8D",
+      "_collector": {
+        "keyword": "美术馆",
+        "category": "art_gallery",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "美术馆",
+          "文化街区"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "环城北路197号(武林广场地铁站B口步行70米)",
+      "business": {
+        "opentime_today": "09:00-17:00",
+        "keytag": "展览馆",
+        "rating": "4.7",
+        "business_area": "天水",
+        "tel": "0571-85051901;0571-85151901",
+        "rectag": "展览馆",
+        "opentime_week": "周一至周日 09:00-17:00 最晚进入16:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330105",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;展览馆;展览馆",
+      "typecode": "140200",
+      "adname": "拱墅区",
+      "citycode": "0571",
+      "name": "浙江展览馆",
+      "location": "120.163215,30.272688",
+      "id": "B0FFLLGM12",
+      "_collector": {
+        "keyword": "展览馆",
+        "category": "exhibition",
+        "recommended_duration_min": 90,
+        "indoor": true,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02842",
+      "address": "西湖街道法云弄1号灵隐寺内(南侧)",
+      "business": {
+        "opentime_today": "08:00-18:00",
+        "keytag": "文物古迹",
+        "rating": "4.2",
+        "business_area": "西湖旅游区中心片区",
+        "alias": "天王殿",
+        "tel": "0571-87968665",
+        "rectag": "文物古迹",
+        "opentime_week": "周一至周日 08:00-18:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;寺庙道观",
+      "typecode": "110205",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "灵隐寺-天王殿",
+      "location": "120.101695,30.240103",
+      "id": "B023B17XAC",
+      "_collector": {
+        "keyword": "历史遗址",
+        "category": "historic_site",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "历史遗址"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "北山街80号",
+      "business": {
+        "opentime_today": "07:30-17:30",
+        "keytag": "寺庙",
+        "rating": "4.7",
+        "business_area": "西湖",
+        "alias": "岳王庙|褒忠衍福禅寺",
+        "tel": "0571-87969670;0571-87986653",
+        "rectag": "春节亲子",
+        "opentime_week": "周一至周日 07:30-17:30 最晚进入17:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;寺庙道观",
+      "typecode": "110205",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州西湖风景名胜区-岳王庙",
+      "location": "120.134590,30.252443",
+      "id": "B0FFFDIGWR",
+      "_collector": {
+        "keyword": "寺庙",
+        "category": "temple",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "寺庙"
+        ]
+      }
+    },
+    {
+      "parent": "B023B14O96",
+      "address": "良渚古城遗址公园",
+      "business": {
+        "opentime_today": "10:00-16:30",
+        "keytag": "博物馆",
+        "rating": "3.5",
+        "rectag": "博物馆",
+        "opentime_week": "周一至周日 10:00-16:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;博物馆;博物馆|风景名胜;风景名胜相关;旅游景点",
+      "typecode": "140100|110000",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚古城数智体验馆",
+      "location": "119.990879,30.388443",
+      "id": "B0G2V7K33P",
+      "_collector": {
+        "keyword": "古镇",
+        "category": "ancient_town",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "古镇"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "凯旋路268号",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "景区",
+        "rating": "4.5",
+        "business_area": "凯旋",
+        "tel": "0571-86971051;0571-86971052;0571-86973207",
+        "rectag": "景区",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "华家池",
+      "location": "120.194390,30.271204",
+      "id": "B0FFFDCCJ2",
+      "_collector": {
+        "keyword": "风景名胜",
+        "category": "scenic_area",
+        "recommended_duration_min": 150,
+        "indoor": false,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "萧山区",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "滨江公园",
+        "rating": "4.6",
+        "rectag": "滨江公园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330109",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "地名地址信息;交通地名;道路名",
+      "typecode": "190301",
+      "adname": "萧山区",
+      "citycode": "0571",
+      "name": "钱江世纪城沿江公园",
+      "location": "120.228306,30.235428",
+      "id": "B0FFKPQ4IL",
+      "_collector": {
+        "keyword": "公园",
+        "category": "park",
+        "recommended_duration_min": 90,
+        "indoor": false,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "高教路与文二西路交汇处附近",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "湿地",
+        "rating": "4.4",
+        "business_area": "五常",
+        "rectag": "湿地",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "五常湿地",
+      "location": "120.023654,30.262026",
+      "id": "B0FFGXM0CQ",
+      "_collector": {
+        "keyword": "湿地公园",
+        "category": "wetland",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "临浦镇西江塘南路59号",
+      "business": {
+        "keytag": "特色街区",
+        "rating": "4.2",
+        "business_area": "临浦镇",
+        "rectag": "特色街区"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330109",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "萧山区",
+      "citycode": "0571",
+      "name": "萧山千年临浦文化体验(临浦老街)",
+      "location": "120.251572,30.036474",
+      "id": "B0IRYMB2TR",
+      "_collector": {
+        "keyword": "文化街区",
+        "category": "cultural_district",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "文化街区"
+        ]
+      }
+    },
+    {
+      "parent": "B023B07SJZ",
+      "address": "中山中路",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "特色商业街",
+        "rating": "4.7",
+        "business_area": "吴山片区",
+        "rectag": "特色商业街",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "购物服务;特色商业街;步行街",
+      "typecode": "061001",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "南宋御街中山路步行街",
+      "location": "120.169526,30.240249",
+      "id": "B023B14PP8",
+      "_collector": {
+        "keyword": "步行街",
+        "category": "pedestrian_street",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 4,
+        "keywords": [
+          "步行街"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02349",
+      "address": "虎跑路40号杭州动物园",
+      "business": {
+        "keytag": "动物园",
+        "rating": "3.8",
+        "business_area": "虎跑",
+        "rectag": "动物园"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;动物园",
+      "typecode": "110102",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "猴山",
+      "location": "120.133803,30.212842",
+      "id": "B0FFK1AXR0",
+      "_collector": {
+        "keyword": "动物园",
+        "category": "zoo",
+        "recommended_duration_min": 240,
+        "indoor": false,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "动物园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B07SJZ",
+      "address": "河坊街207-221号",
+      "business": {
+        "opentime_today": "09:00-21:00",
+        "keytag": "博物馆",
+        "rating": "4.6",
+        "business_area": "清波",
+        "tel": "0571-87814565",
+        "rectag": "博物馆",
+        "opentime_week": "周一至周日 09:00-21:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;博物馆;博物馆",
+      "typecode": "140100",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "朱炳仁铜雕艺术博物馆",
+      "location": "120.167138,30.239925",
+      "id": "B023B14R0K",
+      "_collector": {
+        "keyword": "博物馆",
+        "category": "museum",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "博物馆"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "新天地街309号",
+      "business": {
+        "keytag": "美术馆",
+        "rating": "4.8",
+        "business_area": "杭州新天地",
+        "tel": "0571-86018223",
+        "rectag": "美术馆",
+        "opentime_week": "周二至周日 09:00-16:30,节假日以官方通知为准"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330105",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;美术馆;美术馆",
+      "typecode": "140400",
+      "adname": "拱墅区",
+      "citycode": "0571",
+      "name": "西泠·武林美术馆",
+      "location": "120.183503,30.321132",
+      "id": "B0HUGMQG9N",
+      "_collector": {
+        "keyword": "美术馆",
+        "category": "art_gallery",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "美术馆"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "瓶窑镇文润路1号",
+      "business": {
+        "keytag": "博物馆",
+        "rating": "4.7",
+        "business_area": "良渚",
+        "alias": "中国国家版本馆杭州分馆(文润阁)|文润阁",
+        "tel": "0571-88070098;0571-88079999",
+        "rectag": "博物馆",
+        "opentime_week": "1/1-12/31 周二-周五 09:00-16:00开放；1/1-12/31 周六-周日 09:00-16:30开放；1/1-12/31 周一 全天不开放；元旦节,春节,清明节,劳动节,端午节,中秋节,国庆节 09:00-16:30开放；周一闭馆(特殊情况另行通知）"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;博物馆;博物馆",
+      "typecode": "140100",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "杭州国家版本馆",
+      "location": "120.017007,30.381215",
+      "id": "B0IRO7WYCW",
+      "_collector": {
+        "keyword": "展览馆",
+        "category": "exhibition",
+        "recommended_duration_min": 90,
+        "indoor": true,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "南山路15号",
+      "business": {
+        "keytag": "4A景区",
+        "rating": "4.8",
+        "business_area": "西湖",
+        "alias": "杭州西湖雷峰塔|西关砖塔|西湖雷峰塔|雷峰塔",
+        "tel": "0571-87982111",
+        "rectag": "白娘子的囚禁之所",
+        "opentime_week": "每年3月16日至4月30日 08:00-19:00(18:30停止售票，18:30停止入园) ，每年5月1日至10月31日 08:00-20:00(19:30停止售票，19:30停止入园)，每年11月1日至次年3月15日 08:00-17:30(17:00停止售票，17:00停止入园)"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;国家级景点",
+      "typecode": "110202",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "雷峰塔景区",
+      "location": "120.148849,30.230934",
+      "id": "B023B09LKR",
+      "_collector": {
+        "keyword": "历史遗址",
+        "category": "historic_site",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "历史遗址",
+          "寺庙",
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "杨公堤28号(卧龙桥旁)",
+      "business": {
+        "opentime_today": "08:00-17:00",
+        "keytag": "园林",
+        "rating": "4.7",
+        "business_area": "西湖",
+        "alias": "汾阳别墅|郭庄景点|郭庄",
+        "tel": "0571-87963033;0571-87986026",
+        "rectag": "春节游园",
+        "opentime_week": "周一至周日 08:00-17:00 最晚进入16:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州西湖风景名胜区-郭庄",
+      "location": "120.132267,30.243918",
+      "id": "B023B0A6HW",
+      "_collector": {
+        "keyword": "寺庙",
+        "category": "temple",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "寺庙",
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "B023B14O96",
+      "address": "良渚古城遗址公园",
+      "business": {
+        "keytag": "文物古迹",
+        "rating": "2.7",
+        "rectag": "文物古迹"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;观景点",
+      "typecode": "110209",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚古城遗址公园-青铜装置晨昏时刻(打卡点)",
+      "location": "119.990660,30.387617",
+      "id": "B0MUF7GWL8",
+      "_collector": {
+        "keyword": "古镇",
+        "category": "ancient_town",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 6,
+        "keywords": [
+          "古镇"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "南山路147号9C",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "景区",
+        "rating": "4.7",
+        "business_area": "西湖",
+        "tel": "0571-87026161",
+        "rectag": "湖光山色",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "西湖天地",
+      "location": "120.159282,30.247034",
+      "id": "B023B082T5",
+      "_collector": {
+        "keyword": "风景名胜",
+        "category": "scenic_area",
+        "recommended_duration_min": 150,
+        "indoor": false,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "之江路与庆春东路交叉口南60米",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "公园",
+        "rating": "4.2",
+        "business_area": "新城片区",
+        "rectag": "公园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "CBD公园",
+      "location": "120.222806,30.250250",
+      "id": "B0GR3AJKMC",
+      "_collector": {
+        "keyword": "公园",
+        "category": "park",
+        "recommended_duration_min": 90,
+        "indoor": false,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "西环北路133号",
+      "business": {
+        "opentime_today": "08:30-17:00",
+        "keytag": "湿地公园",
+        "rating": "4.6",
+        "tel": "0571-63172815",
+        "rectag": "湿地公园",
+        "opentime_week": "周一至周日 08:30-17:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330111",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "富阳区",
+      "citycode": "0571",
+      "name": "阳陂湖",
+      "location": "119.913864,30.075331",
+      "id": "B0G3F5JLJS",
+      "_collector": {
+        "keyword": "湿地公园",
+        "category": "wetland",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFFFZRBD",
+      "address": "桥西直街1号拱宸桥西历史文化街区",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "特色街区",
+        "rating": "3.4",
+        "business_area": "小河",
+        "rectag": "特色街区",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330105",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "拱墅区",
+      "citycode": "0571",
+      "name": "浙江省文化创意街区",
+      "location": "120.137919,30.316705",
+      "id": "B0KUBRSGCW",
+      "_collector": {
+        "keyword": "文化街区",
+        "category": "cultural_district",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "文化街区"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "九曲营西路与北大街交叉口西南50米",
+      "business": {
+        "opentime_today": "07:30-22:30",
+        "keytag": "步行街",
+        "rating": "4.6",
+        "business_area": "东湖",
+        "tel": "15397043689",
+        "rectag": "步行街",
+        "opentime_week": "周一至周日 07:30-22:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330113",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "购物服务;特色商业街;步行街",
+      "typecode": "061001",
+      "adname": "临平区",
+      "citycode": "0571",
+      "name": "九曲营步行街",
+      "location": "120.301986,30.424367",
+      "id": "B023B0696X",
+      "_collector": {
+        "keyword": "步行街",
+        "category": "pedestrian_street",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 5,
+        "keywords": [
+          "步行街"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02349",
+      "address": "虎跑路40号杭州动物园内(西北角)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "动物园",
+        "rating": "4.0",
+        "business_area": "虎跑",
+        "rectag": "动物园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;动物园",
+      "typecode": "110102",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州动物园-狮山",
+      "location": "120.131883,30.212817",
+      "id": "B0FFK1AXR8",
+      "_collector": {
+        "keyword": "动物园",
+        "category": "zoo",
+        "recommended_duration_min": 240,
+        "indoor": false,
+        "page": 1,
+        "rank": 6,
+        "keywords": [
+          "动物园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B09GG3",
+      "address": "解百A座5层(定安路地铁站B口步行440米)",
+      "business": {
+        "opentime_today": "10:00-21:30",
+        "keytag": "博物馆",
+        "rating": "4.5",
+        "business_area": "湖滨",
+        "rectag": "博物馆",
+        "opentime_week": "周一至周日 10:00-21:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;科教文化场所;科教文化场所",
+      "typecode": "140000",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "灰色博物馆(杭州解百A座店)",
+      "location": "120.165634,30.249501",
+      "id": "B0L1DMTG82",
+      "_collector": {
+        "keyword": "博物馆",
+        "category": "museum",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 6,
+        "keywords": [
+          "博物馆"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "古荡街道天目山路398号天目里1号楼负一楼",
+      "business": {
+        "keytag": "美术馆",
+        "rating": "4.7",
+        "business_area": "西溪",
+        "tel": "0571-86780635",
+        "rectag": "美术馆",
+        "opentime_week": "1/1-12/31 周二-周日 12:00-20:00开放 最晚进入19:30；1/1-12/31 周一 全天不开放；元旦节,春节,清明节,劳动节,端午节,中秋节,国庆节 12:00-20:00开放 最晚进入19:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;美术馆;美术馆",
+      "typecode": "140400",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "天目里美术馆",
+      "location": "120.099355,30.265681",
+      "id": "B0HKMU8WRN",
+      "_collector": {
+        "keyword": "美术馆",
+        "category": "art_gallery",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "美术馆"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFG978BX",
+      "address": "江涵路88号",
+      "business": {
+        "opentime_today": "09:30-17:00",
+        "keytag": "展览馆",
+        "rating": "4.7",
+        "business_area": "之江文化中心",
+        "tel": "0571-88168787",
+        "rectag": "展览馆",
+        "opentime_week": "周二至周日 09:30-17:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "全山石艺术中心",
+      "location": "120.105670,30.165982",
+      "id": "B0FFFF7W09",
+      "_collector": {
+        "keyword": "展览馆",
+        "category": "exhibition",
+        "recommended_duration_min": 90,
+        "indoor": true,
+        "page": 1,
+        "rank": 6,
+        "keywords": [
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B09LKR",
+      "address": "南山路15号",
+      "business": {
+        "opentime_today": "08:00-17:30 08:00-19:00 08:00-20:00",
+        "keytag": "文物古迹",
+        "rating": "4.6",
+        "business_area": "西湖",
+        "alias": "雷峰塔|雷峰塔遗址",
+        "tel": "0571-87982111",
+        "rectag": "文物古迹",
+        "opentime_week": "11/1-3/15 08:00-17:30开放；3/16-4/30 08:00-19:00开放；5/1-10/31 08:00-20:00开放"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;国家级景点",
+      "typecode": "110202",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "雷峰塔景区雷峰塔",
+      "location": "120.149715,30.231612",
+      "id": "B0FFGOWPEV",
+      "_collector": {
+        "keyword": "历史遗址",
+        "category": "historic_site",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 6,
+        "keywords": [
+          "历史遗址"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "乾龙路",
+      "business": {
+        "opentime_today": "10:00-21:00",
+        "keytag": "寺庙",
+        "rating": "4.5",
+        "business_area": "西湖旅游区中心片区",
+        "alias": "理安寺",
+        "rectag": "寺庙",
+        "opentime_week": "周一至周日 10:00-21:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州西湖风景名胜区-理安寺",
+      "location": "120.112958,30.207319",
+      "id": "B0FFFDE5LV",
+      "_collector": {
+        "keyword": "寺庙",
+        "category": "temple",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 11,
+        "keywords": [
+          "寺庙"
+        ]
+      }
+    },
+    {
+      "parent": "B023B14O96",
+      "address": "良渚古城遗址公园",
+      "business": {
+        "keytag": "文物古迹",
+        "rating": "1.9",
+        "rectag": "文物古迹"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;观景点",
+      "typecode": "110209",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚古城遗址公园-湖边(打卡点)",
+      "location": "119.990058,30.392837",
+      "id": "B0MUF7HIL9",
+      "_collector": {
+        "keyword": "古镇",
+        "category": "ancient_town",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "古镇"
+        ]
+      }
+    },
+    {
+      "parent": "B023B03DMD",
+      "address": "之江东路66号杭州大剧院门前",
+      "business": {
+        "keytag": "景区",
+        "rating": "4.2",
+        "business_area": "钱江新城",
+        "rectag": "景区"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "新城音乐喷泉",
+      "location": "120.214702,30.243802",
+      "id": "B0FFGXJHHL",
+      "_collector": {
+        "keyword": "风景名胜",
+        "category": "scenic_area",
+        "recommended_duration_min": 150,
+        "indoor": false,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFHJTKKP",
+      "address": "秋韵路a7-2号钱江世纪公园(西南角)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "滨江公园",
+        "rating": "4.2",
+        "rectag": "滨江公园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330109",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "萧山区",
+      "citycode": "0571",
+      "name": "钱江世纪城沿江公园绿道观景平台",
+      "location": "120.235234,30.242330",
+      "id": "B0HUAC9R2Z",
+      "_collector": {
+        "keyword": "公园",
+        "category": "park",
+        "recommended_duration_min": 90,
+        "indoor": false,
+        "page": 1,
+        "rank": 6,
+        "keywords": [
+          "公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "江滨路西南侧",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "湿地公园",
+        "rating": "4.0",
+        "rectag": "湿地公园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330122",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "桐庐县",
+      "citycode": "0571",
+      "name": "南堡湿地公园",
+      "location": "119.435036,29.960394",
+      "id": "B0G1DSEKI3",
+      "_collector": {
+        "keyword": "湿地公园",
+        "category": "wetland",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 6,
+        "keywords": [
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B08TS4",
+      "address": "馆驿后8-10号",
+      "business": {
+        "keytag": "特色商业街",
+        "rating": "3.6",
+        "business_area": "西湖",
+        "rectag": "特色商业街"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "坊馅清鸹河-大井巷历史文化街区",
+      "location": "120.176203,30.244877",
+      "id": "B0KRK9C1PN",
+      "_collector": {
+        "keyword": "文化街区",
+        "category": "cultural_district",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 6,
+        "keywords": [
+          "文化街区"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "永旺路兴旺大楼",
+      "business": {
+        "opentime_today": "10:00-24:00",
+        "keytag": "步行街",
+        "rating": "3.9",
+        "business_area": "运河街道",
+        "tel": "17386470083",
+        "rectag": "步行街",
+        "opentime_week": "周一至周日 10:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330113",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "购物服务;特色商业街;步行街",
+      "typecode": "061001",
+      "adname": "临平区",
+      "citycode": "0571",
+      "name": "永旺路步行街",
+      "location": "120.298008,30.462371",
+      "id": "B0G3YUW6WJ",
+      "_collector": {
+        "keyword": "步行街",
+        "category": "pedestrian_street",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 6,
+        "keywords": [
+          "步行街"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02349",
+      "address": "虎跑路40号杭州动物园(西北角)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "动物园",
+        "rating": "3.8",
+        "business_area": "虎跑",
+        "tel": "0571-87981257",
+        "rectag": "动物园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州动物园-长颈鹿馆",
+      "location": "120.132599,30.213609",
+      "id": "B0GDTMXLOL",
+      "_collector": {
+        "keyword": "动物园",
+        "category": "zoo",
+        "recommended_duration_min": 240,
+        "indoor": false,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "动物园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B0247C",
+      "address": "南山路89号",
+      "business": {
+        "keytag": "博物馆",
+        "rating": "4.7",
+        "business_area": "西湖",
+        "tel": "0571-87882279;0571-87882333",
+        "rectag": "春节亲子",
+        "opentime_week": "周一,周三至周日 09:00-17:00 最晚进入16:30；周二 全天关闭；西博馆区:9:00-17:00（16:30停止入场）；名人馆区:8:30-16:30（16:00停止入场）；官窑馆区:8:30-16:30（16:00停止入场） 周二闭馆，遇法定节假日正常开放 具体营业时间以当天开放情况为准"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;博物馆;博物馆",
+      "typecode": "140100",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "西湖博物馆",
+      "location": "120.157449,30.241739",
+      "id": "B023B089X6",
+      "_collector": {
+        "keyword": "博物馆",
+        "category": "museum",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "博物馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B05C9Z",
+      "address": "南山路218号中国美术学院南山校区",
+      "business": {
+        "keytag": "美术馆",
+        "rating": "4.8",
+        "business_area": "吴山",
+        "tel": "0571-87164633;0571-87164801;0571-86611569",
+        "rectag": "美术馆",
+        "opentime_week": "周二至周日 09:00-17:00,节假日以官方通知为准"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;美术馆;美术馆",
+      "typecode": "140400",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "中国美术学院南山校区美术馆",
+      "location": "120.159751,30.242825",
+      "id": "B023B070V2",
+      "_collector": {
+        "keyword": "美术馆",
+        "category": "art_gallery",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "美术馆"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "虎玉路1号",
+      "business": {
+        "keytag": "展览馆",
+        "rating": "4.8",
+        "business_area": "虎跑",
+        "tel": "0571-87060992",
+        "rectag": "展览馆",
+        "opentime_week": "周一 09:00-17:00；周三至周日 09:00-17:00,2026年春节期间 09:00-17:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;展览馆;展览馆",
+      "typecode": "140200",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "肖峰艺术馆",
+      "location": "120.137598,30.205001",
+      "id": "B0LANUXYN0",
+      "_collector": {
+        "keyword": "展览馆",
+        "category": "exhibition",
+        "recommended_duration_min": 90,
+        "indoor": true,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "瓶窑镇凤都路与104国道辅路交叉口西北200米",
+      "business": {
+        "opentime_today": "09:00-17:00",
+        "keytag": "文物古迹",
+        "rating": "4.7",
+        "alias": "良渚古城遗址|良渚国家考古遗址公园",
+        "tel": "0571-85855300",
+        "rectag": "春节周边",
+        "opentime_week": "周一至周日 09:00-17:00；最晚进入16:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚古城遗址公园",
+      "location": "119.991005,30.389549",
+      "id": "B023B14O96",
+      "_collector": {
+        "keyword": "历史遗址",
+        "category": "historic_site",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "历史遗址",
+          "古镇",
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "西湖街道三台山路149-1号(近八盘岭路)",
+      "business": {
+        "opentime_today": "08:30-16:30",
+        "keytag": "寺庙",
+        "rating": "4.6",
+        "business_area": "西湖",
+        "tel": "0571-87963033;0571-87997150",
+        "rectag": "寺庙",
+        "opentime_week": "周一至周日 08:30-16:30 最晚进入16:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;寺庙道观",
+      "typecode": "110205",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "慧因高丽寺",
+      "location": "120.130858,30.228023",
+      "id": "B023B0A6I3",
+      "_collector": {
+        "keyword": "寺庙",
+        "category": "temple",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 12,
+        "keywords": [
+          "寺庙"
+        ]
+      }
+    },
+    {
+      "parent": "B023B14O96",
+      "address": "良渚古城遗址公园(东北角)",
+      "business": {
+        "keytag": "人文景观",
+        "rating": "2.5",
+        "rectag": "人文景观"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;观景点",
+      "typecode": "110209",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚古城遗址公园-莫角山(打卡点)",
+      "location": "119.995797,30.397144",
+      "id": "B0MUF7HVG0",
+      "_collector": {
+        "keyword": "古镇",
+        "category": "ancient_town",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "古镇"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "清波街道南山路87号",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "景区",
+        "rating": "4.7",
+        "business_area": "西湖",
+        "alias": "柳浪闻莺",
+        "rectag": "听鸟叫",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "杭州西湖风景名胜区-柳浪闻莺",
+      "location": "120.156326,30.240389",
+      "id": "B023B0247C",
+      "_collector": {
+        "keyword": "风景名胜",
+        "category": "scenic_area",
+        "recommended_duration_min": 150,
+        "indoor": false,
+        "page": 1,
+        "rank": 9,
+        "keywords": [
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "长河街道闻涛路",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "滨江公园",
+        "rating": "4.3",
+        "rectag": "滨江公园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330108",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "滨江区",
+      "citycode": "0571",
+      "name": "左岸万国花园",
+      "location": "120.212877,30.218890",
+      "id": "B023B1AVVP",
+      "_collector": {
+        "keyword": "公园",
+        "category": "park",
+        "recommended_duration_min": 90,
+        "indoor": false,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "五常大道龙舌嘴入口(西溪湿地西区)",
+      "business": {
+        "opentime_today": "07:30-18:30 08:00-17:30",
+        "keytag": "湿地公园",
+        "rating": "4.6",
+        "business_area": "西溪",
+        "tel": "0571-88106688;0571-88106696",
+        "rectag": "春节游园",
+        "opentime_week": "04-01至10-31 周一至周日 07:30-18:30；11-01至03-31 周一至周日 08:00-17:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;国家级景点",
+      "typecode": "110202",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "西溪国家湿地公园洪园",
+      "location": "120.050588,30.261234",
+      "id": "B023B1DNZH",
+      "_collector": {
+        "keyword": "湿地公园",
+        "category": "wetland",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "德苑路101号德胜社区43幢B座",
+      "business": {
+        "keytag": "文化宫",
+        "business_area": "德胜路沿线",
+        "tel": "0571-88039828",
+        "rectag": "文化宫"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330105",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;科教文化场所;科教文化场所|生活服务;生活服务场所;生活服务场所",
+      "typecode": "140000|070000",
+      "adname": "拱墅区",
+      "citycode": "0571",
+      "name": "杭州市拱墅区大关街道文化艺术交流中心",
+      "location": "120.162236,30.298500",
+      "id": "B0LGUBAI9T",
+      "_collector": {
+        "keyword": "文化街区",
+        "category": "cultural_district",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "文化街区"
+        ]
+      }
+    },
+    {
+      "parent": "B0J01Z0AJ3",
+      "address": "天水街道万寿亭街2号拾里步行街",
+      "business": {
+        "keytag": "步行街",
+        "rating": "4.5",
+        "business_area": "天水",
+        "rectag": "步行街"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330105",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "adname": "拱墅区",
+      "citycode": "0571",
+      "name": "拾里步行街",
+      "location": "120.161585,30.268775",
+      "id": "B0K30CVD6M",
+      "_collector": {
+        "keyword": "步行街",
+        "category": "pedestrian_street",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 7,
+        "keywords": [
+          "步行街"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02349",
+      "address": "虎跑路40号杭州动物园",
+      "business": {
+        "opentime_today": "07:00-17:30",
+        "keytag": "动物园",
+        "rating": "3.5",
+        "business_area": "虎跑",
+        "rectag": "动物园",
+        "opentime_week": "周一至周日 07:00-17:30"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;动物园",
+      "typecode": "110102",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "蟒蛇",
+      "location": "120.134173,30.212105",
+      "id": "B0L35UF0RG",
+      "_collector": {
+        "keyword": "动物园",
+        "category": "zoo",
+        "recommended_duration_min": 240,
+        "indoor": false,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "动物园"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFL9RUOY",
+      "address": "中山中路112号",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "展览馆",
+        "rating": "4.5",
+        "business_area": "吴山",
+        "rectag": "展览馆",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;展览馆;展览馆",
+      "typecode": "140200",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "南宋御街陈列馆",
+      "location": "120.170995,30.242404",
+      "id": "B023B17WS3",
+      "_collector": {
+        "keyword": "博物馆",
+        "category": "museum",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "博物馆",
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "天目山路508号曲水庵区块2区10号",
+      "business": {
+        "keytag": "美术馆",
+        "rating": "4.7",
+        "business_area": "西溪",
+        "tel": "0571-88109158",
+        "rectag": "美术馆",
+        "opentime_week": "周二至周日 09:00-17:00,节假日以官方通知为准"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;美术馆;美术馆",
+      "typecode": "140400",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "西溪蔡志忠美术馆",
+      "location": "120.077094,30.262875",
+      "id": "B0K0YSJAX8",
+      "_collector": {
+        "keyword": "美术馆",
+        "category": "art_gallery",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 9,
+        "keywords": [
+          "美术馆"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "庙前街道南阳坝路入口",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "展览馆",
+        "rating": "4.8",
+        "business_area": "三墩",
+        "rectag": "展览馆",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "商务住宅;产业园区;产业园区",
+      "typecode": "120100",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "东巢·碾米厂当代艺术中心",
+      "location": "120.080215,30.319045",
+      "id": "B0K66ZNQ3R",
+      "_collector": {
+        "keyword": "展览馆",
+        "category": "exhibition",
+        "recommended_duration_min": 90,
+        "indoor": true,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "虎跑路39号",
+      "business": {
+        "opentime_today": "07:00-17:30",
+        "keytag": "文物古迹",
+        "rating": "4.7",
+        "business_area": "虎跑",
+        "alias": "杭州西湖风景名胜区-虎跑公园",
+        "tel": "0571-87981900",
+        "rectag": "春节游园",
+        "opentime_week": "周一至周日 07:00-17:30 最晚进入17:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "虎跑公园",
+      "location": "120.129900,30.208087",
+      "id": "B023B08Q06",
+      "_collector": {
+        "keyword": "历史遗址",
+        "category": "historic_site",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "历史遗址",
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "西湖街道龙井路1号杭州西湖风景名胜区内(东侧)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "寺庙",
+        "rating": "4.0",
+        "rectag": "寺庙",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;寺庙道观",
+      "typecode": "110205",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "杭州西湖风景名胜区-古梵天寺",
+      "location": "120.167401,30.217808",
+      "id": "B0FFJ41BEG",
+      "_collector": {
+        "keyword": "寺庙",
+        "category": "temple",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 13,
+        "keywords": [
+          "寺庙"
+        ]
+      }
+    },
+    {
+      "parent": "B023B14O96",
+      "address": "良渚古城遗址公园内(东南角)",
+      "business": {
+        "keytag": "文物古迹",
+        "rating": "2.6",
+        "rectag": "文物古迹"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "良渚古城遗址公园-夯筑城墙",
+      "location": "119.996183,30.384444",
+      "id": "B0L1JH8I27",
+      "_collector": {
+        "keyword": "古镇",
+        "category": "ancient_town",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 9,
+        "keywords": [
+          "古镇"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "龙井路1号杭州西湖风景名胜区内(东北角)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "景区",
+        "rating": "4.9",
+        "business_area": "西湖",
+        "alias": "断桥残雪",
+        "rectag": "看西湖雪景",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;国家级景点",
+      "typecode": "110202",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州西湖风景名胜区-断桥残雪",
+      "location": "120.151347,30.258151",
+      "id": "B023B01EE6",
+      "_collector": {
+        "keyword": "风景名胜",
+        "category": "scenic_area",
+        "recommended_duration_min": 150,
+        "indoor": false,
+        "page": 1,
+        "rank": 10,
+        "keywords": [
+          "风景名胜"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFHJTKKP",
+      "address": "盈丰街道钱江世纪公园",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "城市公园",
+        "rating": "4.3",
+        "business_area": "奥体中心",
+        "rectag": "城市公园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330109",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;风景名胜;风景名胜",
+      "typecode": "110200",
+      "adname": "萧山区",
+      "citycode": "0571",
+      "name": "钱江世纪公园彩虹跑道",
+      "location": "120.235195,30.245997",
+      "id": "B0KGZ5Z1ZS",
+      "_collector": {
+        "keyword": "公园",
+        "category": "park",
+        "recommended_duration_min": 90,
+        "indoor": false,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "良渚街道美丽洲路1号(近良渚博物院)",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "景区",
+        "rating": "4.6",
+        "business_area": "良渚街道",
+        "rectag": "景区",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330110",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "余杭区",
+      "citycode": "0571",
+      "name": "美丽洲公园",
+      "location": "120.028334,30.377318",
+      "id": "B023B0A461",
+      "_collector": {
+        "keyword": "湿地公园",
+        "category": "wetland",
+        "recommended_duration_min": 180,
+        "indoor": false,
+        "page": 1,
+        "rank": 9,
+        "keywords": [
+          "湿地公园"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "府新花园东1门西北80米",
+      "business": {
+        "keytag": "文化宫",
+        "business_area": "西溪",
+        "rectag": "文化宫"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;科教文化场所;科教文化场所",
+      "typecode": "140000",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "文新街道府新社区文化家园",
+      "location": "120.092926,30.280250",
+      "id": "B0HU6H2FOS",
+      "_collector": {
+        "keyword": "文化街区",
+        "category": "cultural_district",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "文化街区"
+        ]
+      }
+    },
+    {
+      "parent": "",
+      "address": "下沙滟澜园茗轩12幢112-1室",
+      "business": {
+        "opentime_today": "10:00-22:00",
+        "keytag": "步行街",
+        "rating": "4.4",
+        "business_area": "下沙",
+        "rectag": "步行街",
+        "opentime_week": "周一至周日 10:00-22:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330114",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "购物服务;特色商业街;步行街",
+      "typecode": "061001",
+      "adname": "钱塘区",
+      "citycode": "0571",
+      "name": "天街步行街(龙湖杭州金沙天街店)",
+      "location": "120.326292,30.310625",
+      "id": "B0GRD9KTTI",
+      "_collector": {
+        "keyword": "步行街",
+        "category": "pedestrian_street",
+        "recommended_duration_min": 120,
+        "indoor": false,
+        "page": 1,
+        "rank": 8,
+        "keywords": [
+          "步行街"
+        ]
+      }
+    },
+    {
+      "parent": "B023B02349",
+      "address": "虎跑路40号杭州动物园",
+      "business": {
+        "opentime_today": "24小时营业",
+        "keytag": "动物园",
+        "rating": "3.8",
+        "business_area": "虎跑",
+        "tel": "0571-87981257",
+        "rectag": "动物园",
+        "opentime_week": "周一至周日 00:00-24:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;动物园",
+      "typecode": "110102",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "杭州动物园-海豹池",
+      "location": "120.133098,30.211833",
+      "id": "B0FFK1AXR9",
+      "_collector": {
+        "keyword": "动物园",
+        "category": "zoo",
+        "recommended_duration_min": 240,
+        "indoor": false,
+        "page": 1,
+        "rank": 9,
+        "keywords": [
+          "动物园"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "孤山路25号",
+      "business": {
+        "keytag": "博物馆",
+        "rating": "4.7",
+        "business_area": "西湖",
+        "tel": "0571-86013085",
+        "rectag": "第二课堂",
+        "opentime_week": "05/19 09:00-19:00开放 最晚进入18:30；01/01-05/18 周一 全天不开放；05/20-12/31 周一 全天不开放；01/01-05/18 周二-周日 09:00-17:00开放 最晚进入16:30；05/20-12/31 周二-周日 09:00-17:00开放 最晚进入16:30；清明节,端午节,中秋节,国庆节 09:00-17:00开放 最晚进入16:30；周一闭馆，遇法定节假日正常开放，闭馆顺延至节后第一天"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;博物馆;博物馆",
+      "typecode": "140100",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "浙江省博物馆(孤山馆区)",
+      "location": "120.143778,30.251243",
+      "id": "B023B06XVX",
+      "_collector": {
+        "keyword": "博物馆",
+        "category": "museum",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 9,
+        "keywords": [
+          "博物馆"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFHFML0S",
+      "address": "江城路355号丽园8号楼",
+      "business": {
+        "keytag": "美术馆",
+        "rating": "4.6",
+        "business_area": "望江",
+        "tel": "0571-85396660",
+        "rectag": "美术馆",
+        "opentime_week": "周二至周日 10:00-17:00,节假日以官方通知为准"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330102",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "科教文化服务;美术馆;美术馆",
+      "typecode": "140400",
+      "adname": "上城区",
+      "citycode": "0571",
+      "name": "浙江赛丽美术馆",
+      "location": "120.172596,30.229122",
+      "id": "B0FFF6W5U7",
+      "_collector": {
+        "keyword": "美术馆",
+        "category": "art_gallery",
+        "recommended_duration_min": 120,
+        "indoor": true,
+        "page": 1,
+        "rank": 10,
+        "keywords": [
+          "美术馆"
+        ]
+      }
+    },
+    {
+      "parent": "B0FFL3PFC4",
+      "address": "展览东路150号杭州中心L104L203号商铺",
+      "business": {
+        "opentime_today": "10:00-22:00 13:00-22:00",
+        "keytag": "展览馆",
+        "rating": "4.7",
+        "business_area": "天水",
+        "tel": "0571-86720076",
+        "rectag": "相机",
+        "opentime_week": "周一至周日 10:00-22:00 2026-07-08至2026-07-08 13:00-22:00"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330105",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "购物服务;专卖店;摄影器材店",
+      "typecode": "061212",
+      "adname": "拱墅区",
+      "citycode": "0571",
+      "name": "富士胶片影像空间X-SPACE·杭州",
+      "location": "120.165851,30.273185",
+      "id": "B0L6KZOZ4Z",
+      "_collector": {
+        "keyword": "展览馆",
+        "category": "exhibition",
+        "recommended_duration_min": 90,
+        "indoor": true,
+        "page": 1,
+        "rank": 10,
+        "keywords": [
+          "展览馆"
+        ]
+      }
+    },
+    {
+      "parent": "B023B13L9M",
+      "address": "之江路16号(近钱塘江)",
+      "business": {
+        "opentime_today": "07:00-17:30",
+        "keytag": "文物古迹",
+        "rating": "4.7",
+        "tel": "0571-86591401",
+        "rectag": "春节亲子",
+        "opentime_week": "周一至周日 07:00-17:30 最晚进入16:55"
+      },
+      "distance": "",
+      "pcode": "330000",
+      "adcode": "330106",
+      "pname": "浙江省",
+      "cityname": "杭州市",
+      "type": "风景名胜;公园广场;公园",
+      "typecode": "110101",
+      "adname": "西湖区",
+      "citycode": "0571",
+      "name": "六和塔文化公园",
+      "location": "120.131487,30.196338",
+      "id": "B023B08SQK",
+      "_collector": {
+        "keyword": "历史遗址",
+        "category": "historic_site",
+        "recommended_duration_min": 90,
+        "indoor": null,
+        "page": 1,
+        "rank": 9,
+        "keywords": [
+          "历史遗址"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "city": "杭州市",
+  "days": 2,
+  "start_date": "2026-08-01",
+  "travelers": {
+    "adults": 2,
+    "children": 0,
+    "elderly": 0
+  },
+  "budget_yuan": 1200,
+  "preferences": ["历史", "美术"],
+  "districts": ["上城区", "西湖区"],
+  "must_visit": ["灵隐寺"],
+  "avoid": [],
+  "daily_start": "09:00",
+  "daily_end": "18:00",
+  "transport_modes": ["walk", "taxi"],
+  "max_walk_level": "medium",
+  "indoor_preferred": false
+}

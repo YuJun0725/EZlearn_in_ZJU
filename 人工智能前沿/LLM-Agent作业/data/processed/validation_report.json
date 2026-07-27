@@ -1,0 +1,7 @@
+{
+  "input": "data\\review\\hangzhou_poi_review.csv",
+  "included_count": 69,
+  "ready_count": 69,
+  "incomplete_count": 0,
+  "errors": []
+}

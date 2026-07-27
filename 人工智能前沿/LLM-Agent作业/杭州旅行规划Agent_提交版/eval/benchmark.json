@@ -1,0 +1,14 @@
+{
+  "mode": "offline",
+  "scenario_count": 4,
+  "iterations": 50,
+  "runs": 200,
+  "completed_runs": 200,
+  "completion_rate": 1.0,
+  "total_seconds": 0.248,
+  "throughput_runs_per_second": 805.22,
+  "average_ms": 1.24,
+  "median_ms": 1.39,
+  "p95_ms": 2.45,
+  "max_ms": 3.21
+}

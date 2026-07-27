@@ -1,0 +1,75 @@
+[
+  {
+    "keyword": "博物馆",
+    "category": "museum",
+    "recommended_duration_min": 120,
+    "indoor": true
+  },
+  {
+    "keyword": "美术馆",
+    "category": "art_gallery",
+    "recommended_duration_min": 120,
+    "indoor": true
+  },
+  {
+    "keyword": "展览馆",
+    "category": "exhibition",
+    "recommended_duration_min": 90,
+    "indoor": true
+  },
+  {
+    "keyword": "历史遗址",
+    "category": "historic_site",
+    "recommended_duration_min": 90,
+    "indoor": null
+  },
+  {
+    "keyword": "寺庙",
+    "category": "temple",
+    "recommended_duration_min": 90,
+    "indoor": null
+  },
+  {
+    "keyword": "古镇",
+    "category": "ancient_town",
+    "recommended_duration_min": 180,
+    "indoor": false
+  },
+  {
+    "keyword": "风景名胜",
+    "category": "scenic_area",
+    "recommended_duration_min": 150,
+    "indoor": false
+  },
+  {
+    "keyword": "公园",
+    "category": "park",
+    "recommended_duration_min": 90,
+    "indoor": false
+  },
+  {
+    "keyword": "湿地公园",
+    "category": "wetland",
+    "recommended_duration_min": 180,
+    "indoor": false
+  },
+  {
+    "keyword": "文化街区",
+    "category": "cultural_district",
+    "recommended_duration_min": 120,
+    "indoor": false
+  },
+  {
+    "keyword": "步行街",
+    "category": "pedestrian_street",
+    "recommended_duration_min": 120,
+    "indoor": false
+  },
+  {
+    "keyword": "动物园",
+    "category": "zoo",
+    "recommended_duration_min": 240,
+    "indoor": false
+  }
+]
+

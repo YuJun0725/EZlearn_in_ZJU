@@ -1,0 +1,55 @@
+[
+  {
+    "id": "history_art_two_days",
+    "text": "两个人去杭州玩两天，预算1200元，喜欢历史和美术，灵隐寺必去，尽量少走路",
+    "request": {
+      "city": "杭州市",
+      "days": 2,
+      "travelers": {"adults": 2, "children": 0, "elderly": 0},
+      "budget_yuan": 1200,
+      "preferences": ["历史", "美术"],
+      "must_visit": ["灵隐寺"],
+      "max_walk_level": "low",
+      "transport_modes": ["walk", "taxi"]
+    }
+  },
+  {
+    "id": "nature_one_day",
+    "text": "一个人去杭州玩一天，预算500元，想看自然和湿地，避开动物园",
+    "request": {
+      "city": "杭州市",
+      "days": 1,
+      "travelers": {"adults": 1, "children": 0, "elderly": 0},
+      "budget_yuan": 500,
+      "preferences": ["自然", "湿地"],
+      "avoid": ["动物园"],
+      "transport_modes": ["walk", "taxi"]
+    }
+  },
+  {
+    "id": "family_museums",
+    "text": "一家三口去杭州玩两天，预算1800元，想去适合亲子的博物馆，优先室内景点",
+    "request": {
+      "city": "杭州市",
+      "days": 2,
+      "travelers": {"adults": 2, "children": 1, "elderly": 0},
+      "budget_yuan": 1800,
+      "preferences": ["亲子", "博物馆"],
+      "indoor_preferred": true,
+      "transport_modes": ["walk", "taxi"]
+    }
+  },
+  {
+    "id": "elderly_low_walk",
+    "text": "一位老人和一位成年人去杭州玩一天，预算800元，喜欢文化街区，要求少走路，尽量打车",
+    "request": {
+      "city": "杭州市",
+      "days": 1,
+      "travelers": {"adults": 1, "children": 0, "elderly": 1},
+      "budget_yuan": 800,
+      "preferences": ["文化", "街区"],
+      "max_walk_level": "low",
+      "transport_modes": ["taxi"]
+    }
+  }
+]

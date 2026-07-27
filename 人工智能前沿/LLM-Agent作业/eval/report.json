@@ -1,0 +1,57 @@
+{
+  "mode": "offline",
+  "scenario_count": 4,
+  "completion_rate": 1.0,
+  "constraint_satisfaction_rate": 1.0,
+  "average_must_visit_completion": 1.0,
+  "scenarios": [
+    {
+      "id": "history_art_two_days",
+      "status": "completed",
+      "constraint_satisfied": true,
+      "must_visit_completion": 1.0,
+      "budget_compliant": true,
+      "estimated_total_yuan": 464.66,
+      "poi_count": 7,
+      "warning_count": 1,
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "id": "nature_one_day",
+      "status": "completed",
+      "constraint_satisfied": true,
+      "must_visit_completion": 1.0,
+      "budget_compliant": true,
+      "estimated_total_yuan": 100.0,
+      "poi_count": 1,
+      "warning_count": 0,
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "id": "family_museums",
+      "status": "completed",
+      "constraint_satisfied": true,
+      "must_visit_completion": 1.0,
+      "budget_compliant": true,
+      "estimated_total_yuan": 798.19,
+      "poi_count": 8,
+      "warning_count": 1,
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "id": "elderly_low_walk",
+      "status": "completed",
+      "constraint_satisfied": true,
+      "must_visit_completion": 1.0,
+      "budget_compliant": true,
+      "estimated_total_yuan": 239.25,
+      "poi_count": 4,
+      "warning_count": 1,
+      "error_count": 0,
+      "errors": []
+    }
+  ]
+}

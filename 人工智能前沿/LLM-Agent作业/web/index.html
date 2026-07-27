@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>杭州旅行规划 Agent</title>
+  <style>
+    :root {
+      --ink: #17252b;
+      --muted: #607178;
+      --line: #d9e1df;
+      --paper: #f7faf8;
+      --panel: #ffffff;
+      --teal: #087f8c;
+      --teal-dark: #075965;
+      --coral: #d7674b;
+      --pale-teal: #e7f4f2;
+      --pale-coral: #fff0eb;
+      --shadow: 0 12px 30px rgba(23, 37, 43, .07);
+    }
+    * { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font: 15px/1.5 Inter, "Segoe UI", "Microsoft YaHei", sans-serif; }
+    header { background: var(--ink); color: white; border-bottom: 4px solid var(--coral); }
+    .header-inner, main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .header-inner { padding: 28px 0 25px; display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(25px, 4vw, 38px); line-height: 1.1; letter-spacing: 0; }
+    .eyebrow { color: #9fd8d6; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+    .header-meta { color: #b9c8ca; font-size: 13px; text-align: right; }
+    main { padding: 28px 0 48px; }
+    .workspace { display: grid; grid-template-columns: minmax(290px, 360px) minmax(0, 1fr); gap: 24px; align-items: start; min-width: 0; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); }
+    .form-panel { padding: 22px; position: sticky; top: 18px; min-width: 0; }
+    .panel-title { font-size: 19px; margin-bottom: 4px; }
+    .panel-subtitle { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+    label { display: block; color: var(--muted); font-size: 12px; font-weight: 700; margin: 15px 0 7px; }
+    textarea, input { width: 100%; border: 1px solid #becbc8; border-radius: 6px; background: #fcfdfc; color: var(--ink); font: inherit; }
+    textarea { min-height: 150px; padding: 12px; resize: vertical; }
+    input { padding: 10px 11px; }
+    textarea:focus, input:focus { outline: 3px solid rgba(8, 127, 140, .16); border-color: var(--teal); }
+    .switches { display: grid; gap: 9px; margin: 16px 0 20px; }
+    .switch { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--ink); font-size: 13px; font-weight: 600; }
+    .switch input { width: 40px; height: 22px; flex: 0 0 40px; appearance: none; border-radius: 20px; padding: 0; background: #cbd6d4; border: 0; position: relative; cursor: pointer; transition: background .15s ease; }
+    .switch input::after { content: ""; position: absolute; width: 16px; height: 16px; left: 3px; top: 3px; background: white; border-radius: 50%; transition: transform .15s ease; }
+    .switch input:checked { background: var(--teal); }
+    .switch input:checked::after { transform: translateX(18px); }
+    button { width: 100%; border: 0; border-radius: 6px; padding: 12px 16px; background: var(--teal); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+    button:hover { background: var(--teal-dark); }
+    button:disabled { cursor: wait; opacity: .65; }
+    .hint { color: var(--muted); font-size: 12px; margin-top: 12px; }
+    .result { min-width: 0; }
+    .empty { min-height: 520px; display: grid; place-items: center; padding: 44px; text-align: center; color: var(--muted); }
+    .empty-mark { width: 54px; height: 54px; display: grid; place-items: center; margin: 0 auto 14px; border-radius: 50%; background: var(--pale-teal); color: var(--teal); font-size: 25px; font-weight: 800; }
+    .empty h2 { color: var(--ink); font-size: 21px; margin-bottom: 5px; }
+    .summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px; }
+    .metric { padding: 15px; background: var(--panel); border: 1px solid var(--line); border-radius: 7px; }
+    .metric-label { color: var(--muted); font-size: 12px; }
+    .metric-value { font-size: 22px; font-weight: 750; margin-top: 3px; }
+    .metric-value.accent { color: var(--teal); }
+    .metric-value.warn { color: var(--coral); }
+    .request-strip { padding: 14px 16px; background: var(--pale-teal); border-left: 4px solid var(--teal); border-radius: 4px; margin-bottom: 18px; }
+    .request-main { font-size: 17px; font-weight: 750; }
+    .request-detail { color: var(--muted); font-size: 13px; margin-top: 3px; }
+    .narrative { padding: 18px; white-space: pre-line; line-height: 1.8; }
+    .section-title { font-size: 20px; margin: 24px 0 11px; }
+    .day { padding: 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 7px; margin-bottom: 12px; }
+    .day-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 3px; }
+    .day-name { font-size: 17px; font-weight: 750; }
+    .day-meta { color: var(--muted); font-size: 12px; }
+    .timeline { position: relative; padding-top: 4px; }
+    .stop { display: grid; grid-template-columns: 66px 20px minmax(0, 1fr); gap: 10px; padding: 12px 0 3px; }
+    .stop-time { color: var(--teal-dark); font-size: 12px; font-weight: 750; padding-top: 2px; }
+    .stop-dot { width: 12px; height: 12px; border: 3px solid var(--teal); border-radius: 50%; margin-top: 3px; position: relative; background: white; }
+    .stop:not(:last-child) .stop-dot::after { content: ""; position: absolute; top: 9px; left: 2px; width: 2px; height: calc(100% + 33px); min-height: 37px; background: #b9d9d7; }
+    .stop-name { font-weight: 750; }
+    .must { display: inline-block; color: var(--coral); background: var(--pale-coral); font-size: 11px; font-weight: 750; padding: 1px 5px; border-radius: 3px; margin-left: 5px; vertical-align: 2px; }
+    .stop-detail { color: var(--muted); font-size: 12px; margin-top: 2px; }
+    .stop-cost { color: var(--ink); font-size: 12px; margin-top: 4px; }
+    .day-total { color: var(--muted); border-top: 1px solid var(--line); margin-top: 12px; padding-top: 10px; font-size: 12px; text-align: right; }
+    .notice { padding: 13px 15px; background: #fffaf4; border: 1px solid #f0d8c2; border-radius: 6px; margin-top: 12px; color: #82583d; font-size: 13px; }
+    .notice strong { display: block; color: #6e452e; margin-bottom: 4px; }
+    .error { padding: 18px; background: var(--pale-coral); border: 1px solid #efc2b6; border-radius: 7px; color: #8f382a; }
+    .error h2 { font-size: 18px; margin-bottom: 5px; }
+    .valid { color: #21705b; font-size: 13px; font-weight: 700; }
+    details { margin-top: 16px; color: var(--muted); font-size: 12px; }
+    summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+    pre { white-space: pre-wrap; word-break: break-word; background: #f1f5f3; padding: 12px; border-radius: 5px; overflow: auto; }
+    @media (max-width: 820px) {
+      .header-inner { display: block; }
+      .header-meta { text-align: left; margin-top: 12px; }
+      .workspace { grid-template-columns: 1fr; }
+      .form-panel { position: static; }
+      .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 480px) {
+      .header-inner, main { width: min(calc(100% - 24px), 1180px); }
+      main { padding-top: 16px; }
+      .form-panel, .day { padding: 15px; }
+      .summary { gap: 7px; }
+      .metric { padding: 11px; }
+      .metric-value { font-size: 19px; }
+      .stop { grid-template-columns: 57px 16px minmax(0, 1fr); gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div><div class="eyebrow">Hangzhou / Travel Agent</div><h1>杭州旅行规划</h1></div>
+      <div class="header-meta">输入想法，得到一份可执行的行程</div>
+    </div>
+  </header>
+  <main>
+    <div class="workspace">
+      <section class="panel form-panel">
+        <h2 class="panel-title">告诉我你的计划</h2>
+        <p class="panel-subtitle">自然语言即可，天数和人数越明确，结果越贴合。</p>
+        <form id="plan-form">
+          <label for="travel-text">旅行需求</label>
+          <textarea id="travel-text" required>两个人去杭州玩两天，预算1200元，喜欢历史和美术，灵隐寺必去，尽量少走路</textarea>
+          <div class="switches">
+            <label class="switch" for="live-weather"><span>使用实时天气</span><input id="live-weather" type="checkbox"></label>
+            <label class="switch" for="live-routes"><span>使用实时路线</span><input id="live-routes" type="checkbox"></label>
+          </div>
+          <button id="submit-button" type="submit">生成行程</button>
+          <p class="hint" id="form-status">规划使用本地 POI 数据集，结果可重复。</p>
+        </form>
+      </section>
+      <section class="result" id="result" aria-live="polite">
+        <div class="panel empty" id="empty-state">
+          <div><div class="empty-mark">杭</div><h2>行程会出现在这里</h2><p>先写下你的偏好，再点击生成。</p></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script>
+    const form = document.querySelector('#plan-form');
+    const result = document.querySelector('#result');
+    const button = document.querySelector('#submit-button');
+    const status = document.querySelector('#form-status');
+    const money = value => value == null ? '未设置' : `${Number(value).toFixed(2)} 元`;
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const category = {museum:'博物馆', art_gallery:'美术馆', exhibition:'展览馆', historic_site:'历史遗址', temple:'寺庙', ancient_town:'古镇', scenic_area:'风景名胜', park:'公园', wetland:'湿地', cultural_district:'文化街区', pedestrian_street:'步行街', zoo:'动物园'};
+    const transport = {walk:'步行', walking:'步行', taxi:'出租车', driving:'驾车'};
+
+    function renderError(payload) {
+      const errors = (payload.errors || ['请求失败']).map(esc).join('<br>');
+      result.innerHTML = `<div class="error"><h2>暂时无法生成行程</h2><p>${errors}</p></div>`;
+    }
+
+    function renderSuccess(payload) {
+      const req = payload.request || {};
+      const plan = payload.plan || {};
+      const budget = plan.budget || {};
+      const validation = payload.validation || {};
+      const travelers = req.travelers || {};
+      const people = [`成人${travelers.adults || 0}人`, travelers.children ? `儿童${travelers.children}人` : '', travelers.elderly ? `老人${travelers.elderly}人` : ''].filter(Boolean).join('、');
+      const detail = [people, req.preferences?.length ? `偏好：${req.preferences.join('、')}` : '', req.must_visit?.length ? `必去：${req.must_visit.join('、')}` : ''].filter(Boolean).join('  ·  ');
+      const budgetClass = budget.within_budget === false ? 'warn' : 'accent';
+      const metrics = `<div class="summary">
+        <div class="metric"><div class="metric-label">行程天数</div><div class="metric-value accent">${plan.days?.length || 0} 天</div></div>
+        <div class="metric"><div class="metric-label">安排景点</div><div class="metric-value">${plan.poi_count || 0} 个</div></div>
+        <div class="metric"><div class="metric-label">预计总计</div><div class="metric-value ${budgetClass}">${money(budget.total_yuan)}</div></div>
+        <div class="metric"><div class="metric-label">预算余额</div><div class="metric-value">${money(budget.remaining_yuan)}</div></div>
+      </div>`;
+      const days = (plan.days || []).map(day => {
+        const stops = (day.items || []).map(item => {
+          const poi = item.poi || {};
+          const must = (req.must_visit || []).some(name => poi.name?.includes(name) || name.includes(poi.name || ''));
+          const route = item.order > 1 ? `从上一站：${esc(transport[item.transport_mode] || item.transport_mode)} ${item.travel_from_previous_min} 分钟，${(item.travel_distance_m / 1000).toFixed(2)} 公里` : '当天第一站';
+          return `<div class="stop"><div class="stop-time">${esc(item.arrival_time)}<br><span>${esc(item.departure_time)}</span></div><div class="stop-dot"></div><div><div class="stop-name">${esc(poi.name)}${must ? '<span class="must">必去</span>' : ''}</div><div class="stop-detail">${esc(poi.district)} · ${esc(category[poi.category] || poi.category)} · ${esc(poi.address)}</div><div class="stop-detail">${route}</div><div class="stop-cost">门票 ${money(item.ticket_cost_yuan)}　交通 ${money(item.transport_cost_yuan)}</div></div></div>`;
+        }).join('');
+        const date = day.date || '日期未指定';
+        return `<article class="day"><div class="day-head"><div class="day-name">第 ${day.day_index} 天</div><div class="day-meta">${esc(date)}${day.weather_condition ? ` · ${esc(day.weather_condition)}` : ''}</div></div><div class="timeline">${stops || '<p class="stop-detail">暂无可执行安排</p>'}</div><div class="day-total">游览 ${day.total_visit_min} 分钟 · 交通 ${day.total_travel_min} 分钟 · 景点及交通 ${money(day.total_cost_yuan)}</div></article>`;
+      }).join('');
+      const notices = [...(plan.warnings || []), ...(budget.warnings || [])];
+      const noticeHtml = notices.length ? `<div class="notice"><strong>行程提醒</strong>${notices.map(esc).join('<br>')}</div>` : '';
+      const validHtml = validation.is_valid ? '<div class="valid">✓ 已通过全部硬约束校验</div>' : `<div class="error"><h2>存在约束问题</h2>${(validation.violations || []).map(v => `<div>${esc(v.message)}</div>`).join('')}</div>`;
+      const narrativeHtml = payload.natural_language_output ? `<h2 class="section-title">自然语言行程说明</h2><div class="panel narrative">${esc(payload.natural_language_output)}</div>` : '';
+      const trace = (payload.traces || []).map(t => `[${t.status}] ${t.step}: ${t.message}`).join('\n');
+      result.innerHTML = `<div class="request-strip"><div class="request-main">${esc(req.city || '杭州')} · ${req.days || '?'} 天 · ${money(req.budget_yuan)}</div><div class="request-detail">${esc(detail)}</div></div>${metrics}${narrativeHtml}<h2 class="section-title">每日行程</h2>${days}${noticeHtml}<h2 class="section-title">费用与校验</h2><div class="panel" style="padding:18px"><div class="request-detail">门票 ${money(budget.ticket_yuan)}　交通 ${money(budget.transport_yuan)}　餐饮 ${money(budget.meal_yuan)}</div><div style="margin-top:10px">${validHtml}</div></div><details><summary>查看 Agent 执行轨迹</summary><pre>${esc(trace)}</pre></details>`;
+    }
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      button.disabled = true;
+      button.textContent = '正在规划…';
+      status.textContent = '正在解析需求、筛选 POI 并生成行程';
+      try {
+        const response = await fetch('/api/plan', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({text:document.querySelector('#travel-text').value, live_weather:document.querySelector('#live-weather').checked, live_routes:document.querySelector('#live-routes').checked})});
+        const payload = await response.json();
+        if (!response.ok || payload.status !== 'completed') renderError(payload); else renderSuccess(payload);
+        status.textContent = response.ok && payload.status === 'completed' ? '规划完成' : '请修改需求后重试';
+      } catch (error) {
+        renderError({errors:[`无法连接本地服务：${error.message}`]});
+        status.textContent = '服务连接失败';
+      } finally {
+        button.disabled = false;
+        button.textContent = '生成行程';
+      }
+    });
+  </script>
+</body>
+</html>

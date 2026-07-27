@@ -1,0 +1,161 @@
+\documentclass[10.5pt,a4paper]{ctexart}
+
+% 使用 XeLaTeX 编译。
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+
+\geometry{top=2.54cm,bottom=2.54cm,left=2.54cm,right=2.0cm}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.25em}
+\linespread{1.2}
+\setlist[enumerate]{label=(\arabic*),leftmargin=2.5em}
+\setlist[itemize]{leftmargin=2.5em}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\blank}[1]{\underline{\makebox[#1]{}}}
+
+% ===== 报告信息 =====
+\newcommand{\reportCourse}{电工电子学实验}
+\newcommand{\reportTitle}{实验报告}
+\newcommand{\experimentName}{}
+\newcommand{\experimentType}{}
+\newcommand{\experimentDate}{}
+\newcommand{\experimentPlace}{}
+\newcommand{\studentMajor}{}
+\newcommand{\studentName}{}
+\newcommand{\studentId}{}
+\newcommand{\partnerName}{}
+\newcommand{\instructorName}{}
+\newcommand{\score}{}
+
+\title{\reportCourse\\\reportTitle}
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{center}
+  {\zihao{2}\bfseries \reportCourse\quad \reportTitle}
+\end{center}
+
+\begin{table}[H]
+  \centering
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabular}{L{2.2cm}L{5.0cm}L{2.2cm}L{5.0cm}}
+    实验名称 & \experimentName & 实验类型 & \experimentType \\
+    实验日期 & \experimentDate & 实验地点 & \experimentPlace \\
+    专业 & \studentMajor & 姓名 & \studentName \\
+    学号 & \studentId & 同组学生 & \partnerName \\
+    指导老师 & \instructorName & 成绩 & \score \\
+  \end{tabular}
+\end{table}
+
+\section{实验目的和要求}
+\begin{enumerate}
+  \item 写明本次实验需要验证、测量或掌握的核心内容。
+  \item 将目的按知识点或实验任务拆分，避免只写笼统表述。
+\end{enumerate}
+
+\section{实验仪器与设备}
+\begin{table}[H]
+  \centering
+  \caption{主要仪器与元器件}
+  \begin{tabular}{C{1.2cm}L{6.0cm}L{5.0cm}}
+    \toprule
+    序号 & 名称 & 型号或参数 \\
+    \midrule
+    1 &  &  \\
+    2 &  &  \\
+    3 &  &  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{实验原理}
+概述本实验涉及的基本定律、电路模型、关键公式和理论预期。
+
+\subsection{基本原理}
+例如：
+\begin{equation}
+  y = kx + b
+\end{equation}
+其中，各符号的含义、单位和适用条件应在正文中说明。
+
+\subsection{理论分析}
+可结合电路图、波形图或等效模型说明测量量之间的关系，并指出后续数据处理所需的计算式。
+
+\section{实验内容与步骤}
+\begin{enumerate}
+  \item 按实验指导书连接电路或搭建仿真模型。
+  \item 检查仪器量程、接线极性和公共端连接。
+  \item 改变实验条件，记录测量数据或波形。
+  \item 关闭电源，整理数据并进行误差分析。
+\end{enumerate}
+
+\section{实验数据记录与处理}
+\subsection{原始数据}
+\begin{table}[H]
+  \centering
+  \caption{实验数据记录表}
+  \begin{tabular}{C{2cm}C{2.5cm}C{2.5cm}C{2.5cm}C{2.5cm}}
+    \toprule
+    序号 & 测量条件 & 测量量 1 & 测量量 2 & 备注 \\
+    \midrule
+    1 &  &  &  &  \\
+    2 &  &  &  &  \\
+    3 &  &  &  &  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{数据处理}
+写出计算过程、单位换算、误差或相对偏差：
+\begin{equation}
+  \delta = \frac{|x_{\mathrm{meas}} - x_{\mathrm{theory}}|}{x_{\mathrm{theory}}}\times 100\%
+\end{equation}
+
+\section{实验波形与图像}
+插入实验电路、仿真结果或示波器波形。图片文件建议放在同级目录的 \texttt{figures/} 文件夹中。
+
+\begin{figure}[H]
+  \centering
+  % \includegraphics[width=0.65\textwidth]{figures/example.png}
+  \fbox{\parbox[c][4cm][c]{0.65\textwidth}{\centering 图片占位}}
+  \caption{实验图像或波形}
+  \label{fig:example}
+\end{figure}
+
+\section{实验结果与分析}
+\begin{enumerate}
+  \item 对照理论值和实测值，说明实验现象是否符合预期。
+  \item 分析主要误差来源，例如仪表内阻、读数误差、元件容差、接触电阻、波形失真等。
+  \item 对异常数据或波形给出原因判断，而不是只重复表格中的数值。
+\end{enumerate}
+
+\section{思考题}
+\begin{enumerate}
+  \item 题目一：写出题干或要点。
+  \item 解答：结合实验原理和数据作答。
+\end{enumerate}
+
+\section{讨论与心得}
+总结本次实验的关键收获、操作注意事项和后续改进方向。若涉及工程应用，可说明该实验结论在实际电路或设备中的意义。
+
+\end{document}

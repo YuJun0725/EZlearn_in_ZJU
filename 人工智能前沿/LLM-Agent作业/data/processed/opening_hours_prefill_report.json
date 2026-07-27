@@ -1,0 +1,1459 @@
+{
+  "input": "F:\\yujun\\github_file\\EZlearn_in_ZJU\\人工智能前沿\\LLM-Agent作业\\data\\review\\hangzhou_poi_review.csv",
+  "applied": true,
+  "overwrite_existing": false,
+  "counts": {
+    "filled": 73,
+    "preserved": 2,
+    "skipped": 25
+  },
+  "entries": [
+    {
+      "line": 2,
+      "id": "amap_B0HGNGK3FG",
+      "name": "南宋德寿宫遗址博物馆",
+      "status": "preserved",
+      "reason": "at least one weekday was already filled"
+    },
+    {
+      "line": 3,
+      "id": "amap_B023B0BMJ6",
+      "name": "浙江美术馆",
+      "status": "preserved",
+      "reason": "at least one weekday was already filled"
+    },
+    {
+      "line": 4,
+      "id": "amap_B0FFH4JQL4",
+      "name": "杭州国际博览中心A座",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 5,
+      "id": "amap_B023B02842",
+      "name": "灵隐寺",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:30-17:30",
+        "tue": "07:30-17:30",
+        "wed": "07:30-17:30",
+        "thu": "07:30-17:30",
+        "fri": "07:30-17:30",
+        "sat": "07:30-17:30",
+        "sun": "07:30-17:30"
+      }
+    },
+    {
+      "line": 6,
+      "id": "amap_B023B13L9M",
+      "name": "杭州西湖风景名胜区",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 7,
+      "id": "amap_B0FFKQLV24",
+      "name": "良渚古城遗址公园-河道与作坊",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "09:00-17:00",
+        "tue": "09:00-17:00",
+        "wed": "09:00-17:00",
+        "thu": "09:00-17:00",
+        "fri": "09:00-17:00",
+        "sat": "09:00-17:00",
+        "sun": "09:00-17:00"
+      }
+    },
+    {
+      "line": 8,
+      "id": "amap_B0FFFA3PD5",
+      "name": "五柳巷历史街区",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 9,
+      "id": "amap_B0FFHJTKKP",
+      "name": "钱江世纪公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 10,
+      "id": "amap_B0FFKRLAVQ",
+      "name": "杭州沿江湿地公园-西区",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 11,
+      "id": "amap_B023B07SJZ",
+      "name": "清河坊历史文化特色街区",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 12,
+      "id": "amap_B0FFL9RQ5O",
+      "name": "湖滨步行街",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "10:00-22:00",
+        "tue": "10:00-22:00",
+        "wed": "10:00-22:00",
+        "thu": "10:00-22:00",
+        "fri": "10:00-22:00",
+        "sat": "10:00-22:00",
+        "sun": "10:00-22:00"
+      }
+    },
+    {
+      "line": 13,
+      "id": "amap_B0FFK1AXQY",
+      "name": "杭州动物园-虎山",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 14,
+      "id": "amap_B0FFFWQGI8",
+      "name": "杭州博物馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "09:00-16:30",
+        "tue": "closed",
+        "wed": "09:00-16:30",
+        "thu": "09:00-16:30",
+        "fri": "09:00-16:30",
+        "sat": "09:00-16:30",
+        "sun": "09:00-16:30"
+      }
+    },
+    {
+      "line": 15,
+      "id": "amap_B0FFMBRPNX",
+      "name": "山下美术馆",
+      "status": "skipped",
+      "reason": "the same weekday is both open and closed in the raw value"
+    },
+    {
+      "line": 16,
+      "id": "amap_B0HBLG930H",
+      "name": "杭州大会展中心",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "09:00-17:30",
+        "tue": "09:00-17:30",
+        "wed": "09:00-17:30",
+        "thu": "09:00-17:30",
+        "fri": "09:00-17:30",
+        "sat": "09:00-17:30",
+        "sun": "09:00-17:30"
+      }
+    },
+    {
+      "line": 17,
+      "id": "amap_B0FFFWXTX3",
+      "name": "济公殿",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:00-17:00",
+        "tue": "07:00-17:00",
+        "wed": "07:00-17:00",
+        "thu": "07:00-17:00",
+        "fri": "07:00-17:00",
+        "sat": "07:00-17:00",
+        "sun": "07:00-17:00"
+      }
+    },
+    {
+      "line": 18,
+      "id": "amap_B023B02054",
+      "name": "上天竺法喜讲寺",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "06:00-18:00",
+        "tue": "06:00-18:00",
+        "wed": "06:00-18:00",
+        "thu": "06:00-18:00",
+        "fri": "06:00-18:00",
+        "sat": "06:00-18:00",
+        "sun": "06:00-18:00"
+      }
+    },
+    {
+      "line": 19,
+      "id": "amap_B0GRMC1MFG",
+      "name": "良渚古城遗址公园内城区域-观景台",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 20,
+      "id": "amap_B023B17WXC",
+      "name": "吴山景区",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:30-18:00",
+        "tue": "07:30-18:00",
+        "wed": "07:30-18:00",
+        "thu": "07:30-18:00",
+        "fri": "07:30-18:00",
+        "sat": "07:30-18:00",
+        "sun": "07:30-18:00"
+      }
+    },
+    {
+      "line": 21,
+      "id": "amap_B023B0BIO8",
+      "name": "CBD公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 22,
+      "id": "amap_B023B06P06",
+      "name": "西溪国家湿地公园",
+      "status": "skipped",
+      "reason": "the same weekday has multiple seasonal or conflicting schedules"
+    },
+    {
+      "line": 23,
+      "id": "amap_B023B1BJ5L",
+      "name": "清河坊历史文化街区-中山中路47号",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 24,
+      "id": "amap_B023B1E89A",
+      "name": "清河坊步行街",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 25,
+      "id": "amap_B0FFI1Z3OS",
+      "name": "杭州动物园-海狮训练馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 26,
+      "id": "amap_B0JAO7X58K",
+      "name": "杭州亚运会博物馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule; omitted weekdays inferred as closed",
+      "inferred_closed": [
+        "mon"
+      ],
+      "weekly": {
+        "mon": "closed",
+        "tue": "09:00-16:30",
+        "wed": "09:00-16:30",
+        "thu": "09:00-16:30",
+        "fri": "09:00-16:30",
+        "sat": "09:00-16:30",
+        "sun": "09:00-16:30"
+      }
+    },
+    {
+      "line": 27,
+      "id": "amap_B023B09UVH",
+      "name": "韩美林艺术馆",
+      "status": "skipped",
+      "reason": "summer and winter schedules differ"
+    },
+    {
+      "line": 28,
+      "id": "amap_B0H6PCS3J8",
+      "name": "武林之星博览中心",
+      "status": "filled",
+      "reason": "parsed weekly schedule; omitted weekdays inferred as closed",
+      "inferred_closed": [
+        "sat",
+        "sun"
+      ],
+      "weekly": {
+        "mon": "09:00-17:30",
+        "tue": "09:00-17:30",
+        "wed": "09:00-17:30",
+        "thu": "09:00-17:30",
+        "fri": "09:00-17:30",
+        "sat": "closed",
+        "sun": "closed"
+      }
+    },
+    {
+      "line": 29,
+      "id": "amap_B023B17X80",
+      "name": "灵隐寺-华严殿",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:00-18:00",
+        "tue": "07:00-18:00",
+        "wed": "07:00-18:00",
+        "thu": "07:00-18:00",
+        "fri": "07:00-18:00",
+        "sat": "07:00-18:00",
+        "sun": "07:00-18:00"
+      }
+    },
+    {
+      "line": 30,
+      "id": "amap_B023B14CB8",
+      "name": "灵隐景区",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "06:30-16:00",
+        "tue": "06:30-16:00",
+        "wed": "06:30-16:00",
+        "thu": "06:30-16:00",
+        "fri": "06:30-16:00",
+        "sat": "06:30-16:00",
+        "sun": "06:30-16:00"
+      }
+    },
+    {
+      "line": 31,
+      "id": "amap_B0MUF7HVGM",
+      "name": "良渚古城遗址公园-池中寺粮仓晨昏时刻(打卡点)",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 32,
+      "id": "amap_B0IAVN9P4G",
+      "name": "晓霞弄",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 33,
+      "id": "amap_B023B09YVJ",
+      "name": "世纪花园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 34,
+      "id": "amap_B0FFFDSY6C",
+      "name": "浙江富春江咕噜咕噜岛湿地公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:00-17:00",
+        "tue": "07:00-17:00",
+        "wed": "07:00-17:00",
+        "thu": "07:00-17:00",
+        "fri": "07:00-17:00",
+        "sat": "07:00-17:00",
+        "sun": "07:00-17:00"
+      }
+    },
+    {
+      "line": 35,
+      "id": "amap_B023B0BDGD",
+      "name": "大兜路历史文化街区",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 36,
+      "id": "amap_B023B09PZI",
+      "name": "塘栖古镇步行街",
+      "status": "skipped",
+      "reason": "no explicit weekday schedule found"
+    },
+    {
+      "line": 37,
+      "id": "amap_B0FFK1AXR3",
+      "name": "杭州动物园-两栖爬行动物馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 38,
+      "id": "amap_B023B15DKJ",
+      "name": "浙江自然博物院",
+      "status": "skipped",
+      "reason": "multiple venues or venue areas share one raw value"
+    },
+    {
+      "line": 39,
+      "id": "amap_B0FFF0DY8D",
+      "name": "良渚文化艺术中心",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "09:00-22:00",
+        "tue": "09:00-22:00",
+        "wed": "09:00-22:00",
+        "thu": "09:00-22:00",
+        "fri": "09:00-22:00",
+        "sat": "09:00-22:00",
+        "sun": "09:00-22:00"
+      }
+    },
+    {
+      "line": 40,
+      "id": "amap_B0FFLLGM12",
+      "name": "浙江展览馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "09:00-17:00",
+        "tue": "09:00-17:00",
+        "wed": "09:00-17:00",
+        "thu": "09:00-17:00",
+        "fri": "09:00-17:00",
+        "sat": "09:00-17:00",
+        "sun": "09:00-17:00"
+      }
+    },
+    {
+      "line": 41,
+      "id": "amap_B023B17XAC",
+      "name": "灵隐寺-天王殿",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "08:00-18:00",
+        "tue": "08:00-18:00",
+        "wed": "08:00-18:00",
+        "thu": "08:00-18:00",
+        "fri": "08:00-18:00",
+        "sat": "08:00-18:00",
+        "sun": "08:00-18:00"
+      }
+    },
+    {
+      "line": 42,
+      "id": "amap_B0FFFDIGWR",
+      "name": "杭州西湖风景名胜区-岳王庙",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:30-17:30",
+        "tue": "07:30-17:30",
+        "wed": "07:30-17:30",
+        "thu": "07:30-17:30",
+        "fri": "07:30-17:30",
+        "sat": "07:30-17:30",
+        "sun": "07:30-17:30"
+      }
+    },
+    {
+      "line": 43,
+      "id": "amap_B0G2V7K33P",
+      "name": "良渚古城数智体验馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "10:00-16:30",
+        "tue": "10:00-16:30",
+        "wed": "10:00-16:30",
+        "thu": "10:00-16:30",
+        "fri": "10:00-16:30",
+        "sat": "10:00-16:30",
+        "sun": "10:00-16:30"
+      }
+    },
+    {
+      "line": 44,
+      "id": "amap_B0FFFDCCJ2",
+      "name": "华家池",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 45,
+      "id": "amap_B0FFKPQ4IL",
+      "name": "钱江世纪城沿江公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 46,
+      "id": "amap_B0FFGXM0CQ",
+      "name": "五常湿地",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 47,
+      "id": "amap_B0IRYMB2TR",
+      "name": "萧山千年临浦文化体验(临浦老街)",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 48,
+      "id": "amap_B023B14PP8",
+      "name": "南宋御街中山路步行街",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 49,
+      "id": "amap_B0FFK1AXR0",
+      "name": "猴山",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 50,
+      "id": "amap_B023B14R0K",
+      "name": "朱炳仁铜雕艺术博物馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "09:00-21:00",
+        "tue": "09:00-21:00",
+        "wed": "09:00-21:00",
+        "thu": "09:00-21:00",
+        "fri": "09:00-21:00",
+        "sat": "09:00-21:00",
+        "sun": "09:00-21:00"
+      }
+    },
+    {
+      "line": 51,
+      "id": "amap_B0HUGMQG9N",
+      "name": "西泠·武林美术馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule; omitted weekdays inferred as closed",
+      "inferred_closed": [
+        "mon"
+      ],
+      "weekly": {
+        "mon": "closed",
+        "tue": "09:00-16:30",
+        "wed": "09:00-16:30",
+        "thu": "09:00-16:30",
+        "fri": "09:00-16:30",
+        "sat": "09:00-16:30",
+        "sun": "09:00-16:30"
+      }
+    },
+    {
+      "line": 52,
+      "id": "amap_B0IRO7WYCW",
+      "name": "杭州国家版本馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "closed",
+        "tue": "09:00-16:00",
+        "wed": "09:00-16:00",
+        "thu": "09:00-16:00",
+        "fri": "09:00-16:00",
+        "sat": "09:00-16:30",
+        "sun": "09:00-16:30"
+      }
+    },
+    {
+      "line": 53,
+      "id": "amap_B023B09LKR",
+      "name": "雷峰塔景区",
+      "status": "skipped",
+      "reason": "no explicit weekday schedule found"
+    },
+    {
+      "line": 54,
+      "id": "amap_B023B0A6HW",
+      "name": "杭州西湖风景名胜区-郭庄",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "08:00-17:00",
+        "tue": "08:00-17:00",
+        "wed": "08:00-17:00",
+        "thu": "08:00-17:00",
+        "fri": "08:00-17:00",
+        "sat": "08:00-17:00",
+        "sun": "08:00-17:00"
+      }
+    },
+    {
+      "line": 55,
+      "id": "amap_B0MUF7GWL8",
+      "name": "良渚古城遗址公园-青铜装置晨昏时刻(打卡点)",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 56,
+      "id": "amap_B023B082T5",
+      "name": "西湖天地",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 57,
+      "id": "amap_B0GR3AJKMC",
+      "name": "CBD公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 58,
+      "id": "amap_B0G3F5JLJS",
+      "name": "阳陂湖",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "08:30-17:00",
+        "tue": "08:30-17:00",
+        "wed": "08:30-17:00",
+        "thu": "08:30-17:00",
+        "fri": "08:30-17:00",
+        "sat": "08:30-17:00",
+        "sun": "08:30-17:00"
+      }
+    },
+    {
+      "line": 59,
+      "id": "amap_B0KUBRSGCW",
+      "name": "浙江省文化创意街区",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 60,
+      "id": "amap_B023B0696X",
+      "name": "九曲营步行街",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:30-22:30",
+        "tue": "07:30-22:30",
+        "wed": "07:30-22:30",
+        "thu": "07:30-22:30",
+        "fri": "07:30-22:30",
+        "sat": "07:30-22:30",
+        "sun": "07:30-22:30"
+      }
+    },
+    {
+      "line": 61,
+      "id": "amap_B0FFK1AXR8",
+      "name": "杭州动物园-狮山",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 62,
+      "id": "amap_B0L1DMTG82",
+      "name": "灰色博物馆(杭州解百A座店)",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "10:00-21:30",
+        "tue": "10:00-21:30",
+        "wed": "10:00-21:30",
+        "thu": "10:00-21:30",
+        "fri": "10:00-21:30",
+        "sat": "10:00-21:30",
+        "sun": "10:00-21:30"
+      }
+    },
+    {
+      "line": 63,
+      "id": "amap_B0HKMU8WRN",
+      "name": "天目里美术馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "closed",
+        "tue": "12:00-20:00",
+        "wed": "12:00-20:00",
+        "thu": "12:00-20:00",
+        "fri": "12:00-20:00",
+        "sat": "12:00-20:00",
+        "sun": "12:00-20:00"
+      }
+    },
+    {
+      "line": 64,
+      "id": "amap_B0FFFF7W09",
+      "name": "全山石艺术中心",
+      "status": "filled",
+      "reason": "parsed weekly schedule; omitted weekdays inferred as closed",
+      "inferred_closed": [
+        "mon"
+      ],
+      "weekly": {
+        "mon": "closed",
+        "tue": "09:30-17:00",
+        "wed": "09:30-17:00",
+        "thu": "09:30-17:00",
+        "fri": "09:30-17:00",
+        "sat": "09:30-17:00",
+        "sun": "09:30-17:00"
+      }
+    },
+    {
+      "line": 65,
+      "id": "amap_B0FFGOWPEV",
+      "name": "雷峰塔景区雷峰塔",
+      "status": "skipped",
+      "reason": "no explicit weekday schedule found"
+    },
+    {
+      "line": 66,
+      "id": "amap_B0FFFDE5LV",
+      "name": "杭州西湖风景名胜区-理安寺",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "10:00-21:00",
+        "tue": "10:00-21:00",
+        "wed": "10:00-21:00",
+        "thu": "10:00-21:00",
+        "fri": "10:00-21:00",
+        "sat": "10:00-21:00",
+        "sun": "10:00-21:00"
+      }
+    },
+    {
+      "line": 67,
+      "id": "amap_B0MUF7HIL9",
+      "name": "良渚古城遗址公园-湖边(打卡点)",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 68,
+      "id": "amap_B0FFGXJHHL",
+      "name": "新城音乐喷泉",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 69,
+      "id": "amap_B0HUAC9R2Z",
+      "name": "钱江世纪城沿江公园绿道观景平台",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 70,
+      "id": "amap_B0G1DSEKI3",
+      "name": "南堡湿地公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 71,
+      "id": "amap_B0KRK9C1PN",
+      "name": "坊馅清鸹河-大井巷历史文化街区",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 72,
+      "id": "amap_B0G3YUW6WJ",
+      "name": "永旺路步行街",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "10:00-24:00",
+        "tue": "10:00-24:00",
+        "wed": "10:00-24:00",
+        "thu": "10:00-24:00",
+        "fri": "10:00-24:00",
+        "sat": "10:00-24:00",
+        "sun": "10:00-24:00"
+      }
+    },
+    {
+      "line": 73,
+      "id": "amap_B0GDTMXLOL",
+      "name": "杭州动物园-长颈鹿馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 74,
+      "id": "amap_B023B089X6",
+      "name": "西湖博物馆",
+      "status": "skipped",
+      "reason": "multiple venues or venue areas share one raw value"
+    },
+    {
+      "line": 75,
+      "id": "amap_B023B070V2",
+      "name": "中国美术学院南山校区美术馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule; omitted weekdays inferred as closed",
+      "inferred_closed": [
+        "mon"
+      ],
+      "weekly": {
+        "mon": "closed",
+        "tue": "09:00-17:00",
+        "wed": "09:00-17:00",
+        "thu": "09:00-17:00",
+        "fri": "09:00-17:00",
+        "sat": "09:00-17:00",
+        "sun": "09:00-17:00"
+      }
+    },
+    {
+      "line": 76,
+      "id": "amap_B0LANUXYN0",
+      "name": "肖峰艺术馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule; omitted weekdays inferred as closed",
+      "inferred_closed": [
+        "tue"
+      ],
+      "weekly": {
+        "mon": "09:00-17:00",
+        "tue": "closed",
+        "wed": "09:00-17:00",
+        "thu": "09:00-17:00",
+        "fri": "09:00-17:00",
+        "sat": "09:00-17:00",
+        "sun": "09:00-17:00"
+      }
+    },
+    {
+      "line": 77,
+      "id": "amap_B023B14O96",
+      "name": "良渚古城遗址公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "09:00-17:00",
+        "tue": "09:00-17:00",
+        "wed": "09:00-17:00",
+        "thu": "09:00-17:00",
+        "fri": "09:00-17:00",
+        "sat": "09:00-17:00",
+        "sun": "09:00-17:00"
+      }
+    },
+    {
+      "line": 78,
+      "id": "amap_B023B0A6I3",
+      "name": "慧因高丽寺",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "08:30-16:30",
+        "tue": "08:30-16:30",
+        "wed": "08:30-16:30",
+        "thu": "08:30-16:30",
+        "fri": "08:30-16:30",
+        "sat": "08:30-16:30",
+        "sun": "08:30-16:30"
+      }
+    },
+    {
+      "line": 79,
+      "id": "amap_B0MUF7HVG0",
+      "name": "良渚古城遗址公园-莫角山(打卡点)",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 80,
+      "id": "amap_B023B0247C",
+      "name": "杭州西湖风景名胜区-柳浪闻莺",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 81,
+      "id": "amap_B023B1AVVP",
+      "name": "左岸万国花园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 82,
+      "id": "amap_B023B1DNZH",
+      "name": "西溪国家湿地公园洪园",
+      "status": "skipped",
+      "reason": "the same weekday has multiple seasonal or conflicting schedules"
+    },
+    {
+      "line": 83,
+      "id": "amap_B0LGUBAI9T",
+      "name": "杭州市拱墅区大关街道文化艺术交流中心",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 84,
+      "id": "amap_B0K30CVD6M",
+      "name": "拾里步行街",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 85,
+      "id": "amap_B0L35UF0RG",
+      "name": "蟒蛇",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:00-17:30",
+        "tue": "07:00-17:30",
+        "wed": "07:00-17:30",
+        "thu": "07:00-17:30",
+        "fri": "07:00-17:30",
+        "sat": "07:00-17:30",
+        "sun": "07:00-17:30"
+      }
+    },
+    {
+      "line": 86,
+      "id": "amap_B023B17WS3",
+      "name": "南宋御街陈列馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 87,
+      "id": "amap_B0K0YSJAX8",
+      "name": "西溪蔡志忠美术馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule; omitted weekdays inferred as closed",
+      "inferred_closed": [
+        "mon"
+      ],
+      "weekly": {
+        "mon": "closed",
+        "tue": "09:00-17:00",
+        "wed": "09:00-17:00",
+        "thu": "09:00-17:00",
+        "fri": "09:00-17:00",
+        "sat": "09:00-17:00",
+        "sun": "09:00-17:00"
+      }
+    },
+    {
+      "line": 88,
+      "id": "amap_B0K66ZNQ3R",
+      "name": "东巢·碾米厂当代艺术中心",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 89,
+      "id": "amap_B023B08Q06",
+      "name": "虎跑公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:00-17:30",
+        "tue": "07:00-17:30",
+        "wed": "07:00-17:30",
+        "thu": "07:00-17:30",
+        "fri": "07:00-17:30",
+        "sat": "07:00-17:30",
+        "sun": "07:00-17:30"
+      }
+    },
+    {
+      "line": 90,
+      "id": "amap_B0FFJ41BEG",
+      "name": "杭州西湖风景名胜区-古梵天寺",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 91,
+      "id": "amap_B0L1JH8I27",
+      "name": "良渚古城遗址公园-夯筑城墙",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 92,
+      "id": "amap_B023B01EE6",
+      "name": "杭州西湖风景名胜区-断桥残雪",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 93,
+      "id": "amap_B0KGZ5Z1ZS",
+      "name": "钱江世纪公园彩虹跑道",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 94,
+      "id": "amap_B023B0A461",
+      "name": "美丽洲公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 95,
+      "id": "amap_B0HU6H2FOS",
+      "name": "文新街道府新社区文化家园",
+      "status": "skipped",
+      "reason": "opening_hours_raw is empty"
+    },
+    {
+      "line": 96,
+      "id": "amap_B0GRD9KTTI",
+      "name": "天街步行街(龙湖杭州金沙天街店)",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "10:00-22:00",
+        "tue": "10:00-22:00",
+        "wed": "10:00-22:00",
+        "thu": "10:00-22:00",
+        "fri": "10:00-22:00",
+        "sat": "10:00-22:00",
+        "sun": "10:00-22:00"
+      }
+    },
+    {
+      "line": 97,
+      "id": "amap_B0FFK1AXR9",
+      "name": "杭州动物园-海豹池",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "00:00-24:00",
+        "tue": "00:00-24:00",
+        "wed": "00:00-24:00",
+        "thu": "00:00-24:00",
+        "fri": "00:00-24:00",
+        "sat": "00:00-24:00",
+        "sun": "00:00-24:00"
+      }
+    },
+    {
+      "line": 98,
+      "id": "amap_B023B06XVX",
+      "name": "浙江省博物馆(孤山馆区)",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "closed",
+        "tue": "09:00-17:00",
+        "wed": "09:00-17:00",
+        "thu": "09:00-17:00",
+        "fri": "09:00-17:00",
+        "sat": "09:00-17:00",
+        "sun": "09:00-17:00"
+      }
+    },
+    {
+      "line": 99,
+      "id": "amap_B0FFF6W5U7",
+      "name": "浙江赛丽美术馆",
+      "status": "filled",
+      "reason": "parsed weekly schedule; omitted weekdays inferred as closed",
+      "inferred_closed": [
+        "mon"
+      ],
+      "weekly": {
+        "mon": "closed",
+        "tue": "10:00-17:00",
+        "wed": "10:00-17:00",
+        "thu": "10:00-17:00",
+        "fri": "10:00-17:00",
+        "sat": "10:00-17:00",
+        "sun": "10:00-17:00"
+      }
+    },
+    {
+      "line": 100,
+      "id": "amap_B0L6KZOZ4Z",
+      "name": "富士胶片影像空间X-SPACE·杭州",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "10:00-22:00",
+        "tue": "10:00-22:00",
+        "wed": "10:00-22:00",
+        "thu": "10:00-22:00",
+        "fri": "10:00-22:00",
+        "sat": "10:00-22:00",
+        "sun": "10:00-22:00"
+      }
+    },
+    {
+      "line": 101,
+      "id": "amap_B023B08SQK",
+      "name": "六和塔文化公园",
+      "status": "filled",
+      "reason": "parsed weekly schedule",
+      "inferred_closed": [],
+      "weekly": {
+        "mon": "07:00-17:30",
+        "tue": "07:00-17:30",
+        "wed": "07:00-17:30",
+        "thu": "07:00-17:30",
+        "fri": "07:00-17:30",
+        "sat": "07:00-17:30",
+        "sun": "07:00-17:30"
+      }
+    }
+  ]
+}
