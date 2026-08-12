@@ -37,7 +37,7 @@ python scripts/fetch_amap_pois.py --keywords "博物馆" --pages 1 --limit 10
 成功后将生成：
 
 - `data/raw/amap_pois.json`：高德返回的原始 POI 数据快照。
-- `data/processed/hangzhou_pois_draft.jsonl`：标准化但尚未核验的数据。
+- `data/processed/hangzhou_pois_draft.jsonl`：标准化草稿数据，不作为正式规划输入。
 - `data/review/hangzhou_poi_review.csv`：用于人工核验和补全的表格。
 
 如果高德返回 `USERKEY_PLAT_NOMATCH`，请检查申请的 Key 是否属于
@@ -143,7 +143,7 @@ python scripts/build_poi_dataset.py --allow-incomplete
 - `data/processed/hangzhou_pois.jsonl`：构建后的 POI 数据集。
 - `data/processed/validation_report.json`：缺失字段和格式错误报告。
 
-尚未满足规划要求的记录会被标记为：
+不满足规划要求的记录会被标记为：
 
 ```json
 {
@@ -194,7 +194,7 @@ python -m unittest discover -s tests -v
 
 ## 8. 加载和查询 POI
 
-项目采用 `src` 目录布局。尚未安装为 Python 包时，在当前 PowerShell 会话中设置：
+项目采用 `src` 目录布局。当项目没有安装为 Python 包时，在当前 PowerShell 会话中设置：
 
 ```powershell
 $env:PYTHONPATH = "src"
@@ -229,14 +229,15 @@ museums = repository.search(
         categories=("museum",),
         indoor=True,
         include_unknown=True,
-        planning_ready_only=False,
+        planning_ready_only=True,
         limit=20,
     )
 )
 ```
 
-当前数据尚未人工核验，因此 `planning_ready_only` 必须保持为 `False`。完成核验和
-严格构建后，再将其设置为 `True`。
+当前 69 条数据均已通过程序要求的字段和格式检查，因此可以使用
+`planning_ready_only=True`。需要注意，`planning_ready` 只表示记录可被规划器加载，
+不代表票价、开放时间和预约规则已经通过景区官方来源复核。
 
 ## 9. 根据结构化偏好选择候选 POI
 
@@ -510,13 +511,15 @@ python eval/run_evaluation.py --output eval/report.json
 
 ## 16. 当前数据限制
 
-当前69条POI已经可以支撑完整架构联调，但尚未全部人工核验，因此记录仍可能为
-`planning_ready=false`。程序会明确标记以下估算项：
+当前 69 条 POI 已全部标记为 `planning_ready=true`，可以支撑完整架构联调；该字段
+只表示必填字段和格式通过检查。当前 69 条记录的 `official_url` 均为空，官方来源
+覆盖率为 0/69。程序和报告需明确以下数据适用范围：
 
 - 未核验开放时间使用 `09:00-17:00` 默认时间窗。
-- 未知门票目前按每人0元估算。
+- 52 条票价记录为 0，可能表示免费，也可能仍需核验；程序会按当前数值计算。
+- 17 条记录为非零票价，但仍需用官方来源确认。
 - 出租车费用按简化计价规则估算。
 - 离线路线使用球面距离和道路系数估算。
 
-这些情况会作为警告保留，不会伪装成已确认数据。正式提交实验结果前，建议至少优先
-核验演示和评测中实际使用的核心POI，再重新构建严格数据集。
+因此，程序输出的“预算合规”只表示按当前开发数据和估算规则未超过预算，不代表
+现实消费一定准确。真实出行时应以景区官方发布的价格、开放时间和预约规则为准。

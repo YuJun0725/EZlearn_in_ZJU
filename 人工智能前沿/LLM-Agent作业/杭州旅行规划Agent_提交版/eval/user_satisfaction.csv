@@ -1,0 +1,6 @@
+participant_id,prompt_id,structured_agent_score,rag_score
+A,A,4.8,4.6
+B,B,4.7,4.7
+C,C,5.0,4.6
+D,D,4.8,4.8
+E,E,4.7,4.7

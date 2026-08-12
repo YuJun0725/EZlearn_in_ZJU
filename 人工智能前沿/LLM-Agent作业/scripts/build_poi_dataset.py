@@ -160,6 +160,8 @@ def build_record(row: dict[str, str], line_number: int) -> tuple[dict[str, Any],
     if official_url and not official_url.startswith(("http://", "https://")):
         issues.append("official_url must start with http:// or https://")
 
+    # planning_ready means structurally usable by the planner; it is not an
+    # assertion that price, hours, or reservation facts were officially verified.
     record = {
         "id": row.get("id", "").strip(),
         "name": row.get("name", "").strip(),
