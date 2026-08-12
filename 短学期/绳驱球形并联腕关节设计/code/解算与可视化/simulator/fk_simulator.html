@@ -1,0 +1,2055 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theta 正解机构仿真</title>
+  <style>
+    :root {
+      --bg: #f3f6fa;
+      --panel: #ffffff;
+      --panel-2: #f8fafc;
+      --line: #d8e0ea;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2b6cff;
+      --accent-2: #12a57a;
+      --accent-3: #ea8c1f;
+      --danger: #d64545;
+      --shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .app {
+      width: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 0;
+    }
+
+    .topbar {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      background: linear-gradient(180deg, #fbfcfe 0%, #f3f6fa 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .title {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 6px;
+      height: 32px;
+      min-width: 32px;
+      padding: 0 10px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    button:hover {
+      border-color: #bfd0e6;
+      background: #fbfdff;
+    }
+
+    button.icon {
+      width: 34px;
+      padding: 0;
+      display: inline-grid;
+      place-items: center;
+      font-size: 15px;
+    }
+
+    .workspace {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr) 330px;
+      gap: 0;
+    }
+
+    .panel {
+      min-width: 0;
+      background: var(--panel);
+      border-right: 1px solid var(--line);
+      overflow: auto;
+    }
+
+    .panel.right {
+      border-right: 0;
+      border-left: 1px solid var(--line);
+    }
+
+    .section {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .section-title.row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .section-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .axis-row {
+      display: grid;
+      grid-template-columns: 44px 1fr 66px;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .axis-row label {
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .axis-row input[type="range"] {
+      width: 100%;
+    }
+
+    .axis-row input[type="number"] {
+      width: 66px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 5px 7px;
+      background: var(--panel-2);
+      color: var(--text);
+    }
+
+    .toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .toggle input {
+      margin: 0;
+    }
+
+    .toggle.compact {
+      margin-top: 0;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .stat-grid {
+      display: grid;
+      gap: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fcfdff;
+    }
+
+    .stat .label {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .stat .value {
+      font-size: 13px;
+      word-break: break-word;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 12px;
+      background: #f8fbff;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .badge.ok {
+      border-color: rgba(18, 165, 122, 0.25);
+      background: rgba(18, 165, 122, 0.08);
+      color: #0f7a5c;
+    }
+
+    .badge.warn {
+      border-color: rgba(214, 69, 69, 0.25);
+      background: rgba(214, 69, 69, 0.08);
+      color: #b43232;
+    }
+
+    .geom-table {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .geom-row {
+      display: grid;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fcfdff;
+      padding: 8px;
+    }
+
+    .geom-row > .tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .geom-line {
+      display: grid;
+      grid-template-columns: 34px repeat(3, minmax(0, 1fr));
+      gap: 6px;
+      align-items: center;
+    }
+
+    .geom-line.alpha {
+      grid-template-columns: 34px minmax(0, 1fr);
+    }
+
+    .geom-angle-row {
+      display: grid;
+      grid-template-columns: 58px 1fr 66px;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .geom-line .tag {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .geom-angle-row label {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .geom-angle-row input[type="range"] {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .geom-row input[type="number"] {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 5px 6px;
+      background: #fff;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .geom-row input[type="number"]:disabled {
+      background: #f1f5f9;
+      color: var(--muted);
+    }
+
+    .solutions {
+      display: grid;
+      gap: 6px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .solution-row {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px 10px;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .solution-row:hover {
+      border-color: #bfd0e6;
+      background: #fbfdff;
+    }
+
+    .solution-row.active {
+      border-color: rgba(43, 108, 255, 0.35);
+      background: rgba(43, 108, 255, 0.06);
+    }
+
+    .solution-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .solution-bottom {
+      font-size: 12px;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .joint-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .joint-table th,
+    .joint-table td {
+      padding: 6px 3px;
+      border-bottom: 1px solid var(--line);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .joint-table th {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .joint-table th:first-child,
+    .joint-table td:first-child {
+      width: 34px;
+      text-align: left;
+    }
+
+    .joint-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .stage {
+      min-width: 0;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2)),
+        radial-gradient(circle at top left, rgba(43,108,255,0.05), transparent 32%);
+    }
+
+    #scene {
+      display: block;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+      background: transparent;
+    }
+
+    .overlay {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+      box-shadow: var(--shadow);
+      max-width: min(440px, calc(100% - 24px));
+    }
+
+    .overlay .line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .overlay .line:first-child {
+      margin-top: 0;
+    }
+
+    .k {
+      color: var(--muted);
+    }
+
+    .v {
+      color: var(--text);
+    }
+
+    @media (max-width: 1100px) {
+      html, body {
+        overflow: auto;
+      }
+
+      body {
+        overflow: auto;
+      }
+
+      .workspace {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(52vh, 1fr) auto;
+      }
+
+      .panel.right {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .panel {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .stage {
+        min-height: 52vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div class="title">Theta 正解机构仿真</div>
+      <div class="toolbar">
+        <button class="icon" id="btnHome" title="回零">⌂</button>
+        <button class="icon" id="btnSample" title="验证姿态">◎</button>
+        <button class="icon" id="btnResetView" title="重置视角">⟲</button>
+        <button class="icon" id="btnFit" title="居中">⌖</button>
+      </div>
+    </div>
+
+    <div class="workspace">
+      <aside class="panel">
+        <div class="section">
+          <div class="section-title">Theta 输入</div>
+          <div class="axis-row">
+            <label for="theta1Range">θ1</label>
+            <input id="theta1Range" type="range" min="-120" max="120" step="0.1">
+            <input id="theta1Num" type="number" min="-120" max="120" step="0.1">
+          </div>
+          <div class="axis-row">
+            <label for="theta2Range">θ2</label>
+            <input id="theta2Range" type="range" min="-120" max="120" step="0.1">
+            <input id="theta2Num" type="number" min="-120" max="120" step="0.1">
+          </div>
+          <div class="axis-row">
+            <label for="theta3Range">θ3</label>
+            <input id="theta3Range" type="range" min="-120" max="120" step="0.1">
+            <input id="theta3Num" type="number" min="-120" max="120" step="0.1">
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">视图</div>
+          <label class="toggle"><input id="showGrid" type="checkbox" checked> 显示网格</label>
+          <label class="toggle"><input id="showLabels" type="checkbox" checked> 显示标注</label>
+        </div>
+
+        <div class="section">
+          <div class="section-title row">
+            <span>几何编辑</span>
+            <div class="section-actions">
+              <label class="toggle compact"><input id="autoAlpha" type="checkbox" checked> α 自动</label>
+              <button class="icon" id="btnResetGeometry" title="恢复默认几何">↺</button>
+            </div>
+          </div>
+          <div id="geometryEditor" class="geom-table"></div>
+        </div>
+      </aside>
+
+      <main class="stage">
+        <canvas id="scene"></canvas>
+        <div class="overlay" id="overlay">
+          <div class="line"><span class="k">状态</span><span class="v" id="modeText">-</span></div>
+          <div class="line"><span class="k">正解 RPY</span><span class="v" id="thetaText">-</span></div>
+          <div class="line"><span class="k">平台倾角</span><span class="v" id="tiltText">-</span></div>
+          <div class="line"><span class="k">最大残差</span><span class="v" id="maxResidualText">-</span></div>
+        </div>
+      </main>
+
+      <aside class="panel right">
+        <div class="section">
+          <div class="section-title">正解结果</div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="label">yaw / pitch / roll</div>
+              <div class="value" id="selectedModeText">-</div>
+            </div>
+            <div class="stat">
+              <div class="label">输入 θ 向量</div>
+              <div class="value" id="selectedThetaText">-</div>
+            </div>
+            <div class="stat">
+              <div class="label">平台法向量 / 与 Z 轴夹角</div>
+              <div class="value" id="normalText">-</div>
+            </div>
+            <div class="stat">
+              <div class="label">残差</div>
+              <div class="value" id="selectedResidualText">-</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">约束几何复核</div>
+          <table class="joint-table">
+            <thead>
+              <tr>
+                <th>支链</th>
+                <th>输入 θ</th>
+                <th>α 实测</th>
+                <th>目标 α</th>
+                <th>残差</th>
+              </tr>
+            </thead>
+            <tbody id="rotationVerificationBody"></tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <div class="section-title">正解说明</div>
+          <div id="solutionList" class="solutions"></div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">当前几何</div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="label">w0_list</div>
+              <div class="value" id="w0Text"></div>
+            </div>
+            <div class="stat">
+              <div class="label">v0_list</div>
+              <div class="value" id="v0Text"></div>
+            </div>
+            <div class="stat">
+              <div class="label">解算使用 α</div>
+              <div class="value" id="alphaText"></div>
+            </div>
+            <div class="stat">
+              <div class="label">几何夹角 α(w0,v0)</div>
+              <div class="value" id="geomAlphaText"></div>
+            </div>
+            <div class="stat">
+              <div class="label">α 差值</div>
+              <div class="value" id="alphaDeltaText"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const DEG = Math.PI / 180;
+    const SQRT3 = Math.sqrt(3);
+    const EPS = 1e-12;
+
+    const defaultLegs = [
+      { w0: [1, 0, -1], v0: [0.00, -1, 0.0] },
+      { w0: [-0.5, SQRT3 / 2, -1], v0: [SQRT3 / 2, 0.5, 0.0] },
+      { w0: [-0.5, -SQRT3 / 2, -1], v0: [-SQRT3 / 2, 0.5, 0.0] }
+    ];
+
+    const defaultTheta = [0, 0, 0];
+    const sampleTheta = [40.987648, 19.230355, -19.55154];
+    let geometryState = null;
+
+    const state = {
+      theta: defaultTheta.slice(),
+      rpy: [0, 0, 0],
+      lastGoodRpy: [0, 0, 0],
+      showGrid: true,
+      showLabels: true,
+      cameraAzimuth: 35 * DEG,
+      cameraElevation: 22 * DEG,
+      cameraDistance: 6.8
+    };
+
+    const canvas = document.getElementById("scene");
+    const ctx = canvas.getContext("2d");
+
+    const thetaRanges = [
+      document.getElementById("theta1Range"),
+      document.getElementById("theta2Range"),
+      document.getElementById("theta3Range")
+    ];
+    const thetaNums = [
+      document.getElementById("theta1Num"),
+      document.getElementById("theta2Num"),
+      document.getElementById("theta3Num")
+    ];
+    const autoAlpha = document.getElementById("autoAlpha");
+    const geometryEditor = document.getElementById("geometryEditor");
+    const btnResetGeometry = document.getElementById("btnResetGeometry");
+    const showGrid = document.getElementById("showGrid");
+    const showLabels = document.getElementById("showLabels");
+
+    const w0Text = document.getElementById("w0Text");
+    const v0Text = document.getElementById("v0Text");
+    const alphaText = document.getElementById("alphaText");
+    const geomAlphaText = document.getElementById("geomAlphaText");
+    const alphaDeltaText = document.getElementById("alphaDeltaText");
+    const modeText = document.getElementById("modeText");
+    const thetaText = document.getElementById("thetaText");
+    const tiltText = document.getElementById("tiltText");
+    const maxResidualText = document.getElementById("maxResidualText");
+    const selectedModeText = document.getElementById("selectedModeText");
+    const selectedThetaText = document.getElementById("selectedThetaText");
+    const normalText = document.getElementById("normalText");
+    const selectedResidualText = document.getElementById("selectedResidualText");
+    const rotationVerificationBody = document.getElementById("rotationVerificationBody");
+    const solutionList = document.getElementById("solutionList");
+
+    let currentSolution = null;
+    let currentError = null;
+    let geometryError = null;
+    let geometryInputs = [];
+
+    function vec3(x, y, z) {
+      return [x, y, z];
+    }
+
+    function clone(v) {
+      return [v[0], v[1], v[2]];
+    }
+
+    function add(a, b) {
+      return [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+    }
+
+    function sub(a, b) {
+      return [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+    }
+
+    function scale(v, s) {
+      return [v[0] * s, v[1] * s, v[2] * s];
+    }
+
+    function dot(a, b) {
+      return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+    }
+
+    function cross(a, b) {
+      return [
+        a[1] * b[2] - a[2] * b[1],
+        a[2] * b[0] - a[0] * b[2],
+        a[0] * b[1] - a[1] * b[0]
+      ];
+    }
+
+    function norm(v) {
+      return Math.hypot(v[0], v[1], v[2]);
+    }
+
+    function normalize(v) {
+      const n = norm(v);
+      if (n < EPS) {
+        throw new Error("向量长度接近 0");
+      }
+      return [v[0] / n, v[1] / n, v[2] / n];
+    }
+
+    function clamp(x, lo, hi) {
+      return Math.max(lo, Math.min(hi, x));
+    }
+
+    function deg2rad(a) {
+      return a * DEG;
+    }
+
+    function rad2deg(a) {
+      return a / DEG;
+    }
+
+    function cloneLegs(legs) {
+      return legs.map((leg) => ({
+        w0: clone(leg.w0),
+        v0: clone(leg.v0),
+        alphaDeg: leg.alphaDeg
+      }));
+    }
+
+    function alphaDegFromVectors(w0, v0) {
+      const w = normalize(w0);
+      const v = normalize(v0);
+      return rad2deg(Math.acos(clamp(dot(w, v), -1, 1)));
+    }
+
+    function vectorToAngles(v) {
+      const n = normalize(v);
+      const azimuthDeg = rad2deg(Math.atan2(n[1], n[0]));
+      const xy = Math.hypot(n[0], n[1]);
+      const elevationDeg = rad2deg(Math.atan2(n[2], xy));
+      return { azimuthDeg, elevationDeg };
+    }
+
+    function anglesToVector(azimuthDeg, elevationDeg) {
+      const az = deg2rad(azimuthDeg);
+      const el = deg2rad(elevationDeg);
+      const c = Math.cos(el);
+      return [
+        c * Math.cos(az),
+        c * Math.sin(az),
+        Math.sin(el)
+      ];
+    }
+
+    function createGeometryState() {
+      const legs = cloneLegs(defaultLegs);
+      for (const leg of legs) {
+        leg.alphaDeg = alphaDegFromVectors(leg.w0, leg.v0);
+      }
+
+      const next = {
+        legs,
+        autoAlpha: true,
+        normalizedW0: [],
+        normalizedV0: [],
+        alphaGeomDeg: [],
+        alphaUseDeg: [],
+        alphaList: []
+      };
+
+      deriveGeometry(next);
+      return next;
+    }
+
+    function deriveGeometry(geometry) {
+      geometry.normalizedW0 = geometry.legs.map((leg) => normalize(leg.w0));
+      geometry.normalizedV0 = geometry.legs.map((leg) => normalize(leg.v0));
+      geometry.alphaGeomDeg = geometry.legs.map((leg) => alphaDegFromVectors(leg.w0, leg.v0));
+      geometry.alphaUseDeg = geometry.autoAlpha
+        ? geometry.alphaGeomDeg.slice()
+        : geometry.legs.map((leg) => leg.alphaDeg);
+      geometry.alphaList = geometry.alphaUseDeg.map((value) => deg2rad(value));
+    }
+
+    function resetGeometryToDefault() {
+      geometryState = createGeometryState();
+      geometryError = null;
+      state.lastGoodRpy = [0, 0, 0];
+      state.rpy = [0, 0, 0];
+      syncGeometryEditor();
+      recalc();
+    }
+
+    function rotX(a) {
+      const c = Math.cos(a);
+      const s = Math.sin(a);
+      return [
+        [1, 0, 0],
+        [0, c, -s],
+        [0, s, c]
+      ];
+    }
+
+    function rotY(a) {
+      const c = Math.cos(a);
+      const s = Math.sin(a);
+      return [
+        [c, 0, s],
+        [0, 1, 0],
+        [-s, 0, c]
+      ];
+    }
+
+    function rotZ(a) {
+      const c = Math.cos(a);
+      const s = Math.sin(a);
+      return [
+        [c, -s, 0],
+        [s, c, 0],
+        [0, 0, 1]
+      ];
+    }
+
+    function matMul(A, B) {
+      const C = Array.from({ length: 3 }, () => [0, 0, 0]);
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          let s = 0;
+          for (let k = 0; k < 3; k++) {
+            s += A[i][k] * B[k][j];
+          }
+          C[i][j] = s;
+        }
+      }
+      return C;
+    }
+
+    function matVec(M, v) {
+      return [
+        M[0][0] * v[0] + M[0][1] * v[1] + M[0][2] * v[2],
+        M[1][0] * v[0] + M[1][1] * v[1] + M[1][2] * v[2],
+        M[2][0] * v[0] + M[2][1] * v[1] + M[2][2] * v[2]
+      ];
+    }
+
+    function rpyToR(yaw, pitch, roll, degrees = true) {
+      if (degrees) {
+        yaw = deg2rad(yaw);
+        pitch = deg2rad(pitch);
+        roll = deg2rad(roll);
+      }
+      return matMul(matMul(rotZ(yaw), rotY(pitch)), rotX(roll));
+    }
+
+    function wrapToPi(angle) {
+      return ((angle + Math.PI) % (2 * Math.PI)) - Math.PI;
+    }
+
+    function wrapTo180(angle) {
+      return ((angle + 180) % 360) - 180;
+    }
+
+    function unwrapToReference(theta, reference, degrees = true) {
+      return reference.map((r, i) => {
+        const d = theta[i] - r;
+        return degrees ? r + wrapTo180(d) : r + wrapToPi(d);
+      });
+    }
+
+    function solveThetaCandidatesSingle(w0, v0, yaw, pitch, roll, alpha = null, degrees = true) {
+      const w = normalize(w0);
+      const v0n = normalize(v0);
+      let cosAlpha;
+
+      if (alpha === null || alpha === undefined) {
+        cosAlpha = dot(w, v0n);
+      } else {
+        if (degrees) {
+          alpha = deg2rad(alpha);
+        }
+        cosAlpha = Math.cos(alpha);
+      }
+
+      cosAlpha = clamp(cosAlpha, -1, 1);
+
+      const R = rpyToR(yaw, pitch, roll, degrees);
+      const v = matVec(R, v0n);
+
+      const wx = w[0], wy = w[1], wz = w[2];
+      const vx = v[0], vy = v[1], vz = v[2];
+
+      const A = wx * vx + wy * vy;
+      const B = wx * vy - wy * vx;
+      const C = cosAlpha - wz * vz;
+      const rho = Math.hypot(A, B);
+
+      if (rho < EPS) {
+        throw new Error("rho 太小，该姿态下 theta 无法稳定求解");
+      }
+
+      let q = C / rho;
+      if (Math.abs(q) > 1 + 1e-10) {
+        throw new Error("无解，姿态可能超出工作空间");
+      }
+
+      q = clamp(q, -1, 1);
+      const phi = Math.atan2(B, A);
+      const delta = Math.acos(q);
+
+      let thetaPlus = wrapToPi(phi + delta);
+      let thetaMinus = wrapToPi(phi - delta);
+
+      if (degrees) {
+        thetaPlus = rad2deg(thetaPlus);
+        thetaMinus = rad2deg(thetaMinus);
+      }
+
+      return [
+        { theta: thetaPlus, mode: +1 },
+        { theta: thetaMinus, mode: -1 }
+      ];
+    }
+
+    function inverseKinematicsAllSolutionsWithModes(w0List, v0List, yaw, pitch, roll, alphaList = null, degrees = true) {
+      const candidatesByLeg = [];
+      for (let i = 0; i < w0List.length; i++) {
+        candidatesByLeg.push(
+          solveThetaCandidatesSingle(
+            w0List[i],
+            v0List[i],
+            yaw,
+            pitch,
+            roll,
+            alphaList ? alphaList[i] : null,
+            degrees
+          )
+        );
+      }
+
+      const results = [];
+
+      function walk(idx, chosen) {
+        if (idx === candidatesByLeg.length) {
+          results.push({
+            theta: chosen.map((x) => x.theta),
+            workingMode: chosen.map((x) => x.mode)
+          });
+          return;
+        }
+
+        for (const cand of candidatesByLeg[idx]) {
+          chosen.push(cand);
+          walk(idx + 1, chosen);
+          chosen.pop();
+        }
+      }
+
+      walk(0, []);
+      return results;
+    }
+
+    function chooseSolutionClosestToReference(allSolutions, referenceTheta, degrees = true) {
+      let best = null;
+      let bestCost = Infinity;
+
+      for (const sol of allSolutions) {
+        const theta = unwrapToReference(sol.theta, referenceTheta, degrees);
+        let cost = 0;
+        for (let i = 0; i < theta.length; i++) {
+          const d = theta[i] - referenceTheta[i];
+          cost += d * d;
+        }
+        cost = Math.sqrt(cost);
+
+        if (cost < bestCost) {
+          bestCost = cost;
+          best = {
+            theta,
+            workingMode: sol.workingMode,
+            cost
+          };
+        }
+      }
+
+      return best;
+    }
+
+    function chooseSolutionByWorkingMode(allSolutions, workingMode, referenceTheta = null, degrees = true) {
+      const target = workingMode.join(",");
+      const match = allSolutions.find((sol) => sol.workingMode.join(",") === target);
+
+      if (!match) {
+        throw new Error(`没有找到 working_mode = ${workingMode.join(",")}`);
+      }
+
+      const theta = referenceTheta ? unwrapToReference(match.theta, referenceTheta, degrees) : match.theta.slice();
+      return {
+        theta,
+        workingMode: match.workingMode.slice()
+      };
+    }
+
+    function modeString(mode) {
+      return `(${mode.map((m) => (m > 0 ? "+1" : "-1")).join(", ")})`;
+    }
+
+    function thetaString(theta, digits = 2) {
+      return `[${theta.map((v) => formatFixed(v, digits)).join(", ")}]°`;
+    }
+
+    function formatFixed(v, digits = 2) {
+      if (!Number.isFinite(v)) return "NaN";
+      return Number(v).toFixed(digits);
+    }
+
+    function formatSci(v, digits = 3) {
+      if (!Number.isFinite(v)) return "NaN";
+      return Number(v).toExponential(digits);
+    }
+
+    function formatVec(v, digits = 3) {
+      return `[${v.map((x) => formatFixed(x, digits)).join(", ")}]`;
+    }
+
+    function rpyString(rpy, digits = 2) {
+      return `yaw=${formatFixed(rpy[0], digits)}°, pitch=${formatFixed(rpy[1], digits)}°, roll=${formatFixed(rpy[2], digits)}°`;
+    }
+
+    function platformNormalInfo(rpyDeg) {
+      const R = rpyToR(rpyDeg[0], rpyDeg[1], rpyDeg[2], true);
+      const normal = normalize(matVec(R, [0, 0, 1]));
+      const tiltDeg = rad2deg(Math.acos(clamp(normal[2], -1, 1)));
+      return { normal, tiltDeg };
+    }
+
+    function addGeometryCell(row, text, className = "") {
+      const cell = document.createElement("div");
+      cell.className = className;
+      cell.textContent = text;
+      row.appendChild(cell);
+      return cell;
+    }
+
+    function makeGeometryInput(row, step, min = null, max = null) {
+      const input = document.createElement("input");
+      input.type = "number";
+      input.step = step;
+      if (min !== null) input.min = String(min);
+      if (max !== null) input.max = String(max);
+      row.appendChild(input);
+      return input;
+    }
+
+    function makeSliderNumber(row, labelText, min, max, step, onChange) {
+      const line = document.createElement("div");
+      line.className = "geom-angle-row";
+
+      const label = document.createElement("label");
+      label.textContent = labelText;
+      line.appendChild(label);
+
+      const range = document.createElement("input");
+      range.type = "range";
+      range.min = String(min);
+      range.max = String(max);
+      range.step = String(step);
+      line.appendChild(range);
+
+      const num = document.createElement("input");
+      num.type = "number";
+      num.min = String(min);
+      num.max = String(max);
+      num.step = String(step);
+      line.appendChild(num);
+
+      const applyValue = (value) => {
+        if (!Number.isFinite(value)) return;
+        value = clamp(value, min, max);
+        range.value = String(value);
+        num.value = formatFixed(value, 1);
+        onChange(value);
+      };
+
+      range.addEventListener("input", () => applyValue(Number(range.value)));
+      num.addEventListener("input", () => applyValue(Number(num.value)));
+
+      row.appendChild(line);
+      return { range, num };
+    }
+
+    function setSliderNumber(control, value) {
+      control.range.value = String(value);
+      control.num.value = formatFixed(value, 1);
+    }
+
+    function setSliderNumberDisabled(control, disabled) {
+      control.range.disabled = disabled;
+      control.num.disabled = disabled;
+    }
+
+    function buildGeometryEditor() {
+      geometryEditor.innerHTML = "";
+      geometryInputs = [];
+
+      for (let i = 0; i < 3; i++) {
+        const row = document.createElement("div");
+        row.className = "geom-row";
+        addGeometryCell(row, `L${i + 1}`, "tag");
+
+        const inputs = {};
+        inputs.wAz = makeSliderNumber(row, "w方位", -180, 180, 0.1, (value) => {
+          const angles = vectorToAngles(geometryState.legs[i].w0);
+          geometryState.legs[i].w0 = anglesToVector(value, angles.elevationDeg);
+          refreshGeometryFromInputs();
+        });
+
+        inputs.wEl = makeSliderNumber(row, "w仰角", -89.9, 89.9, 0.1, (value) => {
+          const angles = vectorToAngles(geometryState.legs[i].w0);
+          geometryState.legs[i].w0 = anglesToVector(angles.azimuthDeg, value);
+          refreshGeometryFromInputs();
+        });
+
+        inputs.vAz = makeSliderNumber(row, "v方位", -180, 180, 0.1, (value) => {
+          const angles = vectorToAngles(geometryState.legs[i].v0);
+          geometryState.legs[i].v0 = anglesToVector(value, angles.elevationDeg);
+          refreshGeometryFromInputs();
+        });
+
+        inputs.vEl = makeSliderNumber(row, "v仰角", -89.9, 89.9, 0.1, (value) => {
+          const angles = vectorToAngles(geometryState.legs[i].v0);
+          geometryState.legs[i].v0 = anglesToVector(angles.azimuthDeg, value);
+          refreshGeometryFromInputs();
+        });
+
+        inputs.alpha = makeSliderNumber(row, "α", 0, 180, 0.1, (value) => {
+          if (geometryState.autoAlpha) return;
+          geometryState.legs[i].alphaDeg = value;
+          refreshGeometryFromInputs();
+        });
+
+        geometryInputs.push(inputs);
+        geometryEditor.appendChild(row);
+      }
+    }
+
+    function syncGeometryEditor() {
+      if (!geometryState || geometryInputs.length === 0) return;
+      autoAlpha.checked = geometryState.autoAlpha;
+
+      geometryInputs.forEach((inputs, i) => {
+        const leg = geometryState.legs[i];
+        const wAngles = vectorToAngles(leg.w0);
+        const vAngles = vectorToAngles(leg.v0);
+        setSliderNumber(inputs.wAz, wAngles.azimuthDeg);
+        setSliderNumber(inputs.wEl, wAngles.elevationDeg);
+        setSliderNumber(inputs.vAz, vAngles.azimuthDeg);
+        setSliderNumber(inputs.vEl, vAngles.elevationDeg);
+        setSliderNumberDisabled(inputs.alpha, geometryState.autoAlpha);
+        setSliderNumber(inputs.alpha, geometryState.alphaUseDeg[i]);
+      });
+    }
+
+    function syncAlphaInputsOnly() {
+      if (!geometryState || geometryInputs.length === 0) return;
+      geometryInputs.forEach((inputs, i) => {
+        setSliderNumberDisabled(inputs.alpha, geometryState.autoAlpha);
+        setSliderNumber(inputs.alpha, geometryState.alphaUseDeg[i]);
+      });
+    }
+
+    function refreshGeometryFromInputs() {
+      currentError = null;
+      try {
+        deriveGeometry(geometryState);
+        geometryError = null;
+        syncAlphaInputsOnly();
+      } catch (err) {
+        geometryError = err && err.message ? err.message : String(err);
+      }
+      recalc();
+    }
+
+    function residualsForThetaPose(thetaDeg, rpyDeg) {
+      const R = rpyToR(rpyDeg[0], rpyDeg[1], rpyDeg[2], true);
+      return geometryState.normalizedW0.map((w0, i) => {
+        const w = matVec(rotZ(deg2rad(thetaDeg[i])), w0);
+        const v = matVec(R, geometryState.normalizedV0[i]);
+        const c = dot(w, v);
+        return {
+          index: i + 1,
+          inputTheta: thetaDeg[i],
+          dot: c,
+          residual: c - Math.cos(geometryState.alphaList[i]),
+          alphaMeasured: rad2deg(Math.acos(clamp(c, -1, 1))),
+          alphaTarget: geometryState.alphaUseDeg[i]
+        };
+      });
+    }
+
+    function residualVectorForThetaPose(thetaDeg, rpyDeg) {
+      return residualsForThetaPose(thetaDeg, rpyDeg).map((row) => row.residual);
+    }
+
+    function maxAbs(values) {
+      return Math.max(...values.map((v) => Math.abs(v)));
+    }
+
+    function vectorNorm(values) {
+      return Math.sqrt(values.reduce((sum, v) => sum + v * v, 0));
+    }
+
+    function distanceDeg(a, b) {
+      return vectorNorm(a.map((v, i) => wrapTo180(v - b[i])));
+    }
+
+    function rpyNearReference(rpy, reference) {
+      return rpy.map((v, i) => reference[i] + wrapTo180(v - reference[i]));
+    }
+
+    function solveLinear3(A, b) {
+      const m = [
+        [A[0][0], A[0][1], A[0][2], b[0]],
+        [A[1][0], A[1][1], A[1][2], b[1]],
+        [A[2][0], A[2][1], A[2][2], b[2]]
+      ];
+
+      for (let col = 0; col < 3; col++) {
+        let pivot = col;
+        for (let row = col + 1; row < 3; row++) {
+          if (Math.abs(m[row][col]) > Math.abs(m[pivot][col])) {
+            pivot = row;
+          }
+        }
+
+        if (Math.abs(m[pivot][col]) < 1e-14) {
+          throw new Error("正解雅可比矩阵接近奇异");
+        }
+
+        if (pivot !== col) {
+          const tmp = m[col];
+          m[col] = m[pivot];
+          m[pivot] = tmp;
+        }
+
+        const div = m[col][col];
+        for (let j = col; j < 4; j++) {
+          m[col][j] /= div;
+        }
+
+        for (let row = 0; row < 3; row++) {
+          if (row === col) continue;
+          const factor = m[row][col];
+          for (let j = col; j < 4; j++) {
+            m[row][j] -= factor * m[col][j];
+          }
+        }
+      }
+
+      return [m[0][3], m[1][3], m[2][3]];
+    }
+
+    function numericalJacobian(thetaDeg, rpyDeg) {
+      const h = 1e-3;
+      const J = Array.from({ length: 3 }, () => [0, 0, 0]);
+
+      for (let col = 0; col < 3; col++) {
+        const plus = rpyDeg.slice();
+        const minus = rpyDeg.slice();
+        plus[col] += h;
+        minus[col] -= h;
+        const fp = residualVectorForThetaPose(thetaDeg, plus);
+        const fm = residualVectorForThetaPose(thetaDeg, minus);
+        for (let row = 0; row < 3; row++) {
+          J[row][col] = (fp[row] - fm[row]) / (2 * h);
+        }
+      }
+
+      return J;
+    }
+
+    function normalEquation(J, f, lambda) {
+      const A = Array.from({ length: 3 }, () => [0, 0, 0]);
+      const b = [0, 0, 0];
+
+      for (let row = 0; row < 3; row++) {
+        for (let col = 0; col < 3; col++) {
+          b[col] -= J[row][col] * f[row];
+          for (let k = 0; k < 3; k++) {
+            A[col][k] += J[row][col] * J[row][k];
+          }
+        }
+      }
+
+      for (let i = 0; i < 3; i++) {
+        A[i][i] += lambda * (A[i][i] + 1e-9);
+      }
+
+      return { A, b };
+    }
+
+    function solveForwardFromSeed(thetaDeg, seedRpyDeg) {
+      let x = seedRpyDeg.slice();
+      let f = residualVectorForThetaPose(thetaDeg, x);
+      let err = vectorNorm(f);
+      let lambda = 1e-3;
+      let best = {
+        rpy: x.slice(),
+        residualVector: f.slice(),
+        errorNorm: err,
+        maxResidual: maxAbs(f),
+        iterations: 0
+      };
+
+      for (let iter = 0; iter < 80; iter++) {
+        if (best.maxResidual < 1e-10) {
+          best.iterations = iter;
+          break;
+        }
+
+        const J = numericalJacobian(thetaDeg, x);
+        let delta;
+
+        try {
+          const eq = normalEquation(J, f, lambda);
+          delta = solveLinear3(eq.A, eq.b);
+        } catch (errSolve) {
+          lambda *= 10;
+          if (lambda > 1e12) break;
+          continue;
+        }
+
+        const deltaNorm = vectorNorm(delta);
+        if (deltaNorm > 25) {
+          const s = 25 / deltaNorm;
+          delta = delta.map((v) => v * s);
+        }
+
+        let candidate = x.map((v, i) => v + delta[i]);
+        candidate = rpyNearReference(candidate, seedRpyDeg);
+        const fCandidate = residualVectorForThetaPose(thetaDeg, candidate);
+        const errCandidate = vectorNorm(fCandidate);
+
+        if (errCandidate < err) {
+          x = candidate;
+          f = fCandidate;
+          err = errCandidate;
+          lambda = Math.max(lambda * 0.35, 1e-9);
+
+          const maxResidual = maxAbs(f);
+          if (maxResidual < best.maxResidual) {
+            best = {
+              rpy: x.slice(),
+              residualVector: f.slice(),
+              errorNorm: err,
+              maxResidual,
+              iterations: iter + 1
+            };
+          }
+
+          if (deltaNorm < 1e-8) {
+            break;
+          }
+        } else {
+          lambda *= 6;
+          if (lambda > 1e12) break;
+        }
+      }
+
+      return best;
+    }
+
+    function uniqueSeeds(seeds) {
+      const result = [];
+      for (const seed of seeds) {
+        if (!seed || seed.some((v) => !Number.isFinite(v))) continue;
+        if (!result.some((other) => distanceDeg(seed, other) < 1e-6)) {
+          result.push(seed.slice());
+        }
+      }
+      return result;
+    }
+
+    function forwardKinematics(thetaDeg, seedRpyDeg) {
+      const seeds = uniqueSeeds([
+        seedRpyDeg,
+        state.lastGoodRpy,
+        [0, 0, 0],
+        [20, 20, 30],
+        [-20, -20, -30],
+        [45, 0, 0],
+        [-45, 0, 0]
+      ]);
+
+      let best = null;
+      for (const seed of seeds) {
+        const candidate = solveForwardFromSeed(thetaDeg, seed);
+        candidate.seedDistance = distanceDeg(candidate.rpy, seed);
+
+        if (candidate.maxResidual < 1e-7) {
+          return {
+            theta: thetaDeg.slice(),
+            rpy: candidate.rpy,
+            residuals: residualsForThetaPose(thetaDeg, candidate.rpy),
+            maxResidual: candidate.maxResidual,
+            iterations: candidate.iterations
+          };
+        }
+
+        if (!best || candidate.maxResidual < best.maxResidual) {
+          best = candidate;
+        }
+      }
+
+      if (best && best.maxResidual < 1e-5) {
+        return {
+          theta: thetaDeg.slice(),
+          rpy: best.rpy,
+          residuals: residualsForThetaPose(thetaDeg, best.rpy),
+          maxResidual: best.maxResidual,
+          iterations: best.iterations
+        };
+      }
+
+      throw new Error(best ? `正解未收敛，当前最大残差 ${formatSci(best.maxResidual, 2)}` : "正解未收敛");
+    }
+
+    function residualsForSolution(solution, yaw, pitch, roll) {
+      const R = rpyToR(yaw, pitch, roll, true);
+      return geometryState.normalizedW0.map((w0, i) => {
+        const theta = deg2rad(solution.theta[i]);
+        const w = matVec(rotZ(theta), w0);
+        const v = matVec(R, geometryState.normalizedV0[i]);
+        const c = dot(w, v);
+        return {
+          dot: c,
+          residual: c - Math.cos(geometryState.alphaList[i]),
+          angle: Math.acos(clamp(c, -1, 1)) / DEG
+        };
+      });
+    }
+
+    function rotationVerificationForSolution(solution, yaw, pitch, roll) {
+      const R = rpyToR(yaw, pitch, roll, true);
+
+      return geometryState.normalizedW0.map((w0, i) => {
+        const thetaSolved = solution.theta[i];
+        const w = matVec(rotZ(deg2rad(thetaSolved)), w0);
+        const v = matVec(R, geometryState.normalizedV0[i]);
+
+        const crossZ = w0[0] * w[1] - w0[1] * w[0];
+        const dotXY = w0[0] * w[0] + w0[1] * w[1];
+        const thetaMeasuredRaw = rad2deg(Math.atan2(crossZ, dotXY));
+        const thetaMeasured = thetaSolved + wrapTo180(thetaMeasuredRaw - thetaSolved);
+        const alphaMeasured = rad2deg(Math.acos(clamp(dot(w, v), -1, 1)));
+
+        return {
+          index: i + 1,
+          thetaSolved,
+          thetaMeasured,
+          alphaMeasured,
+          thetaError: wrapTo180(thetaMeasured - thetaSolved),
+          alphaError: alphaMeasured - geometryState.alphaUseDeg[i]
+        };
+      });
+    }
+
+    function renderRotationVerification(rows) {
+      rotationVerificationBody.innerHTML = "";
+
+      if (!rows) {
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+        td.colSpan = 5;
+        td.textContent = "无解";
+        tr.appendChild(td);
+        rotationVerificationBody.appendChild(tr);
+        return;
+      }
+
+      for (const row of rows) {
+        const tr = document.createElement("tr");
+        const values = [
+          `L${row.index}`,
+          `${formatFixed(row.inputTheta, 2)}°`,
+          `${formatFixed(row.alphaMeasured, 2)}°`,
+          `${formatFixed(row.alphaTarget, 2)}°`,
+          formatSci(row.residual, 2)
+        ];
+
+        for (const value of values) {
+          const td = document.createElement("td");
+          td.textContent = value;
+          tr.appendChild(td);
+        }
+        rotationVerificationBody.appendChild(tr);
+      }
+    }
+
+    function sphereCenter() {
+      // solve.py 的姿态模型是球面机构：所有方向向量都以 O 为共同球心。
+      return vec3(0, 0, 0);
+    }
+
+    function platformAxes(R) {
+      const c = sphereCenter();
+      const s = 0.72;
+      return [
+        { a: c, b: add(c, scale(matVec(R, [1, 0, 0]), s)), color: "#2b6cff", width: 2, arrow: true },
+        { a: c, b: add(c, scale(matVec(R, [0, 1, 0]), s)), color: "#12a57a", width: 2, arrow: true },
+        { a: c, b: add(c, scale(matVec(R, [0, 0, 1]), s)), color: "#ea8c1f", width: 2, arrow: true }
+      ];
+    }
+
+    function worldAxes() {
+      const o = vec3(0, 0, 0);
+      const s = 1.4;
+      return [
+        { a: o, b: vec3(s, 0, 0), color: "#d64545", width: 2.5, arrow: true },
+        { a: o, b: vec3(0, s, 0), color: "#12a57a", width: 2.5, arrow: true },
+        { a: o, b: vec3(0, 0, s), color: "#2b6cff", width: 2.5, arrow: true }
+      ];
+    }
+
+    function gridLines() {
+      const lines = [];
+      const z = -1.55;
+      const span = 3.5;
+      const step = 0.5;
+      for (let x = -span; x <= span + 1e-9; x += step) {
+        lines.push({ a: vec3(x, -span, z), b: vec3(x, span, z), color: "#e7ebf1", width: 1 });
+      }
+      for (let y = -span; y <= span + 1e-9; y += step) {
+        lines.push({ a: vec3(-span, y, z), b: vec3(span, y, z), color: "#e7ebf1", width: 1 });
+      }
+      return lines;
+    }
+
+    function addRod(items, a, b, color, width = 7, casing = "#263447", casingWidth = width + 4) {
+      items.push({
+        a,
+        b,
+        color,
+        width,
+        casing,
+        casingWidth,
+        lineCap: "round"
+      });
+    }
+
+    function sphericalPoint(a, b, t, radius) {
+      const na = normalize(a);
+      const nb = normalize(b);
+      const omega = Math.acos(clamp(dot(na, nb), -1, 1));
+
+      if (omega < 1e-8) {
+        return scale(na, radius);
+      }
+
+      const s = Math.sin(omega);
+      return scale(
+        add(
+          scale(na, Math.sin((1 - t) * omega) / s),
+          scale(nb, Math.sin(t * omega) / s)
+        ),
+        radius
+      );
+    }
+
+    function addSphericalRod(items, a, b, color, radius, width = 8) {
+      const steps = 16;
+      let previous = scale(normalize(a), radius);
+
+      for (let j = 1; j <= steps; j++) {
+        const next = sphericalPoint(a, b, j / steps, radius);
+        addRod(items, previous, next, color, width, "#263447", width + 5);
+        previous = next;
+      }
+    }
+
+    function buildScene() {
+      const rpy = currentSolution ? currentSolution.rpy : state.lastGoodRpy;
+      const R = rpyToR(rpy[0], rpy[1], rpy[2], true);
+      const c = sphereCenter();
+      const legColors = ["#2b6cff", "#12a57a", "#ea8c1f"];
+      const items = [];
+      const surfaces = [];
+
+      if (state.showGrid) {
+        items.push(...gridLines());
+      }
+
+      items.push(...worldAxes());
+
+      const wPts = [];
+      const vPts = [];
+      const directionRadius = 1.65;
+      const u = vec3(0, 0, -1);
+      const uPoint = scale(u, directionRadius);
+
+      // 三个输入副共用 Z 轴，用一根中心轴和三个同心关节圈表示。
+      addRod(items, vec3(0, 0, -2.15), vec3(0, 0, 0.45), "#64748b", 7, "#263447", 11);
+
+      for (let i = 0; i < 3; i++) {
+        const theta = deg2rad(state.theta[i]);
+        const w = matVec(rotZ(theta), geometryState.normalizedW0[i]);
+        const v = matVec(R, geometryState.normalizedV0[i]);
+        const wPoint = scale(w, directionRadius);
+        const vPoint = scale(v, directionRadius);
+
+        wPts.push(wPoint);
+        vPts.push(vPoint);
+
+        // 第一连杆：公共输入轴 u 到中间转动副 w_i。
+        addSphericalRod(items, u, w, legColors[i], directionRadius, 8);
+
+        // 第二连杆：中间转动副 w_i 到动平台转动副 v_i。
+        addSphericalRod(items, w, v, legColors[i], directionRadius, 9);
+
+        // 细虚线只显示 solve.py 中使用的方向向量。
+        items.push({ a: c, b: wPoint, color: legColors[i], width: 1.5, dash: [6, 5] });
+        items.push({ a: c, b: vPoint, color: legColors[i], width: 1.5, dash: [6, 5] });
+      }
+
+      // v1、v2、v3 就是动平台上的三个点。
+      surfaces.push({
+        points: vPts,
+        fill: "rgba(55, 142, 119, 0.30)",
+        stroke: "#236c5a",
+        width: 3
+      });
+
+      for (let i = 0; i < 3; i++) {
+        addRod(
+          items,
+          vPts[i],
+          vPts[(i + 1) % 3],
+          "#4f9e88",
+          5,
+          "#174f43",
+          9
+        );
+      }
+
+      items.push(...platformAxes(R));
+
+      const points = [];
+      // 三个同轴输入副画成同一位置的三层同心环。
+      points.push({ p: uPoint, color: "#2b6cff", stroke: "#263447", strokeWidth: 3, r: 12 });
+      points.push({ p: uPoint, color: "#12a57a", stroke: "#ffffff", strokeWidth: 2, r: 8.5 });
+      points.push({ p: uPoint, color: "#ea8c1f", stroke: "#ffffff", strokeWidth: 2, r: 5 });
+      for (let i = 0; i < 3; i++) {
+        points.push({ p: wPts[i], color: legColors[i], stroke: "#263447", strokeWidth: 3, r: 7 });
+        points.push({ p: vPts[i], color: "#ffffff", stroke: legColors[i], strokeWidth: 3, r: 7 });
+      }
+      points.push({ p: c, color: "#ffffff", stroke: "#263447", strokeWidth: 3, r: 7 });
+
+      const labels = [];
+      if (state.showLabels) {
+        const axisLen = 1.55;
+        labels.push({ p: vec3(axisLen, 0, 0), text: "X", color: "#d64545" });
+        labels.push({ p: vec3(0, axisLen, 0), text: "Y", color: "#12a57a" });
+        labels.push({ p: vec3(0, 0, axisLen), text: "Z", color: "#2b6cff" });
+        for (let i = 0; i < 3; i++) {
+          labels.push({ p: wPts[i], text: `w${i + 1}`, color: legColors[i] });
+          labels.push({ p: vPts[i], text: `v${i + 1}`, color: legColors[i] });
+        }
+        labels.push({ p: uPoint, text: "同轴输入 θ1 / θ2 / θ3", color: "#334155" });
+        labels.push({ p: add(c, scale(matVec(R, [0, 0, 1]), 0.28)), text: "动平台", color: "#236c5a" });
+        labels.push({ p: c, text: "O", color: "#111827" });
+      }
+
+      return { items, surfaces, points, labels, center: c };
+    }
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const width = Math.max(1, Math.floor(rect.width * dpr));
+      const height = Math.max(1, Math.floor(rect.height * dpr));
+
+      if (canvas.width !== width || canvas.height !== height) {
+        canvas.width = width;
+        canvas.height = height;
+      }
+    }
+
+    function projectPoint(p) {
+      const center = sphereCenter();
+      const target = add(center, vec3(0, 0, -0.2));
+
+      const az = state.cameraAzimuth;
+      const el = clamp(state.cameraElevation, -1.45, 1.45);
+      const cosEl = Math.cos(el);
+      const camPos = add(target, vec3(
+        state.cameraDistance * cosEl * Math.cos(az),
+        state.cameraDistance * cosEl * Math.sin(az),
+        state.cameraDistance * Math.sin(el)
+      ));
+
+      const forward = normalize(sub(target, camPos));
+      const worldUp = [0, 0, 1];
+      let right = cross(forward, worldUp);
+      if (norm(right) < EPS) {
+        right = [1, 0, 0];
+      } else {
+        right = normalize(right);
+      }
+      const up = cross(right, forward);
+
+      const relCam = sub(p, camPos);
+      const x = dot(relCam, right);
+      const y = dot(relCam, up);
+      const z = dot(relCam, forward);
+
+      return { x, y, z };
+    }
+
+    function segmentToScreen(a, b) {
+      const pa = projectPoint(a);
+      const pb = projectPoint(b);
+      const sa = worldToScreen(a);
+      const sb = worldToScreen(b);
+
+      return {
+        // projectPoint() 返回相机坐标，Canvas 需要的是像素坐标。
+        // 之前线段直接使用了 pa/pb 的 x、y，导致连杆被画在左上角的几个像素内。
+        a: sa,
+        b: sb,
+        depth: (pa.z + pb.z) * 0.5
+      };
+    }
+
+    function worldToScreen(p) {
+      const rect = canvas.getBoundingClientRect();
+      const focal = Math.min(rect.width, rect.height) * 0.95;
+      const proj = projectPoint(p);
+      const z = Math.max(0.25, proj.z);
+      return {
+        x: rect.width / 2 + (proj.x / z) * focal,
+        y: rect.height / 2 - (proj.y / z) * focal,
+        z,
+        visible: proj.z > 0
+      };
+    }
+
+    function drawArrowHead(x1, y1, x2, y2, color, size = 8) {
+      const angle = Math.atan2(y2 - y1, x2 - x1);
+      const a1 = angle + Math.PI - 0.35;
+      const a2 = angle + Math.PI + 0.35;
+
+      ctx.beginPath();
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 + Math.cos(a1) * size, y2 + Math.sin(a1) * size);
+      ctx.lineTo(x2 + Math.cos(a2) * size, y2 + Math.sin(a2) * size);
+      ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    function render() {
+      resizeCanvas();
+
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.save();
+      ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+
+      const scene = buildScene();
+      const segments = [];
+
+      for (const item of scene.items) {
+        segments.push({
+          ...segmentToScreen(item.a, item.b),
+          color: item.color,
+          width: item.width,
+          casing: item.casing || null,
+          casingWidth: item.casingWidth || 0,
+          lineCap: item.lineCap || "butt",
+          dash: item.dash || null,
+          arrow: item.arrow || false
+        });
+      }
+
+      segments.sort((a, b) => b.depth - a.depth);
+
+      for (const seg of segments) {
+        if (!Number.isFinite(seg.a.x) || !Number.isFinite(seg.b.x)) continue;
+        if (seg.a.visible === false || seg.b.visible === false) continue;
+        if (seg.a.z <= 0 || seg.b.z <= 0) continue;
+
+        if (seg.casing) {
+          ctx.beginPath();
+          ctx.setLineDash([]);
+          ctx.lineCap = seg.lineCap;
+          ctx.lineWidth = seg.casingWidth;
+          ctx.strokeStyle = seg.casing;
+          ctx.moveTo(seg.a.x, seg.a.y);
+          ctx.lineTo(seg.b.x, seg.b.y);
+          ctx.stroke();
+        }
+
+        ctx.beginPath();
+        ctx.setLineDash(seg.dash || []);
+        ctx.lineCap = seg.lineCap;
+        ctx.lineWidth = seg.width;
+        ctx.strokeStyle = seg.color;
+        ctx.moveTo(seg.a.x, seg.a.y);
+        ctx.lineTo(seg.b.x, seg.b.y);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        if (seg.arrow) {
+          drawArrowHead(seg.a.x, seg.a.y, seg.b.x, seg.b.y, seg.color, 7);
+        }
+      }
+
+      for (const surface of scene.surfaces) {
+        const projected = surface.points.map(worldToScreen);
+        if (projected.some((p) => !p.visible)) continue;
+
+        ctx.beginPath();
+        ctx.moveTo(projected[0].x, projected[0].y);
+        for (let i = 1; i < projected.length; i++) {
+          ctx.lineTo(projected[i].x, projected[i].y);
+        }
+        ctx.closePath();
+        ctx.fillStyle = surface.fill;
+        ctx.fill();
+        ctx.lineJoin = "round";
+        ctx.lineWidth = surface.width;
+        ctx.strokeStyle = surface.stroke;
+        ctx.stroke();
+      }
+
+      for (const p of scene.points) {
+        const s = worldToScreen(p.p);
+        if (!s.visible) continue;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+        ctx.strokeStyle = p.stroke || "#ffffff";
+        ctx.lineWidth = p.strokeWidth || 1;
+        ctx.stroke();
+      }
+
+      if (state.showLabels) {
+        ctx.font = "12px Segoe UI, Microsoft YaHei, sans-serif";
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "left";
+        for (const label of scene.labels) {
+          const s = worldToScreen(label.p);
+          if (!s.visible) continue;
+          ctx.fillStyle = "#111827";
+          ctx.fillText(label.text, s.x + 6, s.y - 6);
+        }
+      }
+
+      ctx.restore();
+    }
+
+    function updateInfoPanels() {
+      const alphaUse = geometryState.alphaUseDeg.map((a) => formatFixed(a, 2)).join("°, ") + "°";
+      const alphaGeom = geometryState.alphaGeomDeg.map((a) => formatFixed(a, 2)).join("°, ") + "°";
+      const alphaDelta = geometryState.alphaUseDeg
+        .map((a, i) => formatFixed(a - geometryState.alphaGeomDeg[i], 2))
+        .join("°, ") + "°";
+      alphaText.textContent = alphaUse;
+      geomAlphaText.textContent = alphaGeom;
+      alphaDeltaText.textContent = alphaDelta;
+      w0Text.textContent = geometryState.legs.map((leg) => formatVec(leg.w0, 3)).join("  ");
+      v0Text.textContent = geometryState.legs.map((leg) => formatVec(leg.v0, 3)).join("  ");
+
+      if (currentError) {
+        modeText.textContent = "无解";
+        thetaText.textContent = currentError;
+        tiltText.textContent = "无解";
+        maxResidualText.textContent = "无解";
+        selectedModeText.textContent = "无解";
+        selectedThetaText.textContent = thetaString(state.theta, 2);
+        normalText.textContent = "无解";
+        selectedResidualText.textContent = currentError;
+        renderRotationVerification(null);
+        return;
+      }
+
+      const normalInfo = platformNormalInfo(currentSolution.rpy);
+
+      modeText.textContent = `已收敛，迭代 ${currentSolution.iterations} 次`;
+      thetaText.textContent = rpyString(currentSolution.rpy, 2);
+      tiltText.textContent = `${formatFixed(normalInfo.tiltDeg, 2)}°`;
+      maxResidualText.textContent = formatSci(currentSolution.maxResidual, 2);
+
+      selectedModeText.textContent = rpyString(currentSolution.rpy, 4);
+      selectedThetaText.textContent = thetaString(state.theta, 4);
+      normalText.textContent = `n=${formatVec(normalInfo.normal, 4)}，倾角=${formatFixed(normalInfo.tiltDeg, 4)}°`;
+      selectedResidualText.textContent = currentSolution.residuals
+        .map((r) => `r${r.index}=${formatSci(r.residual, 2)}`)
+        .join("  ");
+
+      renderRotationVerification(currentSolution.residuals);
+    }
+
+    function renderSolutionList() {
+      solutionList.innerHTML = "";
+
+      const info = document.createElement("div");
+      info.className = currentError ? "stat" : "stat";
+      info.textContent = currentError
+        ? "当前 theta 没有在本分支上找到可收敛姿态。可以先回零，再逐步调整 theta。"
+        : "正解采用当前 w0 / v0 / α 连续迭代：以上一次姿态为初值，求 RPY 使三条支链同时满足 w_i^T v_i = cos(alpha_i)。";
+      solutionList.appendChild(info);
+    }
+
+    function recalc() {
+      currentError = null;
+      state.showGrid = showGrid.checked;
+      state.showLabels = showLabels.checked;
+
+      try {
+        if (geometryError) {
+          throw new Error(geometryError);
+        }
+        currentSolution = forwardKinematics(state.theta, state.lastGoodRpy);
+        state.rpy = currentSolution.rpy.slice();
+        state.lastGoodRpy = currentSolution.rpy.slice();
+      } catch (err) {
+        currentError = err && err.message ? err.message : String(err);
+        currentSolution = null;
+      }
+
+      updateInfoPanels();
+      renderSolutionList();
+      render();
+    }
+
+    function bindRangeAndNumber(rangeEl, numEl, getter, setter) {
+      rangeEl.addEventListener("input", () => {
+        const v = Number(rangeEl.value);
+        numEl.value = v.toFixed(1);
+        setter(v);
+        recalc();
+      });
+
+      numEl.addEventListener("input", () => {
+        let v = Number(numEl.value);
+        if (!Number.isFinite(v)) return;
+        v = clamp(v, Number(rangeEl.min), Number(rangeEl.max));
+        rangeEl.value = v;
+        numEl.value = v.toFixed(1);
+        setter(v);
+        recalc();
+      });
+    }
+
+    thetaRanges.forEach((rangeEl, i) => {
+      bindRangeAndNumber(rangeEl, thetaNums[i], () => state.theta[i], (v) => state.theta[i] = v);
+    });
+
+    showGrid.addEventListener("change", recalc);
+    showLabels.addEventListener("change", recalc);
+
+    autoAlpha.addEventListener("change", () => {
+      if (!geometryState) return;
+      geometryState.autoAlpha = autoAlpha.checked;
+      if (!geometryState.autoAlpha && !geometryError) {
+        geometryState.legs.forEach((leg, i) => {
+          leg.alphaDeg = geometryState.alphaGeomDeg[i];
+        });
+      }
+      refreshGeometryFromInputs();
+      syncGeometryEditor();
+    });
+
+    btnResetGeometry.addEventListener("click", resetGeometryToDefault);
+
+    document.getElementById("btnHome").addEventListener("click", () => {
+      setTheta(defaultTheta);
+    });
+
+    document.getElementById("btnSample").addEventListener("click", () => {
+      setTheta(sampleTheta);
+    });
+
+    document.getElementById("btnResetView").addEventListener("click", () => {
+      state.cameraAzimuth = 35 * DEG;
+      state.cameraElevation = 22 * DEG;
+      state.cameraDistance = 6.8;
+      render();
+    });
+
+    document.getElementById("btnFit").addEventListener("click", () => {
+      state.cameraAzimuth = 35 * DEG;
+      state.cameraElevation = 22 * DEG;
+      state.cameraDistance = 6.8;
+      render();
+    });
+
+    function setTheta(theta) {
+      state.theta = theta.slice();
+      for (let i = 0; i < 3; i++) {
+        thetaRanges[i].value = state.theta[i];
+        thetaNums[i].value = formatFixed(state.theta[i], 1);
+      }
+      recalc();
+    }
+
+    canvas.addEventListener("pointerdown", (e) => {
+      canvas.setPointerCapture(e.pointerId);
+      canvas.dataset.dragging = "1";
+      canvas.dataset.lastX = String(e.clientX);
+      canvas.dataset.lastY = String(e.clientY);
+    });
+
+    canvas.addEventListener("pointermove", (e) => {
+      if (canvas.dataset.dragging !== "1") return;
+      const lastX = Number(canvas.dataset.lastX);
+      const lastY = Number(canvas.dataset.lastY);
+      const dx = e.clientX - lastX;
+      const dy = e.clientY - lastY;
+      canvas.dataset.lastX = String(e.clientX);
+      canvas.dataset.lastY = String(e.clientY);
+      state.cameraAzimuth += dx * 0.006;
+      state.cameraElevation = clamp(state.cameraElevation + dy * 0.006, -1.4, 1.4);
+      render();
+    });
+
+    canvas.addEventListener("pointerup", () => {
+      canvas.dataset.dragging = "0";
+    });
+
+    canvas.addEventListener("pointerleave", () => {
+      canvas.dataset.dragging = "0";
+    });
+
+    canvas.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      const factor = Math.exp(e.deltaY * 0.001);
+      state.cameraDistance = clamp(state.cameraDistance * factor, 4.2, 12.5);
+      render();
+    }, { passive: false });
+
+    window.addEventListener("resize", render);
+
+    function init() {
+      geometryState = createGeometryState();
+      buildGeometryEditor();
+      syncGeometryEditor();
+      setTheta(defaultTheta);
+    }
+
+    init();
+  </script>
+</body>
+</html>

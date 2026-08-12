@@ -1,0 +1,5 @@
+esp32_firmware/.pio/
+pc_host/__pycache__/
+pc_host/.venv/
+*.pyc
+

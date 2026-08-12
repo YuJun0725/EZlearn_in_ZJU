@@ -1,0 +1,32 @@
+{
+  "w0_list": [
+    [0.7986355100, 0.0, -0.6018150232],
+    [-0.3993177550, 0.6916386401, -0.6018150232],
+    [-0.3993177550, -0.6916386401, -0.6018150232]
+  ],
+  "v0_list": [
+    [0.0, -1.0, 0.0],
+    [0.8660254038, 0.5, 0.0],
+    [-0.8660254038, 0.5, 0.0]
+  ],
+  "alpha_deg": [90.0, 90.0, 90.0],
+  "working_mode": [1, 1, 1],
+  "joint_limits_deg": [
+    [-59.0, 59.0],
+    [-59.0, 59.0],
+    [-59.0, 59.0]
+  ],
+  "min_axis_clearance_deg": 5.0,
+  "serial_baudrate": 115200,
+  "command_rate_hz": 50.0,
+  "display_rate_hz": 5.0,
+  "orientation_filter_min_cutoff_hz": 5.0,
+  "orientation_filter_beta": 0.05,
+  "orientation_speed_cutoff_hz": 1.0,
+  "orientation_deadband_deg": 0.1,
+  "theta_max_speed_deg_s": 150.0,
+  "theta_max_acceleration_deg_s2": 900.0,
+  "theta_command_epsilon_deg": 0.005,
+  "startup_delay_s": 2.0,
+  "ack_timeout_s": 1.0
+}

@@ -1,0 +1,9 @@
+source;share/delta_teleop/hook/pythonpath.ps1
+source;share/delta_teleop/hook/pythonpath.dsv
+source;share/delta_teleop/hook/pythonpath.sh
+source;share/delta_teleop/hook/ament_prefix_path.ps1
+source;share/delta_teleop/hook/ament_prefix_path.dsv
+source;share/delta_teleop/hook/ament_prefix_path.sh
+source;../../build/delta_teleop/share/delta_teleop/hook/pythonpath_develop.ps1
+source;../../build/delta_teleop/share/delta_teleop/hook/pythonpath_develop.dsv
+source;../../build/delta_teleop/share/delta_teleop/hook/pythonpath_develop.sh
